@@ -220,7 +220,7 @@ static void RunOnUIThread(std::function<void()>&& action, DWORD timeout = INFINI
 **What's wrong.** To test that 2 + 2 = 4, you build and deploy a Windows Store app. These tests can't run on Linux or in a
 plain CI container. And the graphing engine isn't tested at all, because it isn't in the repository.
 
-**Ours.** The core is a plain .NET library with 249 xUnit tests, and the UI has 36 tests that run without a window; `dotnet test` works on any OS.
+**Ours.** The core is a plain .NET library with 249 xUnit tests, and the UI has 37 tests that run without a window; `dotnet test` works on any OS.
 
 ---
 
@@ -598,7 +598,7 @@ logarithms, hyperbolic functions and gamma function.
 | Platforms | Windows | Windows, Linux, Android, iOS, macOS |
 | Graphing engine | closed, mocks in the public code | open, with tests |
 | `tan(10x)` | "Too complex to graph" after 5 s | 11 ms |
-| Tests | 4 projects; the unit tests are UWP apps | 249 core and 36 UI tests; `dotnet test` on any OS |
+| Tests | 4 projects; the unit tests are UWP apps | 249 core and 37 UI tests; `dotnet test` on any OS |
 | Telemetry | 2 projects, 20 event types | none |
 | Size | ≈ 77,000 lines (26k C++, 36k C#, 15k XAML) without the engine | 18,723 lines with the engine and the tests |
 

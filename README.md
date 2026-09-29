@@ -161,7 +161,7 @@ And now the same for us:
 | Projects | 12 | 4 and tests |
 | Platform | UWP, Windows only | .NET 10 and Avalonia: Windows, Linux, macOS, Android |
 | Graphs | DirectX and a closed engine | A control that draws with Avalonia, and an open engine with tests |
-| Tests | 4 projects; the unit tests are UWP apps | 249 tests of the core and 36 of the UI (it runs without a window); `dotnet test` on any OS |
+| Tests | 4 projects; the unit tests are UWP apps | 249 tests of the core and 37 of the UI (it runs without a window); `dotnet test` on any OS |
 | Telemetry | 2 projects | None. [PRIVACY.md](PRIVACY.md) is shorter than this table |
 | `tan(10x)` | "Too complex to graph" after 5 s | 11 ms |
 | Size | ≈ 77,000 lines without the engine | 18,723 lines with the engine and the tests |

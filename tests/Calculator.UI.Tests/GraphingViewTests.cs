@@ -80,11 +80,7 @@ public sealed class GraphingViewTests
 
     private static bool ColorNear(Bitmap picture, int x, int y, Avalonia.Media.Color color, int radius)
     {
-        using var copy = new WriteableBitmap(picture.PixelSize, picture.Dpi, Avalonia.Platform.PixelFormat.Bgra8888, Avalonia.Platform.AlphaFormat.Premul);
-        using var buffer = copy.Lock();
-        picture.CopyPixels(new PixelRect(picture.PixelSize), buffer.Address, buffer.RowBytes * picture.PixelSize.Height, buffer.RowBytes);
-        byte[] pixels = new byte[buffer.RowBytes * picture.PixelSize.Height];
-        System.Runtime.InteropServices.Marshal.Copy(buffer.Address, pixels, 0, pixels.Length);
+        (byte[] pixels, int rowBytes) = ReadBgraPixels(picture);
         for (int dy = -radius; dy <= radius; dy++)
         {
             for (int dx = -radius; dx <= radius; dx++)
@@ -96,7 +92,7 @@ public sealed class GraphingViewTests
                     continue;
                 }
 
-                int i = (cy * buffer.RowBytes) + (cx * 4);
+                int i = (cy * rowBytes) + (cx * 4);
                 if (Math.Abs(pixels[i] - color.B) < 40 && Math.Abs(pixels[i + 1] - color.G) < 40 && Math.Abs(pixels[i + 2] - color.R) < 40)
                 {
                     return true;
@@ -130,28 +126,48 @@ public sealed class GraphingViewTests
         var viewport = viewModel.Viewport;
         int px = (int)viewport.ScreenX(0);
         int py = (int)viewport.ScreenY(0);
-        picture.Save(Path.Combine(Path.GetTempPath(), $"btl-tan-{xMin}.png"), new PngBitmapEncoderOptions());
         Assert.True(ColorNear(picture, px, py, viewModel.Equations[0].Color, radius: 2),
             $"tan(10x) misses the origin, pixel ({px}, {py}); viewport {viewport}");
         window.Close();
     }
     private static bool ContainsColor(Bitmap picture, Avalonia.Media.Color color)
     {
-        using var copy = new WriteableBitmap(picture.PixelSize, picture.Dpi, Avalonia.Platform.PixelFormat.Bgra8888, Avalonia.Platform.AlphaFormat.Premul);
-        using (var buffer = copy.Lock())
+        (byte[] pixels, _) = ReadBgraPixels(picture);
+        for (int i = 0; i + 3 < pixels.Length; i += 4)
         {
-            picture.CopyPixels(new PixelRect(picture.PixelSize), buffer.Address, buffer.RowBytes * picture.PixelSize.Height, buffer.RowBytes);
-            byte[] pixels = new byte[buffer.RowBytes * picture.PixelSize.Height];
-            System.Runtime.InteropServices.Marshal.Copy(buffer.Address, pixels, 0, pixels.Length);
-            for (int i = 0; i + 3 < pixels.Length; i += 4)
+            if (Math.Abs(pixels[i] - color.B) < 24 && Math.Abs(pixels[i + 1] - color.G) < 24 && Math.Abs(pixels[i + 2] - color.R) < 24 && pixels[i + 3] > 200)
             {
-                if (Math.Abs(pixels[i] - color.B) < 24 && Math.Abs(pixels[i + 1] - color.G) < 24 && Math.Abs(pixels[i + 2] - color.R) < 24 && pixels[i + 3] > 200)
-                {
-                    return true;
-                }
+                return true;
             }
         }
 
         return false;
+    }
+
+    // Pictures on macOS are RGBA: the colors must still be read right.
+    [AvaloniaFact]
+    public void PixelsOfAnRgbaPictureAreReadAsBgra()
+    {
+        using var picture = new WriteableBitmap(new PixelSize(1, 1), new Vector(96, 96), Avalonia.Platform.PixelFormat.Rgba8888, Avalonia.Platform.AlphaFormat.Premul);
+        using (var buffer = picture.Lock())
+        {
+            System.Runtime.InteropServices.Marshal.Copy(new byte[] { 0x10, 0x80, 0xF0, 0xFF }, 0, buffer.Address, 4);
+        }
+
+        Assert.True(ContainsColor(picture, Avalonia.Media.Color.FromRgb(0x10, 0x80, 0xF0)));
+    }
+
+    /// <summary>
+    /// The pixels of a picture as BGRA bytes. Skia keeps pictures in the native order of the platform (BGRA on Windows
+    /// and Linux, RGBA on macOS), so the copy converts them.
+    /// </summary>
+    private static (byte[] Pixels, int RowBytes) ReadBgraPixels(Bitmap picture)
+    {
+        using var copy = new WriteableBitmap(picture.PixelSize, picture.Dpi, Avalonia.Platform.PixelFormat.Bgra8888, Avalonia.Platform.AlphaFormat.Premul);
+        using var buffer = copy.Lock();
+        picture.CopyPixels(buffer);
+        byte[] pixels = new byte[buffer.RowBytes * picture.PixelSize.Height];
+        System.Runtime.InteropServices.Marshal.Copy(buffer.Address, pixels, 0, pixels.Length);
+        return (pixels, buffer.RowBytes);
     }
 }
