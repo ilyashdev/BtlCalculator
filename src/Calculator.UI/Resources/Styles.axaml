@@ -1,0 +1,288 @@
+<!--
+    Styles of the calculator on top of the Fluent theme: fonts, text, and the keys of the Windows 11 calculator.
+    Keys are Buttons with a class: number, operator, accent (the "=" key), subtle (memory row, top bar), link.
+-->
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Styles.Resources>
+        <!--
+            Fonts. Segoe UI (Variable) on Windows like the original; elsewhere the system UI font. Icons are Fluent
+            System Icons (MIT, Assets/Fonts) on every platform, see Platform/SystemGlyphs.
+        -->
+        <FontFamily x:Key="TextFont">Segoe UI Variable Text, Segoe UI, $Default</FontFamily>
+        <FontFamily x:Key="DisplayFont">Segoe UI Variable Display, Segoe UI, $Default</FontFamily>
+        <!--
+            Math labels and formulas use the text font too, like the keys of the original. Cambria Math comes out slanted
+            and without some modifier letters (the d of 2ⁿᵈ) in Avalonia on Windows.
+        -->
+        <FontFamily x:Key="MathFont">Segoe UI Variable Text, Segoe UI, $Default</FontFamily>
+        <FontFamily x:Key="IconFont">avares://Calculator.UI/Assets/Fonts/FluentSystemIcons-Regular.ttf#FluentSystemIcons-Regular</FontFamily>
+
+        <!-- Key font sizes; CalculatorView switches them with the window size (legacy Small/Medium/Large states). -->
+        <x:Double x:Key="NumberKeyFontSize">18</x:Double>
+        <x:Double x:Key="OperatorKeyFontSize">14</x:Double>
+        <x:Double x:Key="SymbolKeyFontSize">16</x:Double>
+
+        <!-- The Fluent "fast" timing of the original. -->
+        <x:TimeSpan x:Key="KeyFadeDuration">0:0:0.083</x:TimeSpan>
+    </Styles.Resources>
+
+    <Style Selector="TextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource TextFont}" />
+    </Style>
+
+    <Style Selector="TextBlock.expression">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="TextAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="TextTrimming" Value="PrefixCharacterEllipsis" />
+        <Setter Property="Foreground" Value="{DynamicResource TextSecondary}" />
+    </Style>
+
+    <!-- The display fills its row (its font size is fitted to the row width) and shows the number on the right -->
+    <Style Selector="TextBlock.display">
+        <Setter Property="FontFamily" Value="{StaticResource DisplayFont}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="TextAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="NoWrap" />
+    </Style>
+
+    <Style Selector="TextBlock.paneTitle">
+        <Setter Property="FontFamily" Value="{StaticResource DisplayFont}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+
+    <Style Selector="TextBlock.icon">
+        <Setter Property="FontFamily" Value="{StaticResource IconFont}" />
+    </Style>
+
+    <!-- Every key -->
+    <Style Selector="Button.key">
+        <Setter Property="Margin" Value="1" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="MinHeight" Value="12" />
+        <Setter Property="MinWidth" Value="24" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{DynamicResource TextPrimary}" />
+    </Style>
+    <Style Selector="Button.key /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="{StaticResource KeyFadeDuration}" />
+            </Transitions>
+        </Setter>
+    </Style>
+    <!-- The keys of the original do not shrink when pressed. -->
+    <Style Selector="Button.key:pressed">
+        <Setter Property="RenderTransform" Value="none" />
+    </Style>
+
+    <!-- Number keys: 0-9, decimal point, +/- -->
+    <Style Selector="Button.number">
+        <Setter Property="FontFamily" Value="{StaticResource DisplayFont}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="FontSize" Value="{DynamicResource NumberKeyFontSize}" />
+        <Setter Property="Background" Value="{DynamicResource NumberFill}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource KeyElevationBorder}" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+    <Style Selector="Button.number:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource NumberFillHover}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource KeyElevationBorder}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextPrimary}" />
+    </Style>
+    <Style Selector="Button.number:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource NumberFillPressed}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource KeyBorder}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextSecondary}" />
+    </Style>
+    <Style Selector="Button.number:disabled /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource NumberFillDisabled}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource KeyBorder}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextDisabled}" />
+    </Style>
+
+    <!-- Operator and function keys -->
+    <Style Selector="Button.operator">
+        <Setter Property="FontFamily" Value="{StaticResource TextFont}" />
+        <Setter Property="FontSize" Value="{DynamicResource OperatorKeyFontSize}" />
+        <Setter Property="Background" Value="{DynamicResource OperatorFill}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource KeyElevationBorder}" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+    <Style Selector="Button.operator:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource OperatorFillHover}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource KeyElevationBorder}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextPrimary}" />
+    </Style>
+    <Style Selector="Button.operator:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource OperatorFillPressed}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource KeyBorder}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextSecondary}" />
+    </Style>
+    <Style Selector="Button.operator:disabled /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource OperatorFillDisabled}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource KeyBorder}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextDisabled}" />
+    </Style>
+
+    <!-- Keys whose label is a math symbol (x², ÷, √) -->
+    <Style Selector="Button.symbol">
+        <Setter Property="FontFamily" Value="{StaticResource MathFont}" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="FontSize" Value="{DynamicResource SymbolKeyFontSize}" />
+    </Style>
+
+    <!-- "=" key: filled with the accent color -->
+    <Style Selector="Button.accent">
+        <Setter Property="FontFamily" Value="{StaticResource MathFont}" />
+        <Setter Property="FontSize" Value="{DynamicResource SymbolKeyFontSize}" />
+        <Setter Property="Background" Value="{DynamicResource AccentBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextOnAccent}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource AccentElevationBorder}" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+    <Style Selector="Button.accent /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition Property="Opacity" Duration="{StaticResource KeyFadeDuration}" />
+            </Transitions>
+        </Setter>
+    </Style>
+    <Style Selector="Button.accent:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource AccentBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource AccentElevationBorder}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextOnAccent}" />
+        <Setter Property="Opacity" Value="0.9" />
+    </Style>
+    <Style Selector="Button.accent:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource AccentBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource AccentBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextOnAccent}" />
+        <Setter Property="Opacity" Value="0.8" />
+    </Style>
+    <Style Selector="Button.accent:disabled /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource AccentBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextOnAccent}" />
+        <Setter Property="Opacity" Value="0.4" />
+    </Style>
+
+    <!-- Transparent keys: memory row, DEG and F-E, the top bar -->
+    <Style Selector="Button.subtle">
+        <Setter Property="FontFamily" Value="{StaticResource TextFont}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="MinHeight" Value="8" />
+        <Setter Property="MinWidth" Value="16" />
+    </Style>
+    <Style Selector="Button.subtle:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource SubtleFillHover}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextPrimary}" />
+    </Style>
+    <Style Selector="Button.subtle:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource SubtleFillPressed}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextSecondary}" />
+    </Style>
+    <Style Selector="Button.subtle:disabled /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource TextDisabled}" />
+    </Style>
+
+    <!-- "Trigonometry", "Function" above the keys: an icon and the name (legacy OperatorPanelButton) -->
+    <Style Selector="Button.panel">
+        <Setter Property="Padding" Value="4,0" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <!-- Navigation pane entries: the selected one keeps the hover fill (and gets the accent bar, see MainView) -->
+    <Style Selector="Button.navItem.selected">
+        <Setter Property="Background" Value="{DynamicResource SubtleFillHover}" />
+    </Style>
+
+    <Style Selector="Button.memory">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="MaxWidth" Value="80" />
+    </Style>
+
+    <Style Selector="Button.icon">
+        <Setter Property="FontFamily" Value="{StaticResource IconFont}" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+
+    <!-- Top bar: navigation, keep on top, history -->
+    <Style Selector="Button.topBar">
+        <Setter Property="Width" Value="40" />
+        <Setter Property="Height" Value="36" />
+        <Setter Property="Margin" Value="4,0" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <!-- Hyperlink-like action in the accent color ("Update rates") -->
+    <Style Selector="Button.link">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource AccentBrush}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+    <Style Selector="Button.link:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource AccentBrush}" />
+        <Setter Property="Opacity" Value="0.8" />
+    </Style>
+    <Style Selector="Button.link:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource AccentBrush}" />
+        <Setter Property="Opacity" Value="0.6" />
+    </Style>
+
+    <!-- Flat pickers of the original (units, date mode): text with a chevron, a fill only under the pointer -->
+    <Style Selector="ComboBox.flat">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+    <Style Selector="ComboBox.flat:pointerover /template/ Border#Background">
+        <Setter Property="Background" Value="{DynamicResource SubtleFillHover}" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+    <Style Selector="ComboBox.flat:pressed /template/ Border#Background">
+        <Setter Property="Background" Value="{DynamicResource SubtleFillPressed}" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <!-- Dates as text with a calendar button, like the original ("28 September 2026") -->
+    <Style Selector="CalendarDatePicker.flat">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="SelectedDateFormat" Value="Long" />
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+    <Style Selector="CalendarDatePicker.flat /template/ TextBox, CalendarDatePicker.flat:pointerover /template/ TextBox, CalendarDatePicker.flat:focus-within /template/ TextBox">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <!-- Small grey header above a field ("From", "To") -->
+    <Style Selector="TextBlock.fieldHeader">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Margin" Value="0,16,0,0" />
+        <Setter Property="Foreground" Value="{DynamicResource TextSecondary}" />
+    </Style>
+
+</Styles>

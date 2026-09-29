@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Settings (legacy Settings.xaml): app theme and About. -->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:app="clr-namespace:Calculator.UI"
+             xmlns:loc="clr-namespace:Calculator.UI.Localization"
+             x:Class="Calculator.UI.Views.SettingsView">
+
+    <ScrollViewer>
+        <StackPanel Margin="16,8,16,16" Spacing="8" MaxWidth="1000" HorizontalAlignment="Stretch">
+
+            <TextBlock Text="{loc:Localize SettingsAppearance.Text}" FontFamily="{StaticResource DisplayFont}" FontSize="14" Margin="0,8,0,0" />
+            <Border Padding="16" BorderThickness="1"
+                    BorderBrush="{DynamicResource KeyBorder}"
+                    Background="{DynamicResource NumberFill}" CornerRadius="4">
+                <StackPanel Spacing="4">
+                    <TextBlock Text="{loc:Localize AppThemeExpander.Header}" FontSize="14" />
+                    <TextBlock Text="{loc:Localize AppThemeExpander.Description}" FontSize="12" Opacity="0.7" />
+                    <RadioButton x:Name="LightTheme" GroupName="Theme" Content="{loc:Localize LightThemeRadioButton.Content}" IsCheckedChanged="OnThemeChecked" />
+                    <RadioButton x:Name="DarkTheme" GroupName="Theme" Content="{loc:Localize DarkThemeRadioButton.Content}" IsCheckedChanged="OnThemeChecked" />
+                    <RadioButton x:Name="SystemTheme" GroupName="Theme" Content="{loc:Localize SystemThemeRadioButton.Content}" IsCheckedChanged="OnThemeChecked" />
+                </StackPanel>
+            </Border>
+
+            <Border Padding="16" BorderThickness="1"
+                    BorderBrush="{DynamicResource KeyBorder}"
+                    Background="{DynamicResource NumberFill}" CornerRadius="4">
+                <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto" ColumnSpacing="12">
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{loc:Localize SettingsLanguage.Header}" FontSize="14" />
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="{loc:Localize SettingsLanguage.Description}" FontSize="12" Opacity="0.7" />
+                    <!-- Each language is listed by its own name, so it can be found in any current language -->
+                    <ComboBox x:Name="LanguagePicker" Grid.RowSpan="2" Grid.Column="1" MinWidth="220" VerticalAlignment="Center"
+                            SelectionChanged="OnLanguageSelected" />
+                </Grid>
+            </Border>
+
+            <TextBlock Text="{loc:Localize AboutGroupTitle.Text}" FontFamily="{StaticResource DisplayFont}" FontSize="14" Margin="0,16,0,0" />
+            <Border Padding="16" BorderThickness="1"
+                    BorderBrush="{DynamicResource KeyBorder}"
+                    Background="{DynamicResource NumberFill}" CornerRadius="4">
+                <StackPanel Spacing="4">
+                    <TextBlock Text="{x:Static app:Branding.ShortName}" FontSize="14" />
+                    <TextBlock x:Name="VersionLabel" FontSize="12" Opacity="0.7" />
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

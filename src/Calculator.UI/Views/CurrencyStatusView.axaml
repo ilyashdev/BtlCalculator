@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Rate status under the currency fields (legacy UnitConverter currency timestamp and ratio lines). -->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:Calculator.UI.Localization"
+             xmlns:vm="clr-namespace:Calculator.UI.ViewModels"
+             x:Class="Calculator.UI.Views.CurrencyStatusView"
+             x:DataType="vm:CurrencyViewModel">
+
+    <!-- Compact, so it fits the information row of the converter and the keypad keeps its size -->
+    <StackPanel Margin="12,6,12,0">
+        <TextBlock Text="{Binding RatioText}" FontSize="12" />
+        <StackPanel Orientation="Horizontal" Spacing="8">
+            <TextBlock Text="{Binding TimestampText}" FontSize="12" Opacity="0.7" VerticalAlignment="Center" />
+            <Button Classes="link" FontSize="12" Content="{loc:Localize RefreshButtonText.Content}" Command="{Binding UpdateCommand}" />
+            <ProgressBar IsIndeterminate="True" IsVisible="{Binding IsUpdating}" Width="40" MinWidth="0" VerticalAlignment="Center" />
+        </StackPanel>
+        <TextBlock Text="{Binding StatusText}" IsVisible="{Binding HasStatus}" FontSize="12" TextTrimming="CharacterEllipsis" />
+        <!-- The attribution the terms of ExchangeRate-API ask for, with a link -->
+        <Button Classes="link" FontSize="11" Opacity="0.7" Command="{Binding OpenProviderCommand}">
+            <TextBlock Text="{Binding ProviderText}" TextDecorations="Underline" />
+        </Button>
+    </StackPanel></UserControl>

@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Tests of the user interface in Avalonia's headless mode: the real views run in memory, without a window or any
+    input to the operating system. They catch what a build cannot: XAML, binding and resource errors at run time, and
+    the behavior of views (panes, animations).
+  -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Headless.XUnit" Version="$(AvaloniaVersion)" />
+    <!-- Real rendering (Skia) in the tests, so drawing code runs and pictures can be taken. -->
+    <PackageReference Include="Avalonia.Skia" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
+    <!-- The version Avalonia.Headless.XUnit is built with. -->
+    <PackageReference Include="xunit.v3" Version="3.2.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Calculator.UI\Calculator.UI.csproj" />
+  </ItemGroup>
+
+</Project>

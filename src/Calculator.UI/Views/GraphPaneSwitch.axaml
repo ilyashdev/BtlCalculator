@@ -1,0 +1,34 @@
+<!--
+    The graph / equations switch of the top bar (legacy SwitchModeToggleButton), shown when the window is too narrow
+    for both panes: a track with the graph and equation icons and an accent knob that glides under the selected one.
+    A click anywhere switches to the other pane.
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Calculator.UI.Views.GraphPaneSwitch"
+             FlowDirection="LeftToRight">
+
+    <UserControl.Styles>
+        <Style Selector="TextBlock.switchIcon">
+            <Setter Property="FontFamily" Value="{StaticResource IconFont}" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="IsHitTestVisible" Value="False" />
+            <Setter Property="Foreground" Value="{DynamicResource TextPrimary}" />
+        </Style>
+        <!-- The icon on the knob uses the text color on the accent -->
+        <Style Selector="TextBlock.switchIcon.onKnob">
+            <Setter Property="Foreground" Value="{DynamicResource TextOnAccent}" />
+        </Style>
+    </UserControl.Styles>
+
+    <Button x:Name="Track" Classes="key subtle" Width="76" Height="32" Margin="4,0" Padding="2" VerticalAlignment="Center"
+            BorderThickness="1" BorderBrush="{DynamicResource AccentBrush}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
+            Click="OnTrackClicked">
+        <Grid ColumnDefinitions="*,*">
+            <Border x:Name="Knob" Grid.Column="0" Background="{DynamicResource AccentBrush}" IsHitTestVisible="False" CornerRadius="3" />
+            <TextBlock x:Name="GraphIcon" Grid.Column="0" Classes="switchIcon" FontSize="14" Text="&#xF343;" />
+            <TextBlock x:Name="EquationsIcon" Grid.Column="1" Classes="switchIcon" FontSize="12" Text="&#xE7E3;" />
+        </Grid>
+    </Button>
+</UserControl>

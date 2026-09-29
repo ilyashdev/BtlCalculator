@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Programmer mode (legacy CalculatorProgrammerOperators, CalculatorProgrammerDisplayPanel,
+    CalculatorProgrammerRadixOperators and CalculatorProgrammerBitFlipPanel).
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:Calculator.UI.Localization"
+             xmlns:platform="clr-namespace:Calculator.UI.Platform"
+             xmlns:programmer="clr-namespace:Calculator.Core.Programmer;assembly=Calculator.Core"
+             xmlns:vm="clr-namespace:Calculator.UI.ViewModels"
+             x:Class="Calculator.UI.Views.ProgrammerView"
+             FlowDirection="LeftToRight"
+             x:DataType="vm:ProgrammerViewModel">
+
+    <UserControl.Styles>
+        <!-- A radix row: accent bar when selected, radix name and the value -->
+        <Style Selector="TextBlock.radixName">
+            <Setter Property="FontFamily" Value="{StaticResource DisplayFont}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style Selector="TextBlock.radixValue">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+        </Style>
+    </UserControl.Styles>
+
+    <Grid RowDefinitions="22*,60*,Auto,32,32,308*" Margin="3,0,3,3">
+
+        <TextBlock Grid.Row="0" Margin="8,0" Text="{Binding ExpressionText}" Classes="expression" />
+        <TextBlock x:Name="DisplayLabel" Grid.Row="1" Margin="8,0" Text="{Binding DisplayText}" Classes="display" FontSize="40" />
+
+        <!-- HEX / DEC / OCT / BIN -->
+        <StackPanel Grid.Row="2" Margin="0,0,0,4">
+            <Button Classes="key subtle" Height="26" Padding="0" HorizontalContentAlignment="Stretch" Command="{Binding SelectRadixCommand}" CommandParameter="{x:Static programmer:Radix.Hexadecimal}">
+                <Grid ColumnDefinitions="4,52,*">
+                <Border Grid.Column="0" Width="3" Height="16" CornerRadius="1.5" Background="{DynamicResource AccentBrush}" IsVisible="{Binding IsHexSelected}" />
+                <TextBlock Grid.Column="1" Text="HEX" Classes="radixName" Margin="10,0,0,0" />
+                <TextBlock Grid.Column="2" Text="{Binding HexText}" Classes="radixValue" />
+            </Grid>
+            </Button>
+            <Button Classes="key subtle" Height="26" Padding="0" HorizontalContentAlignment="Stretch" Command="{Binding SelectRadixCommand}" CommandParameter="{x:Static programmer:Radix.Decimal}">
+                <Grid ColumnDefinitions="4,52,*">
+                <Border Grid.Column="0" Width="3" Height="16" CornerRadius="1.5" Background="{DynamicResource AccentBrush}" IsVisible="{Binding IsDecimalSelected}" />
+                <TextBlock Grid.Column="1" Text="DEC" Classes="radixName" Margin="10,0,0,0" />
+                <TextBlock Grid.Column="2" Text="{Binding DecimalText}" Classes="radixValue" />
+            </Grid>
+            </Button>
+            <Button Classes="key subtle" Height="26" Padding="0" HorizontalContentAlignment="Stretch" Command="{Binding SelectRadixCommand}" CommandParameter="{x:Static programmer:Radix.Octal}">
+                <Grid ColumnDefinitions="4,52,*">
+                <Border Grid.Column="0" Width="3" Height="16" CornerRadius="1.5" Background="{DynamicResource AccentBrush}" IsVisible="{Binding IsOctalSelected}" />
+                <TextBlock Grid.Column="1" Text="OCT" Classes="radixName" Margin="10,0,0,0" />
+                <TextBlock Grid.Column="2" Text="{Binding OctalText}" Classes="radixValue" />
+            </Grid>
+            </Button>
+            <Button Classes="key subtle" Height="26" Padding="0" HorizontalContentAlignment="Stretch" Command="{Binding SelectRadixCommand}" CommandParameter="{x:Static programmer:Radix.Binary}">
+                <Grid ColumnDefinitions="4,52,*">
+                <Border Grid.Column="0" Width="3" Height="16" CornerRadius="1.5" Background="{DynamicResource AccentBrush}" IsVisible="{Binding IsBinarySelected}" />
+                <TextBlock Grid.Column="1" Text="BIN" Classes="radixName" Margin="10,0,0,0" />
+                <TextBlock Grid.Column="2" Text="{Binding BinaryText}" Classes="radixValue" />
+            </Grid>
+            </Button>
+        </StackPanel>
+
+        <!-- Keypad choice, word size, memory -->
+        <Grid Grid.Row="3" ColumnDefinitions="*,*,*,*,*">
+            <Button Grid.Column="0" Classes="key subtle memory" FontFamily="{StaticResource IconFont}" Content="&#xF35F;" Command="{Binding ShowFullKeypadCommand}"
+                    ToolTip.Tip="{loc:Localize fullKeypad.ToolTip}" />
+            <Button Grid.Column="1" Classes="key subtle memory" FontFamily="{StaticResource IconFont}" Content="&#xE6C5;" Command="{Binding ShowBitKeypadCommand}"
+                    ToolTip.Tip="{loc:Localize bitFlip.ToolTip}" />
+            <Button Grid.Column="2" Classes="key subtle" FontSize="14" Content="{Binding WordSizeText}" Command="{Binding CycleWordSizeCommand}"
+                    AutomationProperties.Name="{loc:Localize qwordButton.AutomationName}" />
+            <Button Grid.Column="3" Classes="key subtle memory" Content="MS" Command="{Binding MemoryStoreCommand}"
+                    ToolTip.Tip="{loc:Localize memButton.ToolTip}" />
+            <Button Grid.Column="4" Classes="key subtle memory" FontFamily="{StaticResource TextFont}" Content="M&#x02C5;"
+                    Click="OnMemoryClicked" IsEnabled="{Binding !IsMemoryEmpty}"
+                    ToolTip.Tip="{loc:Localize MemoryButton.ToolTip}" />
+        </Grid>
+
+        <!-- Bitwise and Bit shift panels -->
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Margin="2,0">
+            <Button Classes="key subtle" Padding="8,0" Content="{loc:Localize bitwiseButton.Text}" Click="OnBitwiseClicked" />
+            <Button Classes="key subtle" Padding="8,0" Content="{loc:Localize bitShiftButton.Text}" Click="OnBitShiftClicked" />
+        </StackPanel>
+
+        <!-- Full keypad -->
+        <Grid Grid.Row="5" RowDefinitions="*,*,*,*,*,*" ColumnDefinitions="*,*,*,*,*" IsVisible="{Binding IsFullKeypadVisible}">
+            <Button Grid.Row="0" Grid.Column="0" Classes="key number" Content="A" Command="{Binding DigitCommand}" CommandParameter="A" IsEnabled="{Binding AreHexDigitsEnabled}" />
+            <Button Grid.Row="1" Grid.Column="0" Classes="key number" Content="B" Command="{Binding DigitCommand}" CommandParameter="B" IsEnabled="{Binding AreHexDigitsEnabled}" />
+            <Button Grid.Row="2" Grid.Column="0" Classes="key number" Content="C" Command="{Binding DigitCommand}" CommandParameter="C" IsEnabled="{Binding AreHexDigitsEnabled}" />
+            <Button Grid.Row="3" Grid.Column="0" Classes="key number" Content="D" Command="{Binding DigitCommand}" CommandParameter="D" IsEnabled="{Binding AreHexDigitsEnabled}" />
+            <Button Grid.Row="4" Grid.Column="0" Classes="key number" Content="E" Command="{Binding DigitCommand}" CommandParameter="E" IsEnabled="{Binding AreHexDigitsEnabled}" />
+            <Button Grid.Row="5" Grid.Column="0" Classes="key number" Content="F" Command="{Binding DigitCommand}" CommandParameter="F" IsEnabled="{Binding AreHexDigitsEnabled}" />
+
+            <Button Grid.Row="0" Grid.Column="1" Classes="key operator symbol" Content="&lt;&lt;" Command="{Binding LeftShiftCommand}" IsEnabled="{Binding IsInputEnabled}" />
+            <Button Grid.Row="0" Grid.Column="2" Classes="key operator symbol" Content="&gt;&gt;" Command="{Binding RightShiftCommand}" IsEnabled="{Binding IsInputEnabled}" />
+            <Button Grid.Row="0" Grid.Column="3" Classes="key operator" Content="CE" Command="{Binding ClearEntryCommand}" IsVisible="{Binding ShowClearEntry}" />
+            <Button Grid.Row="0" Grid.Column="3" Classes="key operator" Content="C" Command="{Binding ClearCommand}" IsVisible="{Binding ShowClear}" />
+            <Button Grid.Row="0" Grid.Column="4" Classes="key operator symbol" FontFamily="{StaticResource IconFont}" Content="&#xF1B2;" Command="{Binding BackspaceCommand}" />
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Button Classes="key operator" Content="(" Command="{Binding OpenParenthesisCommand}" IsEnabled="{Binding IsInputEnabled}" />
+                <TextBlock Text="{Binding ParenthesisCountText}" FontSize="10" IsHitTestVisible="False" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="18,10,0,0" />
+            </Grid>
+            <Button Grid.Row="1" Grid.Column="2" Classes="key operator" Content=")" Command="{Binding CloseParenthesisCommand}" IsEnabled="{Binding IsInputEnabled}" />
+            <Button Grid.Row="1" Grid.Column="3" Classes="key operator" Content="%" Command="{Binding OperatorCommand}" CommandParameter="{x:Static programmer:ProgrammerOperator.Modulo}" IsEnabled="{Binding IsInputEnabled}" />
+            <Button Grid.Row="1" Grid.Column="4" Classes="key operator symbol" Content="÷" Command="{Binding OperatorCommand}" CommandParameter="{x:Static programmer:ProgrammerOperator.Divide}" IsEnabled="{Binding IsInputEnabled}" />
+
+            <Button Grid.Row="2" Grid.Column="1" Classes="key number" Content="7" Command="{Binding DigitCommand}" CommandParameter="7" IsEnabled="{Binding AreDigits2To7Enabled}" />
+            <Button Grid.Row="2" Grid.Column="2" Classes="key number" Content="8" Command="{Binding DigitCommand}" CommandParameter="8" IsEnabled="{Binding AreDigits8To9Enabled}" />
+            <Button Grid.Row="2" Grid.Column="3" Classes="key number" Content="9" Command="{Binding DigitCommand}" CommandParameter="9" IsEnabled="{Binding AreDigits8To9Enabled}" />
+            <Button Grid.Row="2" Grid.Column="4" Classes="key operator symbol" Content="×" Command="{Binding OperatorCommand}" CommandParameter="{x:Static programmer:ProgrammerOperator.Multiply}" IsEnabled="{Binding IsInputEnabled}" />
+
+            <Button Grid.Row="3" Grid.Column="1" Classes="key number" Content="4" Command="{Binding DigitCommand}" CommandParameter="4" IsEnabled="{Binding AreDigits2To7Enabled}" />
+            <Button Grid.Row="3" Grid.Column="2" Classes="key number" Content="5" Command="{Binding DigitCommand}" CommandParameter="5" IsEnabled="{Binding AreDigits2To7Enabled}" />
+            <Button Grid.Row="3" Grid.Column="3" Classes="key number" Content="6" Command="{Binding DigitCommand}" CommandParameter="6" IsEnabled="{Binding AreDigits2To7Enabled}" />
+            <Button Grid.Row="3" Grid.Column="4" Classes="key operator symbol" Content="−" Command="{Binding OperatorCommand}" CommandParameter="{x:Static programmer:ProgrammerOperator.Subtract}" IsEnabled="{Binding IsInputEnabled}" />
+
+            <Button Grid.Row="4" Grid.Column="1" Classes="key number" Content="1" Command="{Binding DigitCommand}" CommandParameter="1" />
+            <Button Grid.Row="4" Grid.Column="2" Classes="key number" Content="2" Command="{Binding DigitCommand}" CommandParameter="2" IsEnabled="{Binding AreDigits2To7Enabled}" />
+            <Button Grid.Row="4" Grid.Column="3" Classes="key number" Content="3" Command="{Binding DigitCommand}" CommandParameter="3" IsEnabled="{Binding AreDigits2To7Enabled}" />
+            <Button Grid.Row="4" Grid.Column="4" Classes="key operator symbol" Content="+" Command="{Binding OperatorCommand}" CommandParameter="{x:Static programmer:ProgrammerOperator.Add}" IsEnabled="{Binding IsInputEnabled}" />
+
+            <Button Grid.Row="5" Grid.Column="1" Classes="key number symbol" Content="+/−" Command="{Binding FunctionCommand}" CommandParameter="{x:Static programmer:ProgrammerFunction.Negate}" IsEnabled="{Binding IsInputEnabled}" />
+            <Button Grid.Row="5" Grid.Column="2" Classes="key number" Content="0" Command="{Binding DigitCommand}" CommandParameter="0" />
+            <Button Grid.Row="5" Grid.Column="3" Classes="key number" Content="." IsEnabled="False" />
+            <Button Grid.Row="5" Grid.Column="4" Classes="key accent" Content="=" Command="{Binding EvaluateCommand}" />
+        </Grid>
+
+        <!-- Bit toggling keypad: 64 bits, 16 per row, highest bit first -->
+        <ItemsControl Grid.Row="5" ItemsSource="{Binding Bits}" IsVisible="{Binding IsBitKeypadVisible}" Margin="4,0">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="16" RowSpacing="4" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate x:DataType="vm:BitViewModel">
+                    <StackPanel>
+                        <Button Classes="key subtle" FontSize="14" Height="28" Content="{Binding Text}"
+                                Command="{Binding ToggleCommand}" IsEnabled="{Binding IsEnabled}" />
+                        <TextBlock Text="{Binding IndexLabel}" FontSize="9" TextAlignment="Center" Opacity="0.7" />
+                    </StackPanel>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <!-- Bitwise panel -->
+        <Border x:Name="BitwisePanel" Grid.Row="5" VerticalAlignment="Top" Height="104" IsVisible="False" BorderThickness="1"
+                BorderBrush="{DynamicResource KeyBorder}"
+                Background="{DynamicResource PaneBackground}" Classes="pane" CornerRadius="8">
+            <Grid Margin="4" RowDefinitions="*,*" ColumnDefinitions="*,*,*">
+                <Button Grid.Row="0" Grid.Column="0" Classes="key operator" Content="AND" Click="OnPanelKeyClicked" Command="{Binding OperatorCommand}" CommandParameter="{x:Static programmer:ProgrammerOperator.And}" />
+                <Button Grid.Row="0" Grid.Column="1" Classes="key operator" Content="OR" Click="OnPanelKeyClicked" Command="{Binding OperatorCommand}" CommandParameter="{x:Static programmer:ProgrammerOperator.Or}" />
+                <Button Grid.Row="0" Grid.Column="2" Classes="key operator" Content="NOT" Click="OnPanelKeyClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static programmer:ProgrammerFunction.Not}" />
+                <Button Grid.Row="1" Grid.Column="0" Classes="key operator" Content="NAND" Click="OnPanelKeyClicked" Command="{Binding OperatorCommand}" CommandParameter="{x:Static programmer:ProgrammerOperator.Nand}" />
+                <Button Grid.Row="1" Grid.Column="1" Classes="key operator" Content="NOR" Click="OnPanelKeyClicked" Command="{Binding OperatorCommand}" CommandParameter="{x:Static programmer:ProgrammerOperator.Nor}" />
+                <Button Grid.Row="1" Grid.Column="2" Classes="key operator" Content="XOR" Click="OnPanelKeyClicked" Command="{Binding OperatorCommand}" CommandParameter="{x:Static programmer:ProgrammerOperator.Xor}" />
+            </Grid>
+        </Border>
+
+        <!-- Bit shift panel -->
+        <Border x:Name="BitShiftPanel" Grid.Row="5" VerticalAlignment="Top" IsVisible="False" BorderThickness="1" Padding="8"
+                BorderBrush="{DynamicResource KeyBorder}"
+                Background="{DynamicResource PaneBackground}" Classes="pane" CornerRadius="8">
+            <StackPanel>
+                <RadioButton x:Name="ArithmeticShift" GroupName="Shift" Content="{loc:Localize arithmeticShiftButton.Content}" IsChecked="True" IsCheckedChanged="OnShiftModeChecked" />
+                <RadioButton x:Name="LogicalShift" GroupName="Shift" Content="{loc:Localize logicalShiftButton.Content}" IsCheckedChanged="OnShiftModeChecked" />
+                <RadioButton x:Name="RotateShift" GroupName="Shift" Content="{loc:Localize rotateCircularButton.Content}" IsCheckedChanged="OnShiftModeChecked" />
+                <RadioButton x:Name="RotateCarryShift" GroupName="Shift" Content="{loc:Localize rotateCarryShiftButton.Content}" IsCheckedChanged="OnShiftModeChecked" />
+            </StackPanel>
+        </Border>
+
+        <!-- Memory list -->
+        <Border x:Name="MemoryPanel" Grid.Row="3" Grid.RowSpan="3" IsVisible="False" BorderThickness="1"
+                BorderBrush="{DynamicResource KeyBorder}"
+                Background="{DynamicResource PaneBackground}" Classes="pane" CornerRadius="8,8,0,0">
+            <Grid RowDefinitions="*,Auto" Margin="8">
+                <ScrollViewer>
+                    <ItemsControl ItemsSource="{Binding MemoryItems}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate x:DataType="vm:MemoryItemViewModel">
+                                <Button Classes="key subtle" Padding="12,8" HorizontalContentAlignment="Stretch"
+                                        Command="{Binding $parent[UserControl].((vm:ProgrammerViewModel)DataContext).RecallMemoryItemCommand}"
+                                        CommandParameter="{Binding}" Click="OnMemoryItemClicked">
+                                    <Grid RowDefinitions="Auto,Auto">
+                                <TextBlock Text="{Binding ValueText}" FontFamily="{StaticResource DisplayFont}" FontSize="20" TextAlignment="Right" />
+                                <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" Spacing="2">
+                                    <Button Classes="key subtle" Content="MC" Width="40" Height="28" Command="{Binding ClearCommand}" />
+                                    <Button Classes="key subtle" Content="M+" Width="40" Height="28" Command="{Binding AddCommand}" />
+                                    <Button Classes="key subtle" Content="M−" Width="40" Height="28" Command="{Binding SubtractCommand}" />
+                                </StackPanel>
+                            </Grid>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+                <Button Grid.Row="1" HorizontalAlignment="Right" Classes="key subtle icon" FontSize="16" Width="40" Height="40"
+                        Content="&#xF34D;" Command="{Binding MemoryClearCommand}" Click="OnMemoryClearClicked"
+                        ToolTip.Tip="{loc:Localize ClearMemory.ToolTip}" />
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

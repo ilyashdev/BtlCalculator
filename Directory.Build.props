@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <!-- The version of the app (shown in Settings > About). -->
+    <Version>0.1.0</Version>
+    <!-- One version for every Avalonia package of the solution. -->
+    <AvaloniaVersion>12.1.3</AvaloniaVersion>
+  </PropertyGroup>
+</Project>

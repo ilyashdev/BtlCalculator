@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- No action bar: the app draws its own top bar. Light or dark follows the system until the app theme applies. -->
+  <style name="CalculatorTheme" parent="@style/Theme.AppCompat.DayNight.NoActionBar">
+    <item name="android:windowNoTitle">true</item>
+  </style>
+</resources>

@@ -1,0 +1,98 @@
+<!--
+    Windows 11 calculator colors (the legacy CalcButton*FillColor* brushes). Key fills are white with the opacities of
+    the original, drawn over the page background. Each key has a light and a dark value; controls use the key without
+    the theme and get the value of the current theme.
+-->
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Replaced at run time with the system accent color where there is one (App.UpdateAccentColor) -->
+    <SolidColorBrush x:Key="AccentBrush" Color="#FF005FB8" />
+
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+            <!-- Page and panes -->
+            <SolidColorBrush x:Key="PageBackground" Color="#F3F3F3" />
+            <SolidColorBrush x:Key="PaneBackground" Color="#EEEEEE" />
+            <SolidColorBrush x:Key="ScrimBrush" Color="#33000000" />
+
+            <!-- Text -->
+            <SolidColorBrush x:Key="TextPrimary" Color="#E4000000" />
+            <SolidColorBrush x:Key="TextSecondary" Color="#9E000000" />
+            <SolidColorBrush x:Key="TextDisabled" Color="#5C000000" />
+            <SolidColorBrush x:Key="TextOnAccent" Color="#FFFFFFFF" />
+
+            <!-- Number keys (CalcButtonFillColor*: 1 / 0.75 / 0.5 / 0.125) -->
+            <SolidColorBrush x:Key="NumberFill" Color="#FFFFFFFF" />
+            <SolidColorBrush x:Key="NumberFillHover" Color="#BFFFFFFF" />
+            <SolidColorBrush x:Key="NumberFillPressed" Color="#80FFFFFF" />
+            <SolidColorBrush x:Key="NumberFillDisabled" Color="#20FFFFFF" />
+
+            <!-- Operator keys (CalcButtonAltFillColor*: 0.5 / 0.25 / 0.125 / 0.125) -->
+            <SolidColorBrush x:Key="OperatorFill" Color="#80FFFFFF" />
+            <SolidColorBrush x:Key="OperatorFillHover" Color="#40FFFFFF" />
+            <SolidColorBrush x:Key="OperatorFillPressed" Color="#20FFFFFF" />
+            <SolidColorBrush x:Key="OperatorFillDisabled" Color="#20FFFFFF" />
+
+            <!-- Transparent keys: memory row, top bar -->
+            <SolidColorBrush x:Key="SubtleFillHover" Color="#09000000" />
+            <SolidColorBrush x:Key="SubtleFillPressed" Color="#06000000" />
+
+            <!--
+                Elevation border of Windows 11 controls: a thin stroke that gets darker at the bottom edge, which makes
+                the keys look raised. Pressed keys use the flat stroke.
+            -->
+            <SolidColorBrush x:Key="KeyBorder" Color="#0F000000" />
+            <LinearGradientBrush x:Key="KeyElevationBorder" StartPoint="0%,0%" EndPoint="0%,100%">
+                <GradientStop Offset="0" Color="#0F000000" />
+                <GradientStop Offset="0.9" Color="#0F000000" />
+                <GradientStop Offset="1" Color="#29000000" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="AccentElevationBorder" StartPoint="0%,0%" EndPoint="0%,100%">
+                <GradientStop Offset="0" Color="#14FFFFFF" />
+                <GradientStop Offset="0.9" Color="#14FFFFFF" />
+                <GradientStop Offset="1" Color="#66000000" />
+            </LinearGradientBrush>
+        </ResourceDictionary>
+
+        <ResourceDictionary x:Key="Dark">
+            <SolidColorBrush x:Key="PageBackground" Color="#202020" />
+            <SolidColorBrush x:Key="PaneBackground" Color="#2B2B2B" />
+            <SolidColorBrush x:Key="ScrimBrush" Color="#4D000000" />
+
+            <SolidColorBrush x:Key="TextPrimary" Color="#FFFFFFFF" />
+            <SolidColorBrush x:Key="TextSecondary" Color="#C5FFFFFF" />
+            <SolidColorBrush x:Key="TextDisabled" Color="#5DFFFFFF" />
+            <SolidColorBrush x:Key="TextOnAccent" Color="#FF000000" />
+
+            <!-- CalcButtonFillColor*: 0.125 / 0.0852 / 0.0359 / 0.0359 -->
+            <SolidColorBrush x:Key="NumberFill" Color="#20FFFFFF" />
+            <SolidColorBrush x:Key="NumberFillHover" Color="#16FFFFFF" />
+            <SolidColorBrush x:Key="NumberFillPressed" Color="#09FFFFFF" />
+            <SolidColorBrush x:Key="NumberFillDisabled" Color="#09FFFFFF" />
+
+            <!-- CalcButtonAltFillColor*: 0.0852 / 0.1256 / 0.0852 / 0.0359 -->
+            <SolidColorBrush x:Key="OperatorFill" Color="#16FFFFFF" />
+            <SolidColorBrush x:Key="OperatorFillHover" Color="#20FFFFFF" />
+            <SolidColorBrush x:Key="OperatorFillPressed" Color="#16FFFFFF" />
+            <SolidColorBrush x:Key="OperatorFillDisabled" Color="#09FFFFFF" />
+
+            <SolidColorBrush x:Key="SubtleFillHover" Color="#0FFFFFFF" />
+            <SolidColorBrush x:Key="SubtleFillPressed" Color="#0AFFFFFF" />
+
+            <!-- In the dark theme the light comes from above: the top edge is brighter. -->
+            <SolidColorBrush x:Key="KeyBorder" Color="#12FFFFFF" />
+            <LinearGradientBrush x:Key="KeyElevationBorder" StartPoint="0%,0%" EndPoint="0%,100%">
+                <GradientStop Offset="0" Color="#18FFFFFF" />
+                <GradientStop Offset="0.1" Color="#12FFFFFF" />
+                <GradientStop Offset="1" Color="#12FFFFFF" />
+            </LinearGradientBrush>
+            <LinearGradientBrush x:Key="AccentElevationBorder" StartPoint="0%,0%" EndPoint="0%,100%">
+                <GradientStop Offset="0" Color="#14FFFFFF" />
+                <GradientStop Offset="0.9" Color="#14FFFFFF" />
+                <GradientStop Offset="1" Color="#23000000" />
+            </LinearGradientBrush>
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
+
+</ResourceDictionary>

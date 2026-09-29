@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    The user interface on Avalonia, shared by every platform: the app, its views and view models, services, graph
+    drawing, localization and styles. The platform heads (Calculator.Desktop, later Android and iOS) only start it.
+  -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>Calculator.UI</RootNamespace>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <!-- The Linux app is a Native AOT build: keep the UI free of trimming and AOT problems. -->
+    <IsAotCompatible>true</IsAotCompatible>
+    <!--
+      AVLN3001: a view without a parameterless constructor cannot be created by the XAML runtime loader (IDE previewer).
+      The mode views take their view model in the constructor on purpose; ModeViewFactory creates them.
+    -->
+    <NoWarn>$(NoWarn);AVLN3001</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Calculator.Core\Calculator.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\**" />
+    <!-- Currency names in every language (Unicode CLDR, tools/Import-CurrencyNames.ps1) -->
+    <EmbeddedResource Include="Resources\Currency\CurrencyNames.json" LogicalName="CurrencyNames.json" />
+  </ItemGroup>
+
+</Project>

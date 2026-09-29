@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Android app. Needs the android workload (dotnet workload install android), the Android SDK and a JDK.
+    Build: dotnet build src/Calculator.Android
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
+    <RootNamespace>Calculator.Android</RootNamespace>
+    <ApplicationId>com.btlcalculator.app</ApplicationId>
+    <ApplicationTitle>BTL Calculator</ApplicationTitle>
+    <ApplicationVersion>1</ApplicationVersion>
+    <ApplicationDisplayVersion>$(Version)</ApplicationDisplayVersion>
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Android" Version="$(AvaloniaVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Calculator.UI\Calculator.UI.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Scientific mode keys (legacy CalculatorScientificAngleButtons + CalculatorScientificOperators):
+    angle unit and F-E, the Trigonometry and Function panels, and the 7 × 5 key grid.
+    Keys that change with "2nd" are pairs of buttons of which exactly one is visible.
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:engine="clr-namespace:Calculator.Core.Engine;assembly=Calculator.Core"
+             xmlns:loc="clr-namespace:Calculator.UI.Localization"
+             xmlns:platform="clr-namespace:Calculator.UI.Platform"
+             xmlns:vm="clr-namespace:Calculator.UI.ViewModels"
+             x:Class="Calculator.UI.Views.ScientificKeypad"
+             FlowDirection="LeftToRight"
+             x:DataType="vm:CalculatorViewModel">
+
+    <Grid RowDefinitions="32*,32*,308*">
+
+        <!-- Angle unit and scientific notation -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="2,0">
+            <Button Classes="key subtle" Width="56" Content="{Binding AngleUnitText}"
+                    Command="{Binding CycleAngleUnitCommand}"
+                    AutomationProperties.Name="{loc:Localize degreesButton.AutomationName}" />
+            <Button Classes="key subtle" Width="56" Content="F-E"
+                    Command="{Binding ToggleScientificNotationCommand}" IsVisible="{Binding !IsScientificNotation}"
+                    AutomationProperties.Name="{loc:Localize ftoeButton.AutomationName}" />
+            <Button Classes="key accent" Width="56" FontFamily="{StaticResource TextFont}" FontSize="12" Content="F-E"
+                    Command="{Binding ToggleScientificNotationCommand}" IsVisible="{Binding IsScientificNotation}"
+                    AutomationProperties.Name="{loc:Localize ftoeButton.AutomationName}" />
+        </StackPanel>
+
+        <!-- Trigonometry and Function panels -->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="2,0">
+            <Button Classes="key subtle panel" Click="OnTrigonometryClicked"
+                    AutomationProperties.Name="{loc:Localize trigButton.AutomationName}">
+                <StackPanel Orientation="Horizontal" Spacing="6">
+                    <TextBlock Classes="icon" Text="&#xF03A5;" FontSize="14" VerticalAlignment="Center" />
+                    <TextBlock Text="{loc:Localize trigButton.Text}" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button Classes="key subtle panel" Click="OnFunctionClicked"
+                    AutomationProperties.Name="{loc:Localize funcButton.AutomationName}">
+                <StackPanel Orientation="Horizontal" Spacing="6">
+                    <TextBlock Classes="icon" Text="&#xE7E3;" FontSize="14" VerticalAlignment="Center" />
+                    <TextBlock Text="{loc:Localize funcButton.Text}" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <Grid Grid.Row="2" RowDefinitions="*,*,*,*,*,*,*" ColumnDefinitions="*,*,*,*,*">
+
+            <!-- Row 0: 2nd, π, e, C/CE, backspace -->
+            <Button Grid.Row="0" Grid.Column="0" Classes="key operator symbol" Content="2ⁿᵈ"
+                    Command="{Binding ToggleInverseCommand}" IsVisible="{Binding IsNotInverse}"
+                    AutomationProperties.Name="{loc:Localize shiftButton.AutomationName}" />
+            <Button Grid.Row="0" Grid.Column="0" Classes="key accent" Content="2ⁿᵈ"
+                    Command="{Binding ToggleInverseCommand}" IsVisible="{Binding IsInverse}"
+                    AutomationProperties.Name="{loc:Localize shiftButton.AutomationName}" />
+            <Button Grid.Row="0" Grid.Column="1" Classes="key operator symbol" Content="π"
+                    Command="{Binding ConstantCommand}" CommandParameter="{x:Static engine:MathConstant.Pi}"
+                    AutomationProperties.Name="{loc:Localize piButton.AutomationName}" />
+            <Button Grid.Row="0" Grid.Column="2" Classes="key operator" Content="e"
+                    Command="{Binding ConstantCommand}" CommandParameter="{x:Static engine:MathConstant.E}"
+                    AutomationProperties.Name="{loc:Localize eulerButton.AutomationName}" />
+            <Button Grid.Row="0" Grid.Column="3" Classes="key operator" Content="CE"
+                    Command="{Binding ClearEntryCommand}" IsVisible="{Binding ShowClearEntry}"
+                    AutomationProperties.Name="{loc:Localize clearEntryButton.AutomationName}" />
+            <Button Grid.Row="0" Grid.Column="3" Classes="key operator" Content="C"
+                    Command="{Binding ClearCommand}" IsVisible="{Binding ShowClear}"
+                    AutomationProperties.Name="{loc:Localize clearButton.AutomationName}" />
+            <Button Grid.Row="0" Grid.Column="4" Classes="key operator symbol" FontFamily="{StaticResource IconFont}" Content="&#xF1B2;"
+                    Command="{Binding BackspaceCommand}"
+                    AutomationProperties.Name="{loc:Localize backSpaceButton.AutomationName}" />
+
+            <!-- Row 1: x² / x³, 1/x, |x|, exp, mod -->
+            <Button Grid.Row="1" Grid.Column="0" Classes="key operator symbol" Content="x²"
+                    Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Square}"
+                    IsVisible="{Binding IsNotInverse}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize xpower2Button.AutomationName}" />
+            <Button Grid.Row="1" Grid.Column="0" Classes="key operator symbol" Content="x³"
+                    Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Cube}"
+                    IsVisible="{Binding IsInverse}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize xpower3Button.AutomationName}" />
+            <Button Grid.Row="1" Grid.Column="1" Classes="key operator symbol" Content="¹⁄ₓ"
+                    Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Reciprocal}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize invertButton.AutomationName}" />
+            <Button Grid.Row="1" Grid.Column="2" Classes="key operator symbol" Content="|x|"
+                    Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Abs}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize absButton.AutomationName}" />
+            <Button Grid.Row="1" Grid.Column="3" Classes="key operator" Content="exp"
+                    Command="{Binding ExponentCommand}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize expButton.AutomationName}" />
+            <Button Grid.Row="1" Grid.Column="4" Classes="key operator" Content="mod"
+                    Command="{Binding OperatorCommand}" CommandParameter="{x:Static engine:BinaryOperator.Modulo}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize modButton.AutomationName}" />
+
+            <!-- Row 2: √x / ∛x, (, ), n!, ÷ -->
+            <Button Grid.Row="2" Grid.Column="0" Classes="key operator symbol" Content="²√x"
+                    Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.SquareRoot}"
+                    IsVisible="{Binding IsNotInverse}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize squareRootButton.AutomationName}" />
+            <Button Grid.Row="2" Grid.Column="0" Classes="key operator symbol" Content="∛x"
+                    Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.CubeRoot}"
+                    IsVisible="{Binding IsInverse}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize cubeRootButton.AutomationName}" />
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Button Classes="key operator" Content="("
+                        Command="{Binding OpenParenthesisCommand}" IsEnabled="{Binding IsInputEnabled}"
+                        AutomationProperties.Name="{loc:Localize openParenthesisButton.AutomationName}" />
+                <TextBlock Text="{Binding ParenthesisCountText}" FontSize="10" IsHitTestVisible="False"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" Margin="18,10,0,0" />
+            </Grid>
+            <Button Grid.Row="2" Grid.Column="2" Classes="key operator" Content=")"
+                    Command="{Binding CloseParenthesisCommand}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize closeParenthesisButton.AutomationName}" />
+            <Button Grid.Row="2" Grid.Column="3" Classes="key operator symbol" Content="n!"
+                    Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Factorial}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize factorialButton.AutomationName}" />
+            <Button Grid.Row="2" Grid.Column="4" Classes="key operator symbol" Content="÷"
+                    Command="{Binding OperatorCommand}" CommandParameter="{x:Static engine:BinaryOperator.Divide}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize divideButton.AutomationName}" />
+
+            <!-- Row 3: xʸ / ʸ√x, 7, 8, 9, × -->
+            <Button Grid.Row="3" Grid.Column="0" Classes="key operator symbol" Content="xʸ"
+                    Command="{Binding OperatorCommand}" CommandParameter="{x:Static engine:BinaryOperator.Power}"
+                    IsVisible="{Binding IsNotInverse}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize powerButton.AutomationName}" />
+            <Button Grid.Row="3" Grid.Column="0" Classes="key operator symbol" Content="ʸ√x"
+                    Command="{Binding OperatorCommand}" CommandParameter="{x:Static engine:BinaryOperator.Root}"
+                    IsVisible="{Binding IsInverse}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize ySquareRootButton.AutomationName}" />
+            <Button Grid.Row="3" Grid.Column="1" Classes="key number" Content="7" Command="{Binding DigitCommand}" CommandParameter="7" />
+            <Button Grid.Row="3" Grid.Column="2" Classes="key number" Content="8" Command="{Binding DigitCommand}" CommandParameter="8" />
+            <Button Grid.Row="3" Grid.Column="3" Classes="key number" Content="9" Command="{Binding DigitCommand}" CommandParameter="9" />
+            <Button Grid.Row="3" Grid.Column="4" Classes="key operator symbol" Content="×"
+                    Command="{Binding OperatorCommand}" CommandParameter="{x:Static engine:BinaryOperator.Multiply}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize multiplyButton.AutomationName}" />
+
+            <!-- Row 4: 10ˣ / 2ˣ, 4, 5, 6, − -->
+            <Button Grid.Row="4" Grid.Column="0" Classes="key operator symbol" Content="10ˣ"
+                    Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.PowerOfTen}"
+                    IsVisible="{Binding IsNotInverse}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize powerOf10Button.AutomationName}" />
+            <Button Grid.Row="4" Grid.Column="0" Classes="key operator symbol" Content="2ˣ"
+                    Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.PowerOfTwo}"
+                    IsVisible="{Binding IsInverse}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize twoPowerXButton.AutomationName}" />
+            <Button Grid.Row="4" Grid.Column="1" Classes="key number" Content="4" Command="{Binding DigitCommand}" CommandParameter="4" />
+            <Button Grid.Row="4" Grid.Column="2" Classes="key number" Content="5" Command="{Binding DigitCommand}" CommandParameter="5" />
+            <Button Grid.Row="4" Grid.Column="3" Classes="key number" Content="6" Command="{Binding DigitCommand}" CommandParameter="6" />
+            <Button Grid.Row="4" Grid.Column="4" Classes="key operator symbol" Content="−"
+                    Command="{Binding OperatorCommand}" CommandParameter="{x:Static engine:BinaryOperator.Subtract}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize minusButton.AutomationName}" />
+
+            <!-- Row 5: log / logᵧx, 1, 2, 3, + -->
+            <Button Grid.Row="5" Grid.Column="0" Classes="key operator" Content="log"
+                    Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Log10}"
+                    IsVisible="{Binding IsNotInverse}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize logBase10Button.AutomationName}" />
+            <Button Grid.Row="5" Grid.Column="0" Classes="key operator symbol" Content="logᵧx"
+                    Command="{Binding OperatorCommand}" CommandParameter="{x:Static engine:BinaryOperator.LogBase}"
+                    IsVisible="{Binding IsInverse}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize logBaseY.AutomationName}" />
+            <Button Grid.Row="5" Grid.Column="1" Classes="key number" Content="1" Command="{Binding DigitCommand}" CommandParameter="1" />
+            <Button Grid.Row="5" Grid.Column="2" Classes="key number" Content="2" Command="{Binding DigitCommand}" CommandParameter="2" />
+            <Button Grid.Row="5" Grid.Column="3" Classes="key number" Content="3" Command="{Binding DigitCommand}" CommandParameter="3" />
+            <Button Grid.Row="5" Grid.Column="4" Classes="key operator symbol" Content="+"
+                    Command="{Binding OperatorCommand}" CommandParameter="{x:Static engine:BinaryOperator.Add}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize plusButton.AutomationName}" />
+
+            <!-- Row 6: ln / eˣ, +/−, 0, decimal point, = -->
+            <Button Grid.Row="6" Grid.Column="0" Classes="key operator" Content="ln"
+                    Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Ln}"
+                    IsVisible="{Binding IsNotInverse}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize logBaseEButton.AutomationName}" />
+            <Button Grid.Row="6" Grid.Column="0" Classes="key operator symbol" Content="eˣ"
+                    Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.PowerOfE}"
+                    IsVisible="{Binding IsInverse}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize powerOfEButton.AutomationName}" />
+            <Button Grid.Row="6" Grid.Column="1" Classes="key number symbol" Content="+/−"
+                    Command="{Binding NegateCommand}" IsEnabled="{Binding IsInputEnabled}"
+                    AutomationProperties.Name="{loc:Localize negateButton.AutomationName}" />
+            <Button Grid.Row="6" Grid.Column="2" Classes="key number" Content="0" Command="{Binding DigitCommand}" CommandParameter="0" />
+            <Button Grid.Row="6" Grid.Column="3" Classes="key number" Content="{Binding DecimalSeparator}"
+                    Command="{Binding DecimalPointCommand}"
+                    AutomationProperties.Name="{loc:Localize decimalSeparatorButton.AutomationName}" />
+            <Button Grid.Row="6" Grid.Column="4" Classes="key accent" Content="="
+                    Command="{Binding EvaluateCommand}"
+                    AutomationProperties.Name="{loc:Localize equalButton.AutomationName}" />
+
+            <!-- Trigonometry panel: 2nd / hyp on the left, one of four function sets on the right -->
+            <Border x:Name="TrigonometryPanel" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="5" IsVisible="False"
+                    BorderThickness="1" BorderBrush="{DynamicResource KeyBorder}"
+                    Background="{DynamicResource PaneBackground}" Classes="pane" CornerRadius="8">
+                <Grid Margin="4" RowDefinitions="*,*" ColumnDefinitions="*,*,*,*">
+                    <Button Grid.Row="0" Grid.Column="0" Classes="key operator symbol" Content="2ⁿᵈ"
+                            Command="{Binding ToggleInverseCommand}" IsVisible="{Binding IsNotInverse}"
+                            AutomationProperties.Name="{loc:Localize trigShiftButton.AutomationName}" />
+                    <Button Grid.Row="0" Grid.Column="0" Classes="key accent" Content="2ⁿᵈ"
+                            Command="{Binding ToggleInverseCommand}" IsVisible="{Binding IsInverse}"
+                            AutomationProperties.Name="{loc:Localize trigShiftButton.AutomationName}" />
+                    <Button Grid.Row="1" Grid.Column="0" Classes="key operator" Content="hyp"
+                            Command="{Binding ToggleHyperbolicCommand}" IsVisible="{Binding !IsHyperbolic}"
+                            AutomationProperties.Name="{loc:Localize hypButton.AutomationName}" />
+                    <Button Grid.Row="1" Grid.Column="0" Classes="key accent" FontFamily="{StaticResource TextFont}" Content="hyp"
+                            Command="{Binding ToggleHyperbolicCommand}" IsVisible="{Binding IsHyperbolic}"
+                            AutomationProperties.Name="{loc:Localize hypButton.AutomationName}" />
+
+                    <Grid Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" RowDefinitions="*,*" ColumnDefinitions="*,*,*" IsVisible="{Binding ShowTrigonometric}">
+                        <Button Grid.Row="0" Grid.Column="0" Classes="key operator" Content="sin" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Sin}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="0" Grid.Column="1" Classes="key operator" Content="cos" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Cos}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="0" Grid.Column="2" Classes="key operator" Content="tan" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Tan}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="1" Grid.Column="0" Classes="key operator" Content="sec" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Sec}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="1" Grid.Column="1" Classes="key operator" Content="csc" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Csc}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="1" Grid.Column="2" Classes="key operator" Content="cot" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Cot}" IsEnabled="{Binding IsInputEnabled}" />
+                    </Grid>
+                    <Grid Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" RowDefinitions="*,*" ColumnDefinitions="*,*,*" IsVisible="{Binding ShowInverseTrigonometric}">
+                        <Button Grid.Row="0" Grid.Column="0" Classes="key operator" Content="sin⁻¹" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Asin}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="0" Grid.Column="1" Classes="key operator" Content="cos⁻¹" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Acos}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="0" Grid.Column="2" Classes="key operator" Content="tan⁻¹" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Atan}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="1" Grid.Column="0" Classes="key operator" Content="sec⁻¹" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Asec}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="1" Grid.Column="1" Classes="key operator" Content="csc⁻¹" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Acsc}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="1" Grid.Column="2" Classes="key operator" Content="cot⁻¹" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Acot}" IsEnabled="{Binding IsInputEnabled}" />
+                    </Grid>
+                    <Grid Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" RowDefinitions="*,*" ColumnDefinitions="*,*,*" IsVisible="{Binding ShowHyperbolic}">
+                        <Button Grid.Row="0" Grid.Column="0" Classes="key operator" Content="sinh" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Sinh}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="0" Grid.Column="1" Classes="key operator" Content="cosh" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Cosh}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="0" Grid.Column="2" Classes="key operator" Content="tanh" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Tanh}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="1" Grid.Column="0" Classes="key operator" Content="sech" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Sech}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="1" Grid.Column="1" Classes="key operator" Content="csch" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Csch}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="1" Grid.Column="2" Classes="key operator" Content="coth" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Coth}" IsEnabled="{Binding IsInputEnabled}" />
+                    </Grid>
+                    <Grid Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="3" RowDefinitions="*,*" ColumnDefinitions="*,*,*" IsVisible="{Binding ShowInverseHyperbolic}">
+                        <Button Grid.Row="0" Grid.Column="0" Classes="key operator" Content="sinh⁻¹" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Asinh}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="0" Grid.Column="1" Classes="key operator" Content="cosh⁻¹" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Acosh}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="0" Grid.Column="2" Classes="key operator" Content="tanh⁻¹" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Atanh}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="1" Grid.Column="0" Classes="key operator" Content="sech⁻¹" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Asech}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="1" Grid.Column="1" Classes="key operator" Content="csch⁻¹" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Acsch}" IsEnabled="{Binding IsInputEnabled}" />
+                        <Button Grid.Row="1" Grid.Column="2" Classes="key operator" Content="coth⁻¹" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Acoth}" IsEnabled="{Binding IsInputEnabled}" />
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <!-- Function panel -->
+            <Border x:Name="FunctionPanel" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="5" IsVisible="False"
+                    BorderThickness="1" BorderBrush="{DynamicResource KeyBorder}"
+                    Background="{DynamicResource PaneBackground}" Classes="pane" CornerRadius="8">
+                <Grid Margin="4" RowDefinitions="*,*" ColumnDefinitions="*,*,*">
+                    <Button Grid.Row="0" Grid.Column="0" Classes="key operator symbol" Content="|x|" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Abs}" IsEnabled="{Binding IsInputEnabled}" />
+                    <Button Grid.Row="0" Grid.Column="1" Classes="key operator symbol" Content="⌊x⌋" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Floor}" IsEnabled="{Binding IsInputEnabled}" />
+                    <Button Grid.Row="0" Grid.Column="2" Classes="key operator symbol" Content="⌈x⌉" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Ceiling}" IsEnabled="{Binding IsInputEnabled}" />
+                    <Button Grid.Row="1" Grid.Column="0" Classes="key operator" Content="rand" Click="OnPanelFunctionClicked" Command="{Binding RandomCommand}" />
+                    <Button Grid.Row="1" Grid.Column="1" Classes="key operator symbol" Content="dms" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.ToDegreesMinutesSeconds}" IsEnabled="{Binding IsInputEnabled}" />
+                    <Button Grid.Row="1" Grid.Column="2" Classes="key operator symbol" Content="deg" Click="OnPanelFunctionClicked" Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.FromDegreesMinutesSeconds}" IsEnabled="{Binding IsInputEnabled}" />
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

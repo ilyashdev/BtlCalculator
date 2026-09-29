@@ -1,0 +1,41 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="CHANGELOG.md" />
+    <File Path="Directory.Build.props" />
+    <File Path="LICENSE" />
+    <File Path="PRIVACY.md" />
+    <File Path="README.md" />
+    <File Path="README.ru.md" />
+    <File Path="THIRD-PARTY-NOTICES.md" />
+  </Folder>
+  <Folder Name="/.github/">
+    <File Path=".github/FUNDING.yml" />
+  </Folder>
+  <Folder Name="/.github/workflows/">
+    <File Path=".github/workflows/ci.yml" />
+    <File Path=".github/workflows/release.yml" />
+  </Folder>
+  <Folder Name="/docs/">
+    <File Path="docs/HALL-OF-SHAME.md" />
+    <File Path="docs/HALL-OF-SHAME.ru.md" />
+  </Folder>
+  <Folder Name="/docs/images/">
+    <File Path="docs/images/original-tan-100x.png" />
+    <File Path="docs/images/original-tan-10x.png" />
+  </Folder>
+  <Folder Name="/tools/">
+    <File Path="tools/Import-CurrencyNames.ps1" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Calculator.Android/Calculator.Android.csproj" />
+    <Project Path="src/Calculator.Core/Calculator.Core.csproj" />
+    <Project Path="src/Calculator.Desktop/Calculator.Desktop.csproj" />
+    <Project Path="src/Calculator.UI/Calculator.UI.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Calculator.Core.Tests/Calculator.Core.Tests.csproj" />
+    <Project Path="tests/Calculator.UI.Tests/Calculator.UI.Tests.csproj" />
+  </Folder>
+</Solution>

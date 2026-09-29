@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Currency converter: the status while the first rates load, then the converter with the rate status. -->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:Calculator.UI.Localization"
+             xmlns:vm="clr-namespace:Calculator.UI.ViewModels"
+             x:Class="Calculator.UI.Views.CurrencyView"
+             x:DataType="vm:CurrencyViewModel">
+
+    <StackPanel x:Name="LoadingPanel" Margin="12" Spacing="8">
+        <ProgressBar IsIndeterminate="True" IsVisible="{Binding IsUpdating}" Width="120" HorizontalAlignment="Left" />
+        <TextBlock Text="{Binding StatusText}" FontSize="14" TextWrapping="Wrap" />
+        <Button Classes="link"
+                Content="{loc:Localize RefreshButtonText.Content}" Command="{Binding UpdateCommand}" />
+    </StackPanel>
+</UserControl>

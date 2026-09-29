@@ -1,0 +1,275 @@
+<!--
+    Graphing mode (legacy GraphingCalculator, EquationInputArea, KeyGraphFeaturesPanel, GraphingSettings, GraphingNumPad).
+    The graph on the left, equations, parameters and the keypad on the right (like the original); narrow windows show
+    one of them at a time and the top bar gets the graph / equations switch.
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+             xmlns:graphing="clr-namespace:Calculator.UI.Graphing"
+             xmlns:core="clr-namespace:Calculator.Core.Graphing;assembly=Calculator.Core"
+             xmlns:loc="clr-namespace:Calculator.UI.Localization"
+             xmlns:platform="clr-namespace:Calculator.UI.Platform"
+             xmlns:vm="clr-namespace:Calculator.UI.ViewModels"
+             x:Class="Calculator.UI.Views.GraphingView"
+             x:DataType="vm:GraphingViewModel">
+
+    <UserControl.Styles>
+        <!-- Buttons on the graph: their text color follows the graph surface and is set in code-behind -->
+        <Style Selector="Button.graphTool">
+            <Setter Property="FontFamily" Value="{StaticResource IconFont}" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="CornerRadius" Value="4" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Width" Value="32" />
+            <Setter Property="Height" Value="32" />
+            <Setter Property="MinWidth" Value="8" />
+            <Setter Property="MinHeight" Value="8" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+        <Style Selector="Button.graphTool:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#1A808080" />
+        </Style>
+        <Style Selector="Button.graphTool:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#10808080" />
+        </Style>
+        <Style Selector="Button.graphTool.active /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource AccentBrush}" />
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+
+        <!-- Actions of an equation line: analysis, color, line style, remove -->
+        <Style Selector="Button.equationAction">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Width" Value="32" />
+            <Setter Property="Height" Value="32" />
+        </Style>
+
+        <!-- The text box of an equation line: no frame of its own, the line around it is the frame -->
+        <Style Selector="TextBox.equation">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style Selector="TextBox.equation:pointerover /template/ Border#PART_BorderElement, TextBox.equation:focus /template/ Border#PART_BorderElement">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+    </UserControl.Styles>
+
+    <Grid x:Name="RootGrid" ColumnDefinitions="2*,1*" Margin="3,0,3,3">
+
+        <!-- Equations, parameters, key graph features and the keypad -->
+        <Grid x:Name="EquationsPane" Grid.Column="1" RowDefinitions="*,Auto,1.3*" Margin="4,0,0,0" FlowDirection="LeftToRight">
+            <ScrollViewer Grid.Row="0" IsVisible="{Binding IsEquationListVisible}">
+                <ItemsControl ItemsSource="{Binding Equations}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Spacing="4" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="vm:GraphEquationViewModel">
+                            <Border MinHeight="44" CornerRadius="4" Background="{DynamicResource NumberFill}"
+                                    PointerEntered="OnEquationPointerEntered" PointerExited="OnEquationPointerExited">
+                                <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="44,*,Auto">
+
+                                    <!-- "f" with the line number across the full height of the line; shows or hides the equation -->
+                                    <Button Grid.RowSpan="2" Grid.Column="0" Classes="key" MinHeight="44" Margin="0" Padding="0" BorderThickness="2"
+                                            CornerRadius="4,0,0,4" ToolTip.Tip="{loc:Localize showEquationButtonToolTip}"
+                                            Command="{Binding $parent[UserControl].((vm:GraphingViewModel)DataContext).ToggleVisibilityCommand}"
+                                            CommandParameter="{Binding}">
+                                        <Button.BorderBrush>
+                                            <SolidColorBrush Color="{Binding SwatchColor}" />
+                                        </Button.BorderBrush>
+                                        <Button.Background>
+                                            <SolidColorBrush Color="{Binding SwatchFill}" />
+                                        </Button.Background>
+                                        <Button.Foreground>
+                                            <SolidColorBrush Color="{Binding SwatchTextColor}" />
+                                        </Button.Foreground>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <TextBlock Text="f" FontFamily="{StaticResource MathFont}" FontSize="22" FontStyle="Italic" />
+                                            <TextBlock Text="{Binding NumberText}" FontSize="10" VerticalAlignment="Bottom" Margin="1,0,0,2" />
+                                        </StackPanel>
+                                    </Button>
+
+                                    <TextBox Grid.Row="0" Grid.Column="1" Classes="equation" Text="{Binding Text}" Margin="6,0,0,0"
+                                             PlaceholderText="{loc:Localize mathRichEditBox.PlaceholderText}"
+                                             GotFocus="OnEquationFocused" LostFocus="OnEquationUnfocused" KeyDown="OnEquationKeyDown" />
+                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding ErrorText}" IsVisible="{Binding HasError}" FontSize="12"
+                                               Foreground="#E81123" Margin="8,0,4,4" TextWrapping="Wrap" />
+
+                                    <!-- Actions appear while the line is hovered or edited -->
+                                    <StackPanel Grid.RowSpan="2" Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,4,0"
+                                                IsVisible="{Binding ShowActions}">
+                                        <Button Classes="key subtle icon equationAction" Content="{x:Static platform:SystemGlyphs.FunctionAnalysis}"
+                                                Command="{Binding $parent[UserControl].((vm:GraphingViewModel)DataContext).AnalyzeCommand}"
+                                                CommandParameter="{Binding}" ToolTip.Tip="{loc:Localize functionAnalysisButton.ToolTip}" />
+                                        <Button Classes="key subtle icon equationAction" Content="&#xF2F6;"
+                                                Command="{Binding $parent[UserControl].((vm:GraphingViewModel)DataContext).CycleColorCommand}"
+                                                CommandParameter="{Binding}" ToolTip.Tip="{loc:Localize colorChooserButton.ToolTip}" />
+                                        <!-- A sample of the current line style; each click switches to the next one -->
+                                        <Button Classes="key subtle equationAction"
+                                                Command="{Binding $parent[UserControl].((vm:GraphingViewModel)DataContext).CycleLineStyleCommand}"
+                                                CommandParameter="{Binding}">
+                                            <Line StartPoint="0,0" EndPoint="16,0" StrokeThickness="2" Stroke="{DynamicResource TextPrimary}"
+                                                  StrokeDashArray="{Binding LineStyleDashes}" />
+                                        </Button>
+                                        <Button Classes="key subtle icon equationAction" Content="{x:Static platform:SystemGlyphs.Close}"
+                                                Command="{Binding $parent[UserControl].((vm:GraphingViewModel)DataContext).RemoveEquationCommand}"
+                                                CommandParameter="{Binding}" ToolTip.Tip="{loc:Localize removeButton.ToolTip}" />
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+
+            <!-- Key graph features of one equation -->
+            <Grid x:Name="AnalysisPanel" Grid.Row="0" Grid.RowSpan="3" RowDefinitions="Auto,Auto,*" IsVisible="False">
+                <!-- Header (legacy KeyGraphFeaturesPanel): "← f₁" in the equation color, then the equation -->
+                <Border Grid.Row="0" Height="44" CornerRadius="4" Background="{DynamicResource NumberFill}">
+                    <Grid ColumnDefinitions="72,*">
+                        <Button Grid.Column="0" Classes="key" Margin="0" Padding="0" BorderThickness="0" CornerRadius="4,0,0,4" Foreground="White"
+                                ToolTip.Tip="{loc:Localize KGFEquationTextBox.AutomationName}" Command="{Binding CloseAnalysisCommand}">
+                            <Button.Background>
+                                <SolidColorBrush Color="{Binding AnalyzedEquationColor}" />
+                            </Button.Background>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="6">
+                                <TextBlock Classes="icon" Text="&#xF15C;" FontSize="16" VerticalAlignment="Center" />
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="f" FontFamily="{StaticResource MathFont}" FontSize="22" FontStyle="Italic" />
+                                    <TextBlock Text="{Binding AnalyzedEquationNumber}" FontSize="10" VerticalAlignment="Bottom" Margin="1,0,0,2" />
+                                </StackPanel>
+                            </StackPanel>
+                        </Button>
+                        <TextBlock Grid.Column="1" Text="{Binding AnalyzedEquationText}" FontFamily="{StaticResource MathFont}" FontSize="16"
+                                   VerticalAlignment="Center" Margin="12,0" TextTrimming="CharacterEllipsis" />
+                    </Grid>
+                </Border>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="8,16,8,4" Spacing="12">
+                    <TextBlock Text="{loc:Localize FunctionAnalysisGrid.AutomationName}" FontFamily="{StaticResource DisplayFont}" FontWeight="SemiBold" FontSize="20" />
+                    <ProgressBar IsIndeterminate="True" IsVisible="{Binding IsAnalyzing}" Width="60" MinWidth="0" VerticalAlignment="Center" />
+                </StackPanel>
+                <ScrollViewer Grid.Row="2">
+                    <ItemsControl ItemsSource="{Binding AnalysisFeatures}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate x:DataType="vm:KeyFeatureViewModel">
+                                <StackPanel Margin="8">
+                                    <TextBlock Text="{Binding Title}" IsVisible="{Binding HasTitle}" FontSize="12" Opacity="0.8" />
+                                    <ItemsControl ItemsSource="{Binding Lines}" IsVisible="{Binding IsFormula}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate x:DataType="sys:String">
+                                                <TextBlock Text="{Binding}" FontFamily="{StaticResource MathFont}" FontSize="15" FontStyle="Italic" TextWrapping="Wrap" />
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                    <ItemsControl ItemsSource="{Binding Lines}" IsVisible="{Binding IsMessage}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate x:DataType="sys:String">
+                                                <TextBlock Text="{Binding}" FontSize="14" TextWrapping="Wrap" />
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Grid>
+
+            <!-- Parameter sliders -->
+            <ItemsControl Grid.Row="1" IsVisible="{Binding ShowVariables}" ItemsSource="{Binding Variables}" Margin="4,0">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate x:DataType="vm:GraphVariableViewModel">
+                        <Grid ColumnDefinitions="24,*,64" RowDefinitions="Auto,Auto">
+                            <TextBlock Grid.Column="0" Text="{Binding Name}" FontSize="16" FontStyle="Italic" VerticalAlignment="Center" />
+                            <Slider Grid.Column="1" Margin="6,0" Minimum="{Binding Minimum}" Maximum="{Binding Maximum}" Value="{Binding Value}" />
+                            <TextBox Grid.Column="2" Text="{Binding Value}" FontSize="14" />
+                            <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Spacing="6" Margin="6,0">
+                                <TextBox Text="{Binding Minimum}" FontSize="12" Width="64" ToolTip.Tip="{loc:Localize VariableMinTextBox.AutomationName}" />
+                                <TextBox Text="{Binding Step}" FontSize="12" Width="64" ToolTip.Tip="{loc:Localize VariableStepTextBox.AutomationName}" />
+                                <TextBox Text="{Binding Maximum}" FontSize="12" Width="64" ToolTip.Tip="{loc:Localize VariableMaxTextBox.AutomationName}" />
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <ContentControl x:Name="KeypadHost" Grid.Row="2" IsVisible="{Binding IsEquationListVisible}" />
+        </Grid>
+
+        <!-- Graph -->
+        <Panel x:Name="GraphPane" Grid.Column="0" FlowDirection="LeftToRight">
+            <Border BorderThickness="1" BorderBrush="{DynamicResource KeyBorder}" CornerRadius="4" ClipToBounds="True">
+                <graphing:GraphCanvas x:Name="Canvas" />
+            </Border>
+
+            <!-- Top right: active tracing, share, graph options -->
+            <Border x:Name="CommandPanel" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,8,8,0" Padding="4" BorderThickness="1" CornerRadius="8">
+                <StackPanel Orientation="Horizontal" Spacing="4">
+                    <Button x:Name="TracingButton" Classes="graphTool" Content="&#xE444;" Command="{Binding ToggleTracingCommand}" />
+                    <Button x:Name="ShareButton" Classes="graphTool" Content="&#xF6B0;" ToolTip.Tip="{loc:Localize shareButton.ToolTip}" />
+                    <Button x:Name="SettingsButton" Classes="graphTool" Content="&#xF6AA;" Click="OnSettingsClicked"
+                            ToolTip.Tip="{loc:Localize graphSettingsButton.ToolTip}" />
+                </StackPanel>
+            </Border>
+
+            <!-- Bottom right: zoom in, zoom out, reset view -->
+            <Border x:Name="ZoomPanel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,8,8" Padding="4" BorderThickness="1" CornerRadius="8">
+                <StackPanel Spacing="4">
+                    <Button x:Name="ZoomInButton" Classes="graphTool" FontSize="14" Content="&#xF10A;"
+                            Command="{Binding ZoomInCommand}" ToolTip.Tip="{loc:Localize zoomInButton.ToolTip}" />
+                    <Button x:Name="ZoomOutButton" Classes="graphTool" FontSize="14" Content="&#xEBD1;"
+                            Command="{Binding ZoomOutCommand}" ToolTip.Tip="{loc:Localize zoomOutButton.ToolTip}" />
+                    <Button x:Name="ResetViewButton" Classes="graphTool" FontSize="14" Content="&#xEE8D;"
+                            Command="{Binding ResetViewCommand}" ToolTip.Tip="{loc:Localize ResetViewButton.Content}" />
+                </StackPanel>
+            </Border>
+
+            <!-- Graph options -->
+            <Border x:Name="SettingsPanel" IsVisible="False" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,56,8,0" Width="300" Padding="16,12"
+                    BorderThickness="1" BorderBrush="{DynamicResource KeyBorder}" Background="{DynamicResource PaneBackground}" Classes="pane" CornerRadius="8">
+                <StackPanel Spacing="6">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <TextBlock Text="{loc:Localize GraphOptionsHeading.Text}" FontFamily="{StaticResource DisplayFont}" FontWeight="SemiBold"
+                                   FontSize="16" VerticalAlignment="Center" />
+                        <Button Grid.Column="1" Classes="key subtle" Padding="8,0" Height="28" Content="{loc:Localize ResetViewButton.Content}"
+                                Command="{Binding ResetViewCommand}" />
+                    </Grid>
+                    <TextBlock Text="{loc:Localize GridHeading.Text}" FontSize="14" />
+                    <Grid ColumnDefinitions="*,8,*" RowDefinitions="Auto,Auto,Auto,Auto">
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="{loc:Localize GraphSettingsXMin.Header}" FontSize="12" />
+                        <TextBlock Grid.Row="0" Grid.Column="2" Text="{loc:Localize GraphSettingsXMax.Header}" FontSize="12" />
+                        <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding XMinText}" />
+                        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding XMaxText}" />
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="{loc:Localize GraphSettingsYMin.Header}" FontSize="12" />
+                        <TextBlock Grid.Row="2" Grid.Column="2" Text="{loc:Localize GraphSettingsYMax.Header}" FontSize="12" />
+                        <TextBox Grid.Row="3" Grid.Column="0" Text="{Binding YMinText}" />
+                        <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding YMaxText}" />
+                    </Grid>
+                    <TextBlock Text="{loc:Localize UnitsHeading.Text}" FontSize="14" Margin="0,6,0,0" />
+                    <StackPanel Orientation="Horizontal" Spacing="4">
+                        <Button Classes="key operator" Padding="8,0" Height="32" Content="{loc:Localize TrigModeRadians.Content}"
+                                Command="{Binding SelectUnitCommand}" CommandParameter="{x:Static core:TrigonometricUnit.Radians}" />
+                        <Button Classes="key operator" Padding="8,0" Height="32" Content="{loc:Localize TrigModeDegrees.Content}"
+                                Command="{Binding SelectUnitCommand}" CommandParameter="{x:Static core:TrigonometricUnit.Degrees}" />
+                        <Button Classes="key operator" Padding="8,0" Height="32" Content="{loc:Localize TrigModeGradians.Content}"
+                                Command="{Binding SelectUnitCommand}" CommandParameter="{x:Static core:TrigonometricUnit.Gradians}" />
+                    </StackPanel>
+                    <TextBlock Text="{loc:Localize LineThicknessBoxHeading.Text}" FontSize="14" Margin="0,6,0,0" />
+                    <Slider Minimum="1" Maximum="4" Value="{Binding LineThickness}" />
+                    <TextBlock Text="{loc:Localize GraphThemeHeading.Text}" FontSize="14" Margin="0,6,0,0" />
+                    <RadioButton GroupName="GraphTheme" Content="{loc:Localize AlwaysLightTheme.Content}" IsChecked="{Binding IsGraphAlwaysLight}" />
+                    <RadioButton GroupName="GraphTheme" Content="{loc:Localize MatchAppTheme.Content}" IsChecked="{Binding IsGraphMatchingAppTheme}" />
+                </StackPanel>
+            </Border>
+        </Panel>
+    </Grid>
+</UserControl>

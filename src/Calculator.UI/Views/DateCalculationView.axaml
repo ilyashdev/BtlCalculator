@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Date calculation (legacy DateCalculator.xaml). -->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:Calculator.UI.Localization"
+             xmlns:vm="clr-namespace:Calculator.UI.ViewModels"
+             x:Class="Calculator.UI.Views.DateCalculationView"
+             x:DataType="vm:DateCalculationViewModel">
+
+    <ScrollViewer>
+        <StackPanel Margin="16,0,16,16" Spacing="6">
+            <ComboBox ItemsSource="{Binding Modes}" SelectedIndex="{Binding SelectedModeIndex}" Classes="flat" FontSize="16" />
+
+            <!-- From (both modes) -->
+            <TextBlock Text="{loc:Localize DateDiff_FromHeader.Header}" Classes="fieldHeader" />
+            <CalendarDatePicker SelectedDate="{Binding FromDate}" Classes="flat" />
+
+            <!-- Difference between dates -->
+            <StackPanel IsVisible="{Binding IsDifferenceMode}" Spacing="6">
+                <TextBlock Text="{loc:Localize DateDiff_ToHeader.Header}" Classes="fieldHeader" />
+                <CalendarDatePicker SelectedDate="{Binding ToDate}" Classes="flat" />
+
+                <TextBlock Text="{loc:Localize Date_DifferenceLabel.Text}" Classes="fieldHeader" Margin="0,24,0,0" />
+                <TextBlock Text="{Binding DifferenceText}" FontFamily="{StaticResource DisplayFont}" FontSize="24" TextWrapping="Wrap" />
+                <TextBlock Text="{Binding TotalDaysText}" FontSize="14" Classes="expression" TextAlignment="Left" />
+            </StackPanel>
+
+            <!-- Add or subtract days -->
+            <StackPanel IsVisible="{Binding IsAddSubtractMode}" Spacing="6">
+                <StackPanel Orientation="Horizontal" Spacing="24" Margin="0,12,0,0">
+                    <RadioButton GroupName="AddSubtract" Content="{loc:Localize AddOption.Content}" IsChecked="{Binding IsAddMode}" />
+                    <RadioButton GroupName="AddSubtract" Content="{loc:Localize SubtractOption.Content}"
+                                 IsChecked="{Binding !IsAddMode}" />
+                </StackPanel>
+
+                <Grid ColumnDefinitions="*,*,*" ColumnSpacing="8" MaxWidth="420" HorizontalAlignment="Left">
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="{loc:Localize YearsLabel.Text}" Classes="fieldHeader" Margin="0" />
+                        <ComboBox ItemsSource="{Binding Amounts}" SelectedItem="{Binding Years}" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <TextBlock Text="{loc:Localize MonthsLabel.Text}" Classes="fieldHeader" Margin="0" />
+                        <ComboBox ItemsSource="{Binding Amounts}" SelectedItem="{Binding Months}" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <TextBlock Text="{loc:Localize DaysLabel.Text}" Classes="fieldHeader" Margin="0" />
+                        <ComboBox ItemsSource="{Binding Amounts}" SelectedItem="{Binding Days}" />
+                    </StackPanel>
+                </Grid>
+
+                <TextBlock Text="{loc:Localize DateLabel.Text}" Classes="fieldHeader" Margin="0,24,0,0" />
+                <TextBlock Text="{Binding ResultDateText}" FontFamily="{StaticResource DisplayFont}" FontSize="24" TextWrapping="Wrap" />
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

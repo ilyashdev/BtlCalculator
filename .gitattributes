@@ -1,0 +1,20 @@
+# Text files: normalized to LF in the repository, native line endings in the working copy.
+* text=auto
+
+*.cs      text diff=csharp
+*.xaml    text
+*.csproj  text
+*.slnx    text
+*.props   text
+*.resx    text
+*.json    text
+*.md      text
+*.ps1     text eol=crlf
+*.sh      text eol=lf
+*.svg     text
+
+# Binary
+*.png  binary
+*.jpg  binary
+*.ico  binary
+*.ttf  binary

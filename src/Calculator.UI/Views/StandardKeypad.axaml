@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Standard mode keys, same layout and glyphs as the legacy CalculatorStandardOperators + NumberPad. -->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:engine="clr-namespace:Calculator.Core.Engine;assembly=Calculator.Core"
+             xmlns:loc="clr-namespace:Calculator.UI.Localization"
+             xmlns:vm="clr-namespace:Calculator.UI.ViewModels"
+             x:Class="Calculator.UI.Views.StandardKeypad"
+             FlowDirection="LeftToRight"
+             x:DataType="vm:CalculatorViewModel">
+
+    <Grid RowDefinitions="*,*,*,*,*,*" ColumnDefinitions="*,*,*,*">
+
+        <Button Grid.Row="0" Grid.Column="0" Classes="key operator symbol" Content="%"
+                Command="{Binding PercentCommand}" IsEnabled="{Binding IsInputEnabled}"
+                AutomationProperties.Name="{loc:Localize percentButton.AutomationName}" />
+        <Button Grid.Row="0" Grid.Column="1" Classes="key operator" Content="CE"
+                Command="{Binding ClearEntryCommand}"
+                AutomationProperties.Name="{loc:Localize clearEntryButton.AutomationName}" />
+        <Button Grid.Row="0" Grid.Column="2" Classes="key operator" Content="C"
+                Command="{Binding ClearCommand}"
+                AutomationProperties.Name="{loc:Localize clearButton.AutomationName}" />
+        <Button Grid.Row="0" Grid.Column="3" Classes="key operator symbol" FontFamily="{StaticResource IconFont}" Content="&#xF1B2;"
+                Command="{Binding BackspaceCommand}"
+                AutomationProperties.Name="{loc:Localize backSpaceButton.AutomationName}" />
+
+        <Button Grid.Row="1" Grid.Column="0" Classes="key operator symbol" Content="¹⁄ₓ"
+                Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Reciprocal}" IsEnabled="{Binding IsInputEnabled}"
+                AutomationProperties.Name="{loc:Localize invertButton.AutomationName}" />
+        <Button Grid.Row="1" Grid.Column="1" Classes="key operator symbol" Content="x²"
+                Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.Square}" IsEnabled="{Binding IsInputEnabled}"
+                AutomationProperties.Name="{loc:Localize xpower2Button.AutomationName}" />
+        <Button Grid.Row="1" Grid.Column="2" Classes="key operator symbol" Content="²√x"
+                Command="{Binding FunctionCommand}" CommandParameter="{x:Static engine:UnaryFunction.SquareRoot}" IsEnabled="{Binding IsInputEnabled}"
+                AutomationProperties.Name="{loc:Localize squareRootButton.AutomationName}" />
+        <Button Grid.Row="1" Grid.Column="3" Classes="key operator symbol" Content="÷"
+                Command="{Binding OperatorCommand}" CommandParameter="{x:Static engine:BinaryOperator.Divide}" IsEnabled="{Binding IsInputEnabled}"
+                AutomationProperties.Name="{loc:Localize divideButton.AutomationName}" />
+
+        <Button Grid.Row="2" Grid.Column="0" Classes="key number" Content="7" Command="{Binding DigitCommand}" CommandParameter="7" />
+        <Button Grid.Row="2" Grid.Column="1" Classes="key number" Content="8" Command="{Binding DigitCommand}" CommandParameter="8" />
+        <Button Grid.Row="2" Grid.Column="2" Classes="key number" Content="9" Command="{Binding DigitCommand}" CommandParameter="9" />
+        <Button Grid.Row="2" Grid.Column="3" Classes="key operator symbol" Content="×"
+                Command="{Binding OperatorCommand}" CommandParameter="{x:Static engine:BinaryOperator.Multiply}" IsEnabled="{Binding IsInputEnabled}"
+                AutomationProperties.Name="{loc:Localize multiplyButton.AutomationName}" />
+
+        <Button Grid.Row="3" Grid.Column="0" Classes="key number" Content="4" Command="{Binding DigitCommand}" CommandParameter="4" />
+        <Button Grid.Row="3" Grid.Column="1" Classes="key number" Content="5" Command="{Binding DigitCommand}" CommandParameter="5" />
+        <Button Grid.Row="3" Grid.Column="2" Classes="key number" Content="6" Command="{Binding DigitCommand}" CommandParameter="6" />
+        <Button Grid.Row="3" Grid.Column="3" Classes="key operator symbol" Content="−"
+                Command="{Binding OperatorCommand}" CommandParameter="{x:Static engine:BinaryOperator.Subtract}" IsEnabled="{Binding IsInputEnabled}"
+                AutomationProperties.Name="{loc:Localize minusButton.AutomationName}" />
+
+        <Button Grid.Row="4" Grid.Column="0" Classes="key number" Content="1" Command="{Binding DigitCommand}" CommandParameter="1" />
+        <Button Grid.Row="4" Grid.Column="1" Classes="key number" Content="2" Command="{Binding DigitCommand}" CommandParameter="2" />
+        <Button Grid.Row="4" Grid.Column="2" Classes="key number" Content="3" Command="{Binding DigitCommand}" CommandParameter="3" />
+        <Button Grid.Row="4" Grid.Column="3" Classes="key operator symbol" Content="+"
+                Command="{Binding OperatorCommand}" CommandParameter="{x:Static engine:BinaryOperator.Add}" IsEnabled="{Binding IsInputEnabled}"
+                AutomationProperties.Name="{loc:Localize plusButton.AutomationName}" />
+
+        <Button Grid.Row="5" Grid.Column="0" Classes="key number symbol" Content="+/−"
+                Command="{Binding NegateCommand}" IsEnabled="{Binding IsInputEnabled}"
+                AutomationProperties.Name="{loc:Localize negateButton.AutomationName}" />
+        <Button Grid.Row="5" Grid.Column="1" Classes="key number" Content="0" Command="{Binding DigitCommand}" CommandParameter="0" />
+        <Button Grid.Row="5" Grid.Column="2" Classes="key number" Content="{Binding DecimalSeparator}"
+                Command="{Binding DecimalPointCommand}"
+                AutomationProperties.Name="{loc:Localize decimalSeparatorButton.AutomationName}" />
+        <Button Grid.Row="5" Grid.Column="3" Classes="key accent" Content="="
+                Command="{Binding EvaluateCommand}"
+                AutomationProperties.Name="{loc:Localize equalButton.AutomationName}" />
+    </Grid>
+</UserControl>

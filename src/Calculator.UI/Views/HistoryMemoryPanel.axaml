@@ -1,0 +1,85 @@
+<!-- The "History | Memory" pane (legacy HistoryList + Memory + MemoryListItem). -->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:Calculator.UI.Localization"
+             xmlns:vm="clr-namespace:Calculator.UI.ViewModels"
+             x:Class="Calculator.UI.Views.HistoryMemoryPanel"
+             FlowDirection="LeftToRight"
+             x:DataType="vm:CalculatorViewModel">
+
+    <Grid RowDefinitions="48,*" Margin="8,0,8,8">
+
+        <!-- Tabs -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="16" VerticalAlignment="Center" Margin="4,0">
+            <StackPanel>
+                <Button Classes="key subtle" FontFamily="{StaticResource DisplayFont}" FontWeight="SemiBold" FontSize="14"
+                        Padding="4,6" Content="{loc:Localize HistoryLabel.Text}" Click="OnHistoryTabClicked" />
+                <Border x:Name="HistoryTabIndicator" Height="3" Width="16" CornerRadius="1.5" HorizontalAlignment="Center"
+                        Background="{DynamicResource AccentBrush}" />
+            </StackPanel>
+            <StackPanel>
+                <Button Classes="key subtle" FontFamily="{StaticResource DisplayFont}" FontWeight="SemiBold" FontSize="14"
+                        Padding="4,6" Content="{loc:Localize MemoryLabel.Text}" Click="OnMemoryTabClicked" />
+                <Border x:Name="MemoryTabIndicator" Height="3" Width="16" CornerRadius="1.5" HorizontalAlignment="Center"
+                        Background="{DynamicResource AccentBrush}" IsVisible="False" />
+            </StackPanel>
+        </StackPanel>
+
+        <!-- History tab: an entry loads its result -->
+        <Grid x:Name="HistoryContent" Grid.Row="1" RowDefinitions="*,Auto">
+            <TextBlock Text="{loc:Localize HistoryEmpty.Text}" Margin="12,8" IsVisible="{Binding IsHistoryEmpty}" />
+            <ScrollViewer>
+                <ItemsControl ItemsSource="{Binding HistoryItems}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="vm:HistoryItemViewModel">
+                            <Button Classes="key subtle" Padding="12,8" HorizontalContentAlignment="Stretch"
+                                    Command="{Binding $parent[UserControl].((vm:CalculatorViewModel)DataContext).LoadHistoryItemCommand}"
+                                    CommandParameter="{Binding}" Click="OnItemClicked">
+                                <StackPanel>
+                                    <TextBlock Classes="expression" Text="{Binding ExpressionText}" TextWrapping="Wrap" TextAlignment="Right" />
+                                    <TextBlock Text="{Binding ResultText}" FontFamily="{StaticResource DisplayFont}" FontWeight="SemiBold"
+                                               FontSize="20" TextAlignment="Right" TextWrapping="Wrap" />
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+            <Button Grid.Row="1" HorizontalAlignment="Right" Classes="key subtle icon" Width="40" Height="40" Content="&#xF34D;"
+                    Command="{Binding ClearHistoryCommand}" IsVisible="{Binding !IsHistoryEmpty}"
+                    ToolTip.Tip="{loc:Localize ClearHistory.ToolTip}" />
+        </Grid>
+
+        <!-- Memory tab: an entry recalls its value; its own keys change it -->
+        <Grid x:Name="MemoryContent" Grid.Row="1" RowDefinitions="*,Auto" IsVisible="False">
+            <TextBlock Text="{loc:Localize MemoryPaneEmpty.Text}" Margin="12,8" IsVisible="{Binding IsMemoryEmpty}" />
+            <ScrollViewer>
+                <ItemsControl ItemsSource="{Binding MemoryItems}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="vm:MemoryItemViewModel">
+                            <Button Classes="key subtle" Padding="12,8" HorizontalContentAlignment="Stretch"
+                                    Command="{Binding $parent[UserControl].((vm:CalculatorViewModel)DataContext).RecallMemoryItemCommand}"
+                                    CommandParameter="{Binding}" Click="OnItemClicked">
+                                <StackPanel>
+                                    <TextBlock Text="{Binding ValueText}" FontFamily="{StaticResource DisplayFont}" FontWeight="SemiBold"
+                                               FontSize="20" TextAlignment="Right" TextWrapping="Wrap" />
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="2">
+                                        <Button Classes="key subtle" Content="MC" Width="40" Height="28"
+                                                Command="{Binding ClearCommand}" ToolTip.Tip="{loc:Localize ClearMemoryItemButton.ToolTip}" />
+                                        <Button Classes="key subtle" Content="M+" Width="40" Height="28"
+                                                Command="{Binding AddCommand}" ToolTip.Tip="{loc:Localize MemPlusItem.ToolTip}" />
+                                        <Button Classes="key subtle" Content="M−" Width="40" Height="28"
+                                                Command="{Binding SubtractCommand}" ToolTip.Tip="{loc:Localize MemMinusItem.ToolTip}" />
+                                    </StackPanel>
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+            <Button Grid.Row="1" HorizontalAlignment="Right" Classes="key subtle icon" Width="40" Height="40" Content="&#xF34D;"
+                    Command="{Binding MemoryClearCommand}" IsVisible="{Binding !IsMemoryEmpty}"
+                    ToolTip.Tip="{loc:Localize ClearMemory.ToolTip}" />
+        </Grid>
+    </Grid>
+</UserControl>

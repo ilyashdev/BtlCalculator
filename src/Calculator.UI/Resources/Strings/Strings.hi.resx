@@ -1,0 +1,1678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Strings of BTL Calculator, written for this project (see tools). Neutral = English. -->
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutGroupTitle.Text" xml:space="preserve">
+    <value>परिचय</value>
+  </data>
+  <data name="AddOption.Content" xml:space="preserve">
+    <value>जोड़ें</value>
+  </data>
+  <data name="AlwaysLightTheme.Content" xml:space="preserve">
+    <value>हमेशा हल्का</value>
+  </data>
+  <data name="AlwaysOnTop_Enter" xml:space="preserve">
+    <value>सबसे ऊपर रखें</value>
+  </data>
+  <data name="AlwaysOnTop_Exit" xml:space="preserve">
+    <value>पूर्ण दृश्य पर लौटें</value>
+  </data>
+  <data name="AppThemeExpander.Description" xml:space="preserve">
+    <value>चुनें कि ऐप कैसा दिखे</value>
+  </data>
+  <data name="AppThemeExpander.Header" xml:space="preserve">
+    <value>थीम</value>
+  </data>
+  <data name="CalculatorModeText" xml:space="preserve">
+    <value>कैलकुलेटर</value>
+  </data>
+  <data name="CategoryName_AngleText" xml:space="preserve">
+    <value>कोण</value>
+  </data>
+  <data name="CategoryName_AreaText" xml:space="preserve">
+    <value>क्षेत्रफल</value>
+  </data>
+  <data name="CategoryName_CurrencyText" xml:space="preserve">
+    <value>मुद्रा</value>
+  </data>
+  <data name="CategoryName_DataText" xml:space="preserve">
+    <value>डेटा</value>
+  </data>
+  <data name="CategoryName_EnergyText" xml:space="preserve">
+    <value>ऊर्जा</value>
+  </data>
+  <data name="CategoryName_LengthText" xml:space="preserve">
+    <value>लंबाई</value>
+  </data>
+  <data name="CategoryName_PowerText" xml:space="preserve">
+    <value>शक्ति</value>
+  </data>
+  <data name="CategoryName_PressureText" xml:space="preserve">
+    <value>दाब</value>
+  </data>
+  <data name="CategoryName_SpeedText" xml:space="preserve">
+    <value>गति</value>
+  </data>
+  <data name="CategoryName_TemperatureText" xml:space="preserve">
+    <value>तापमान</value>
+  </data>
+  <data name="CategoryName_TimeText" xml:space="preserve">
+    <value>समय</value>
+  </data>
+  <data name="CategoryName_VolumeText" xml:space="preserve">
+    <value>आयतन</value>
+  </data>
+  <data name="CategoryName_WeightText" xml:space="preserve">
+    <value>भार और द्रव्यमान</value>
+  </data>
+  <data name="ClearHistory.ToolTip" xml:space="preserve">
+    <value>इतिहास साफ़ करें</value>
+  </data>
+  <data name="ClearMemory.ToolTip" xml:space="preserve">
+    <value>मेमोरी साफ़ करें (Ctrl+L)</value>
+  </data>
+  <data name="ClearMemoryButton.AutomationName" xml:space="preserve">
+    <value>मेमोरी साफ़ करें</value>
+  </data>
+  <data name="ClearMemoryButton.ToolTip" xml:space="preserve">
+    <value>मेमोरी साफ़ करें (Ctrl+L)</value>
+  </data>
+  <data name="ClearMemoryItemButton.ToolTip" xml:space="preserve">
+    <value>मेमोरी से हटाएँ</value>
+  </data>
+  <data name="ConverterModeText" xml:space="preserve">
+    <value>कनवर्टर</value>
+  </data>
+  <data name="CurrencyFromToRatioFormat" xml:space="preserve">
+    <value>%1 %2 = %3 %4</value>
+  </data>
+  <data name="CurrencyRatesUpdateFailed" xml:space="preserve">
+    <value>दरें अपडेट नहीं हो सकीं। सहेजी गई दरें दिखाई जा रही हैं।</value>
+  </data>
+  <data name="CurrencyTimestampFormat" xml:space="preserve">
+    <value>अपडेट किया गया %1 %2</value>
+  </data>
+  <data name="DarkThemeRadioButton.Content" xml:space="preserve">
+    <value>गहरा</value>
+  </data>
+  <data name="DateCalculationModeText" xml:space="preserve">
+    <value>तारीख़ की गणना</value>
+  </data>
+  <data name="DateDiff_FromHeader.Header" xml:space="preserve">
+    <value>से</value>
+  </data>
+  <data name="DateDiff_ToHeader.Header" xml:space="preserve">
+    <value>तक</value>
+  </data>
+  <data name="DateLabel.Text" xml:space="preserve">
+    <value>तारीख़</value>
+  </data>
+  <data name="Date_AddSubtractOption.Content" xml:space="preserve">
+    <value>दिन जोड़ें या घटाएँ</value>
+  </data>
+  <data name="Date_Day_few" xml:space="preserve">
+    <value>दिन</value>
+  </data>
+  <data name="Date_Day_many" xml:space="preserve">
+    <value>दिन</value>
+  </data>
+  <data name="Date_Day_one" xml:space="preserve">
+    <value>दिन</value>
+  </data>
+  <data name="Date_Day_other" xml:space="preserve">
+    <value>दिन</value>
+  </data>
+  <data name="Date_Day_two" xml:space="preserve">
+    <value>दिन</value>
+  </data>
+  <data name="Date_Day_zero" xml:space="preserve">
+    <value>दिन</value>
+  </data>
+  <data name="Date_DifferenceLabel.Text" xml:space="preserve">
+    <value>अंतर</value>
+  </data>
+  <data name="Date_DifferenceOption.Content" xml:space="preserve">
+    <value>तारीख़ों के बीच अंतर</value>
+  </data>
+  <data name="Date_Month_few" xml:space="preserve">
+    <value>महीने</value>
+  </data>
+  <data name="Date_Month_many" xml:space="preserve">
+    <value>महीने</value>
+  </data>
+  <data name="Date_Month_one" xml:space="preserve">
+    <value>महीना</value>
+  </data>
+  <data name="Date_Month_other" xml:space="preserve">
+    <value>महीने</value>
+  </data>
+  <data name="Date_Month_two" xml:space="preserve">
+    <value>महीने</value>
+  </data>
+  <data name="Date_Month_zero" xml:space="preserve">
+    <value>महीने</value>
+  </data>
+  <data name="Date_OutOfBoundMessage" xml:space="preserve">
+    <value>तारीख़ सीमा से बाहर है</value>
+  </data>
+  <data name="Date_SameDates" xml:space="preserve">
+    <value>तारीख़ें समान हैं</value>
+  </data>
+  <data name="Date_Week_few" xml:space="preserve">
+    <value>सप्ताह</value>
+  </data>
+  <data name="Date_Week_many" xml:space="preserve">
+    <value>सप्ताह</value>
+  </data>
+  <data name="Date_Week_one" xml:space="preserve">
+    <value>सप्ताह</value>
+  </data>
+  <data name="Date_Week_other" xml:space="preserve">
+    <value>सप्ताह</value>
+  </data>
+  <data name="Date_Week_two" xml:space="preserve">
+    <value>सप्ताह</value>
+  </data>
+  <data name="Date_Week_zero" xml:space="preserve">
+    <value>सप्ताह</value>
+  </data>
+  <data name="Date_Year_few" xml:space="preserve">
+    <value>वर्ष</value>
+  </data>
+  <data name="Date_Year_many" xml:space="preserve">
+    <value>वर्ष</value>
+  </data>
+  <data name="Date_Year_one" xml:space="preserve">
+    <value>वर्ष</value>
+  </data>
+  <data name="Date_Year_other" xml:space="preserve">
+    <value>वर्ष</value>
+  </data>
+  <data name="Date_Year_two" xml:space="preserve">
+    <value>वर्ष</value>
+  </data>
+  <data name="Date_Year_zero" xml:space="preserve">
+    <value>वर्ष</value>
+  </data>
+  <data name="DaysLabel.Text" xml:space="preserve">
+    <value>दिन</value>
+  </data>
+  <data name="Domain" xml:space="preserve">
+    <value>प्रांत</value>
+  </data>
+  <data name="EmptyExpression" xml:space="preserve">
+    <value>व्यंजक खाली है</value>
+  </data>
+  <data name="EqualWithoutGraphVariable" xml:space="preserve">
+    <value>समीकरण में x या y होना चाहिए</value>
+  </data>
+  <data name="Error.DivideByZero" xml:space="preserve">
+    <value>शून्य से भाग नहीं दे सकते</value>
+  </data>
+  <data name="Error.InvalidInput" xml:space="preserve">
+    <value>अमान्य इनपुट</value>
+  </data>
+  <data name="Error.Overflow" xml:space="preserve">
+    <value>ओवरफ़्लो</value>
+  </data>
+  <data name="Error.Undefined" xml:space="preserve">
+    <value>परिणाम अपरिभाषित है</value>
+  </data>
+  <data name="ExpectParenthesisAfterFunctionName" xml:space="preserve">
+    <value>फलन के नाम के बाद कोष्ठक चाहिए</value>
+  </data>
+  <data name="FlyoutNav.AutomationName" xml:space="preserve">
+    <value>नेविगेशन खोलें</value>
+  </data>
+  <data name="FunctionAnalysisGrid.AutomationName" xml:space="preserve">
+    <value>फलन विश्लेषण</value>
+  </data>
+  <data name="GraphOptionsHeading.Text" xml:space="preserve">
+    <value>ग्राफ़ विकल्प</value>
+  </data>
+  <data name="GraphSettingsXMax.Header" xml:space="preserve">
+    <value>X अधिकतम</value>
+  </data>
+  <data name="GraphSettingsXMin.Header" xml:space="preserve">
+    <value>X न्यूनतम</value>
+  </data>
+  <data name="GraphSettingsYMax.Header" xml:space="preserve">
+    <value>Y अधिकतम</value>
+  </data>
+  <data name="GraphSettingsYMin.Header" xml:space="preserve">
+    <value>Y न्यूनतम</value>
+  </data>
+  <data name="GraphSwitchToEquationMode" xml:space="preserve">
+    <value>समीकरण दिखाएँ</value>
+  </data>
+  <data name="GraphSwitchToGraphMode" xml:space="preserve">
+    <value>ग्राफ़ दिखाएँ</value>
+  </data>
+  <data name="GraphThemeHeading.Text" xml:space="preserve">
+    <value>ग्राफ़ थीम</value>
+  </data>
+  <data name="GraphingCalculatorModeText" xml:space="preserve">
+    <value>ग्राफ़</value>
+  </data>
+  <data name="GridHeading.Text" xml:space="preserve">
+    <value>दृश्य सीमा</value>
+  </data>
+  <data name="HistoryButton.ToolTip" xml:space="preserve">
+    <value>इतिहास (Ctrl+H)</value>
+  </data>
+  <data name="HistoryEmpty.Text" xml:space="preserve">
+    <value>अभी कोई गणना नहीं है।</value>
+  </data>
+  <data name="HistoryLabel.Text" xml:space="preserve">
+    <value>इतिहास</value>
+  </data>
+  <data name="HorizontalAsymptotes" xml:space="preserve">
+    <value>क्षैतिज अनंतस्पर्शी</value>
+  </data>
+  <data name="IncorrectNumParameter" xml:space="preserve">
+    <value>किसी फलन में तर्कों की संख्या गलत है</value>
+  </data>
+  <data name="InflectionPoints" xml:space="preserve">
+    <value>नति परिवर्तन बिंदु</value>
+  </data>
+  <data name="InvalidEquationSyntax" xml:space="preserve">
+    <value>व्यंजक मान्य नहीं है</value>
+  </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>व्यंजक में ऐसे वर्ण हैं जिनका उपयोग नहीं हो सकता</value>
+  </data>
+  <data name="KGFAnalysisNotSupported" xml:space="preserve">
+    <value>इस प्रकार के समीकरण का विश्लेषण नहीं किया जा सकता।</value>
+  </data>
+  <data name="KGFDomainNone" xml:space="preserve">
+    <value>प्रांत ज्ञात नहीं किया जा सका।</value>
+  </data>
+  <data name="KGFEquationTextBox.AutomationName" xml:space="preserve">
+    <value>समीकरणों पर लौटें</value>
+  </data>
+  <data name="KGFHorizontalAsymptotesNone" xml:space="preserve">
+    <value>फलन की कोई क्षैतिज अनंतस्पर्शी नहीं है।</value>
+  </data>
+  <data name="KGFInflectionPointsNone" xml:space="preserve">
+    <value>फलन का कोई नति परिवर्तन बिंदु नहीं है।</value>
+  </data>
+  <data name="KGFMaximaNone" xml:space="preserve">
+    <value>फलन का कोई उच्चिष्ठ नहीं है।</value>
+  </data>
+  <data name="KGFMinimaNone" xml:space="preserve">
+    <value>फलन का कोई निम्निष्ठ नहीं है।</value>
+  </data>
+  <data name="KGFMonotonicityConstant" xml:space="preserve">
+    <value>अचर</value>
+  </data>
+  <data name="KGFMonotonicityDecreasing" xml:space="preserve">
+    <value>ह्रासमान</value>
+  </data>
+  <data name="KGFMonotonicityError" xml:space="preserve">
+    <value>एकदिष्टता ज्ञात नहीं की जा सकी।</value>
+  </data>
+  <data name="KGFMonotonicityIncreasing" xml:space="preserve">
+    <value>वर्धमान</value>
+  </data>
+  <data name="KGFMonotonicityUnknown" xml:space="preserve">
+    <value>अज्ञात</value>
+  </data>
+  <data name="KGFObliqueAsymptotesNone" xml:space="preserve">
+    <value>फलन की कोई तिर्यक अनंतस्पर्शी नहीं है।</value>
+  </data>
+  <data name="KGFParityEven" xml:space="preserve">
+    <value>फलन सम है।</value>
+  </data>
+  <data name="KGFParityNeither" xml:space="preserve">
+    <value>फलन न तो सम है न विषम।</value>
+  </data>
+  <data name="KGFParityOdd" xml:space="preserve">
+    <value>फलन विषम है।</value>
+  </data>
+  <data name="KGFParityUnknown" xml:space="preserve">
+    <value>समता ज्ञात नहीं की जा सकी।</value>
+  </data>
+  <data name="KGFPeriodicityNotPeriodic" xml:space="preserve">
+    <value>फलन आवर्ती नहीं है।</value>
+  </data>
+  <data name="KGFRangeNone" xml:space="preserve">
+    <value>परिसर ज्ञात नहीं किया जा सका।</value>
+  </data>
+  <data name="KGFTooComplexFeaturesError" xml:space="preserve">
+    <value>इन गुणों की गणना करना बहुत जटिल है:</value>
+  </data>
+  <data name="KGFVariableIsNotX" xml:space="preserve">
+    <value>केवल x के फलनों का विश्लेषण किया जा सकता है, जैसे y = x²।</value>
+  </data>
+  <data name="KGFVerticalAsymptotesNone" xml:space="preserve">
+    <value>फलन की कोई ऊर्ध्वाधर अनंतस्पर्शी नहीं है।</value>
+  </data>
+  <data name="KGFXInterceptNone" xml:space="preserve">
+    <value>ग्राफ़ x-अक्ष को नहीं काटता।</value>
+  </data>
+  <data name="KGFYInterceptNone" xml:space="preserve">
+    <value>ग्राफ़ y-अक्ष को नहीं काटता।</value>
+  </data>
+  <data name="LightThemeRadioButton.Content" xml:space="preserve">
+    <value>हल्का</value>
+  </data>
+  <data name="LineThicknessBoxHeading.Text" xml:space="preserve">
+    <value>रेखा की मोटाई</value>
+  </data>
+  <data name="MatchAppTheme.Content" xml:space="preserve">
+    <value>ऐप थीम के अनुसार</value>
+  </data>
+  <data name="Maxima" xml:space="preserve">
+    <value>उच्चिष्ठ</value>
+  </data>
+  <data name="MemMinus.AutomationName" xml:space="preserve">
+    <value>मेमोरी से घटाएँ</value>
+  </data>
+  <data name="MemMinus.ToolTip" xml:space="preserve">
+    <value>मेमोरी से घटाएँ (Ctrl+Q)</value>
+  </data>
+  <data name="MemMinusItem.ToolTip" xml:space="preserve">
+    <value>इस मान से घटाएँ</value>
+  </data>
+  <data name="MemPlus.AutomationName" xml:space="preserve">
+    <value>मेमोरी में जोड़ें</value>
+  </data>
+  <data name="MemPlus.ToolTip" xml:space="preserve">
+    <value>मेमोरी में जोड़ें (Ctrl+P)</value>
+  </data>
+  <data name="MemPlusItem.ToolTip" xml:space="preserve">
+    <value>इस मान में जोड़ें</value>
+  </data>
+  <data name="MemRecall.AutomationName" xml:space="preserve">
+    <value>मेमोरी से लें</value>
+  </data>
+  <data name="MemRecall.ToolTip" xml:space="preserve">
+    <value>मेमोरी से लें (Ctrl+R)</value>
+  </data>
+  <data name="MemoryButton.ToolTip" xml:space="preserve">
+    <value>मेमोरी</value>
+  </data>
+  <data name="MemoryLabel.Text" xml:space="preserve">
+    <value>मेमोरी</value>
+  </data>
+  <data name="MemoryPaneEmpty.Text" xml:space="preserve">
+    <value>मेमोरी खाली है।</value>
+  </data>
+  <data name="Minima" xml:space="preserve">
+    <value>निम्निष्ठ</value>
+  </data>
+  <data name="Monotonicity" xml:space="preserve">
+    <value>एकदिष्टता</value>
+  </data>
+  <data name="MonthsLabel.Text" xml:space="preserve">
+    <value>महीने</value>
+  </data>
+  <data name="ObliqueAsymptotes" xml:space="preserve">
+    <value>तिर्यक अनंतस्पर्शी</value>
+  </data>
+  <data name="OfflineStatusHyperlinkText" xml:space="preserve">
+    <value>ऑफ़लाइन। अपना इंटरनेट कनेक्शन जाँचें।</value>
+  </data>
+  <data name="ParenthesisMismatch" xml:space="preserve">
+    <value>आरंभिक कोष्ठक नहीं है</value>
+  </data>
+  <data name="Parity" xml:space="preserve">
+    <value>समता</value>
+  </data>
+  <data name="Periodicity" xml:space="preserve">
+    <value>आवर्त</value>
+  </data>
+  <data name="ProgrammerModeText" xml:space="preserve">
+    <value>प्रोग्रामर</value>
+  </data>
+  <data name="Range" xml:space="preserve">
+    <value>परिसर</value>
+  </data>
+  <data name="RefreshButtonText.Content" xml:space="preserve">
+    <value>दरें अपडेट करें</value>
+  </data>
+  <data name="ResetViewButton.Content" xml:space="preserve">
+    <value>दृश्य रीसेट करें</value>
+  </data>
+  <data name="ScientificModeText" xml:space="preserve">
+    <value>वैज्ञानिक</value>
+  </data>
+  <data name="SettingsAppearance.Text" xml:space="preserve">
+    <value>रूप-रंग</value>
+  </data>
+  <data name="SettingsHeader.Text" xml:space="preserve">
+    <value>सेटिंग्स</value>
+  </data>
+  <data name="SettingsLanguage.Description" xml:space="preserve">
+    <value>ऐप की भाषा चुनें</value>
+  </data>
+  <data name="SettingsLanguage.Header" xml:space="preserve">
+    <value>भाषा</value>
+  </data>
+  <data name="ShareActionErrorMessage" xml:space="preserve">
+    <value>अभी साझा नहीं किया जा सकता।</value>
+  </data>
+  <data name="ShareActionErrorOk" xml:space="preserve">
+    <value>ठीक है</value>
+  </data>
+  <data name="ShareActionTitle" xml:space="preserve">
+    <value>देखिए, मैंने %1 में यह ग्राफ़ बनाया</value>
+  </data>
+  <data name="StandardModeText" xml:space="preserve">
+    <value>मानक</value>
+  </data>
+  <data name="SubtractOption.Content" xml:space="preserve">
+    <value>घटाएँ</value>
+  </data>
+  <data name="SupplementaryResultsHeader.Text" xml:space="preserve">
+    <value>लगभग बराबर</value>
+  </data>
+  <data name="SupplementaryUnit_AutomationName" xml:space="preserve">
+    <value>%1 %2</value>
+  </data>
+  <data name="SystemThemeRadioButton.Content" xml:space="preserve">
+    <value>सिस्टम सेटिंग का उपयोग करें</value>
+  </data>
+  <data name="TooManyDecimalPoints" xml:space="preserve">
+    <value>किसी संख्या में बहुत अधिक दशमलव विभाजक हैं</value>
+  </data>
+  <data name="TooManyEquals" xml:space="preserve">
+    <value>बहुत अधिक बराबर चिह्न हैं</value>
+  </data>
+  <data name="TrigModeDegrees.Content" xml:space="preserve">
+    <value>डिग्री</value>
+  </data>
+  <data name="TrigModeGradians.Content" xml:space="preserve">
+    <value>ग्रेडियन</value>
+  </data>
+  <data name="TrigModeRadians.Content" xml:space="preserve">
+    <value>रेडियन</value>
+  </data>
+  <data name="UnexpectedEndOfExpression" xml:space="preserve">
+    <value>व्यंजक अधूरा है</value>
+  </data>
+  <data name="UnexpectedToken" xml:space="preserve">
+    <value>व्यंजक में कुछ अनपेक्षित है</value>
+  </data>
+  <data name="UnitAbbreviation_Acre" xml:space="preserve">
+    <value>एकड़</value>
+  </data>
+  <data name="UnitAbbreviation_Angstrom" xml:space="preserve">
+    <value>Å</value>
+  </data>
+  <data name="UnitAbbreviation_Atmosphere" xml:space="preserve">
+    <value>atm</value>
+  </data>
+  <data name="UnitAbbreviation_BTUPerMinute" xml:space="preserve">
+    <value>BTU/min</value>
+  </data>
+  <data name="UnitAbbreviation_Banana" xml:space="preserve">
+    <value>केले</value>
+  </data>
+  <data name="UnitAbbreviation_Bar" xml:space="preserve">
+    <value>bar</value>
+  </data>
+  <data name="UnitAbbreviation_Bathtub" xml:space="preserve">
+    <value>बाथटब</value>
+  </data>
+  <data name="UnitAbbreviation_Battery" xml:space="preserve">
+    <value>AA बैटरियाँ</value>
+  </data>
+  <data name="UnitAbbreviation_Bit" xml:space="preserve">
+    <value>b</value>
+  </data>
+  <data name="UnitAbbreviation_BritishThermalUnit" xml:space="preserve">
+    <value>BTU</value>
+  </data>
+  <data name="UnitAbbreviation_Byte" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="UnitAbbreviation_CD" xml:space="preserve">
+    <value>सीडी</value>
+  </data>
+  <data name="UnitAbbreviation_Calorie" xml:space="preserve">
+    <value>cal</value>
+  </data>
+  <data name="UnitAbbreviation_Carat" xml:space="preserve">
+    <value>ct</value>
+  </data>
+  <data name="UnitAbbreviation_Castle" xml:space="preserve">
+    <value>महल</value>
+  </data>
+  <data name="UnitAbbreviation_Centigram" xml:space="preserve">
+    <value>cg</value>
+  </data>
+  <data name="UnitAbbreviation_Centimeter" xml:space="preserve">
+    <value>cm</value>
+  </data>
+  <data name="UnitAbbreviation_CentimetersPerSecond" xml:space="preserve">
+    <value>cm/s</value>
+  </data>
+  <data name="UnitAbbreviation_CoffeeCup" xml:space="preserve">
+    <value>कॉफ़ी के कप</value>
+  </data>
+  <data name="UnitAbbreviation_CubicCentimeter" xml:space="preserve">
+    <value>cm³</value>
+  </data>
+  <data name="UnitAbbreviation_CubicFoot" xml:space="preserve">
+    <value>ft³</value>
+  </data>
+  <data name="UnitAbbreviation_CubicInch" xml:space="preserve">
+    <value>in³</value>
+  </data>
+  <data name="UnitAbbreviation_CubicMeter" xml:space="preserve">
+    <value>m³</value>
+  </data>
+  <data name="UnitAbbreviation_CubicYard" xml:space="preserve">
+    <value>yd³</value>
+  </data>
+  <data name="UnitAbbreviation_CupUS" xml:space="preserve">
+    <value>कप (अमेरिकी)</value>
+  </data>
+  <data name="UnitAbbreviation_DVD" xml:space="preserve">
+    <value>डीवीडी</value>
+  </data>
+  <data name="UnitAbbreviation_Day" xml:space="preserve">
+    <value>दिन</value>
+  </data>
+  <data name="UnitAbbreviation_Decagram" xml:space="preserve">
+    <value>dag</value>
+  </data>
+  <data name="UnitAbbreviation_Decigram" xml:space="preserve">
+    <value>dg</value>
+  </data>
+  <data name="UnitAbbreviation_Degree" xml:space="preserve">
+    <value>°</value>
+  </data>
+  <data name="UnitAbbreviation_DegreesCelsius" xml:space="preserve">
+    <value>°C</value>
+  </data>
+  <data name="UnitAbbreviation_DegreesFahrenheit" xml:space="preserve">
+    <value>°F</value>
+  </data>
+  <data name="UnitAbbreviation_Electron-Volt" xml:space="preserve">
+    <value>eV</value>
+  </data>
+  <data name="UnitAbbreviation_Elephant" xml:space="preserve">
+    <value>हाथी</value>
+  </data>
+  <data name="UnitAbbreviation_Exabits" xml:space="preserve">
+    <value>Eb</value>
+  </data>
+  <data name="UnitAbbreviation_Exabytes" xml:space="preserve">
+    <value>EB</value>
+  </data>
+  <data name="UnitAbbreviation_Exbibits" xml:space="preserve">
+    <value>Eib</value>
+  </data>
+  <data name="UnitAbbreviation_Exbibytes" xml:space="preserve">
+    <value>EiB</value>
+  </data>
+  <data name="UnitAbbreviation_FeetPerSecond" xml:space="preserve">
+    <value>ft/s</value>
+  </data>
+  <data name="UnitAbbreviation_FloppyDisk" xml:space="preserve">
+    <value>फ़्लॉपी डिस्क</value>
+  </data>
+  <data name="UnitAbbreviation_FluidOunceUK" xml:space="preserve">
+    <value>fl oz (ब्रिटिश)</value>
+  </data>
+  <data name="UnitAbbreviation_FluidOunceUS" xml:space="preserve">
+    <value>fl oz (अमेरिकी)</value>
+  </data>
+  <data name="UnitAbbreviation_Foot" xml:space="preserve">
+    <value>ft</value>
+  </data>
+  <data name="UnitAbbreviation_Foot-Pound" xml:space="preserve">
+    <value>ft·lb</value>
+  </data>
+  <data name="UnitAbbreviation_Foot-PoundPerMinute" xml:space="preserve">
+    <value>ft·lb/min</value>
+  </data>
+  <data name="UnitAbbreviation_GallonUK" xml:space="preserve">
+    <value>gal (ब्रिटिश)</value>
+  </data>
+  <data name="UnitAbbreviation_GallonUS" xml:space="preserve">
+    <value>gal (अमेरिकी)</value>
+  </data>
+  <data name="UnitAbbreviation_Gibibits" xml:space="preserve">
+    <value>Gib</value>
+  </data>
+  <data name="UnitAbbreviation_Gibibytes" xml:space="preserve">
+    <value>GiB</value>
+  </data>
+  <data name="UnitAbbreviation_Gigabit" xml:space="preserve">
+    <value>Gb</value>
+  </data>
+  <data name="UnitAbbreviation_Gigabyte" xml:space="preserve">
+    <value>GB</value>
+  </data>
+  <data name="UnitAbbreviation_Gradian" xml:space="preserve">
+    <value>gon</value>
+  </data>
+  <data name="UnitAbbreviation_Gram" xml:space="preserve">
+    <value>g</value>
+  </data>
+  <data name="UnitAbbreviation_Hand" xml:space="preserve">
+    <value>हथेलियाँ</value>
+  </data>
+  <data name="UnitAbbreviation_Hectare" xml:space="preserve">
+    <value>ha</value>
+  </data>
+  <data name="UnitAbbreviation_Hectogram" xml:space="preserve">
+    <value>hg</value>
+  </data>
+  <data name="UnitAbbreviation_Horse" xml:space="preserve">
+    <value>घोड़े</value>
+  </data>
+  <data name="UnitAbbreviation_Horsepower" xml:space="preserve">
+    <value>hp (अमेरिकी)</value>
+  </data>
+  <data name="UnitAbbreviation_Hour" xml:space="preserve">
+    <value>घंटे</value>
+  </data>
+  <data name="UnitAbbreviation_Inch" xml:space="preserve">
+    <value>in</value>
+  </data>
+  <data name="UnitAbbreviation_Jet" xml:space="preserve">
+    <value>यात्री विमान</value>
+  </data>
+  <data name="UnitAbbreviation_Joule" xml:space="preserve">
+    <value>J</value>
+  </data>
+  <data name="UnitAbbreviation_JumboJet" xml:space="preserve">
+    <value>जंबो जेट</value>
+  </data>
+  <data name="UnitAbbreviation_Kelvin" xml:space="preserve">
+    <value>K</value>
+  </data>
+  <data name="UnitAbbreviation_Kibibits" xml:space="preserve">
+    <value>Kib</value>
+  </data>
+  <data name="UnitAbbreviation_Kibibytes" xml:space="preserve">
+    <value>KiB</value>
+  </data>
+  <data name="UnitAbbreviation_KiloPascal" xml:space="preserve">
+    <value>kPa</value>
+  </data>
+  <data name="UnitAbbreviation_Kilobit" xml:space="preserve">
+    <value>kb</value>
+  </data>
+  <data name="UnitAbbreviation_Kilobyte" xml:space="preserve">
+    <value>kB</value>
+  </data>
+  <data name="UnitAbbreviation_Kilocalorie" xml:space="preserve">
+    <value>kcal</value>
+  </data>
+  <data name="UnitAbbreviation_Kilogram" xml:space="preserve">
+    <value>kg</value>
+  </data>
+  <data name="UnitAbbreviation_Kilojoule" xml:space="preserve">
+    <value>kJ</value>
+  </data>
+  <data name="UnitAbbreviation_Kilometer" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="UnitAbbreviation_KilometersPerHour" xml:space="preserve">
+    <value>km/h</value>
+  </data>
+  <data name="UnitAbbreviation_Kilowatt" xml:space="preserve">
+    <value>kW</value>
+  </data>
+  <data name="UnitAbbreviation_Kilowatthour" xml:space="preserve">
+    <value>kWh</value>
+  </data>
+  <data name="UnitAbbreviation_Knot" xml:space="preserve">
+    <value>kn</value>
+  </data>
+  <data name="UnitAbbreviation_LightBulb" xml:space="preserve">
+    <value>बल्ब</value>
+  </data>
+  <data name="UnitAbbreviation_Liter" xml:space="preserve">
+    <value>L</value>
+  </data>
+  <data name="UnitAbbreviation_LongTon" xml:space="preserve">
+    <value>टन (ब्रिटिश)</value>
+  </data>
+  <data name="UnitAbbreviation_Mach" xml:space="preserve">
+    <value>मैक</value>
+  </data>
+  <data name="UnitAbbreviation_Mebibits" xml:space="preserve">
+    <value>Mib</value>
+  </data>
+  <data name="UnitAbbreviation_Mebibytes" xml:space="preserve">
+    <value>MiB</value>
+  </data>
+  <data name="UnitAbbreviation_Megabit" xml:space="preserve">
+    <value>Mb</value>
+  </data>
+  <data name="UnitAbbreviation_Megabyte" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="UnitAbbreviation_Meter" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="UnitAbbreviation_MetersPerSecond" xml:space="preserve">
+    <value>m/s</value>
+  </data>
+  <data name="UnitAbbreviation_Micron" xml:space="preserve">
+    <value>µm</value>
+  </data>
+  <data name="UnitAbbreviation_Microsecond" xml:space="preserve">
+    <value>µs</value>
+  </data>
+  <data name="UnitAbbreviation_Mile" xml:space="preserve">
+    <value>mi</value>
+  </data>
+  <data name="UnitAbbreviation_MilesPerHour" xml:space="preserve">
+    <value>mph</value>
+  </data>
+  <data name="UnitAbbreviation_Milligram" xml:space="preserve">
+    <value>mg</value>
+  </data>
+  <data name="UnitAbbreviation_Milliliter" xml:space="preserve">
+    <value>mL</value>
+  </data>
+  <data name="UnitAbbreviation_Millimeter" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="UnitAbbreviation_MillimeterOfMercury" xml:space="preserve">
+    <value>mmHg</value>
+  </data>
+  <data name="UnitAbbreviation_Millisecond" xml:space="preserve">
+    <value>ms</value>
+  </data>
+  <data name="UnitAbbreviation_Minute" xml:space="preserve">
+    <value>मिनट</value>
+  </data>
+  <data name="UnitAbbreviation_Nanometer" xml:space="preserve">
+    <value>nm</value>
+  </data>
+  <data name="UnitAbbreviation_NauticalMile" xml:space="preserve">
+    <value>nmi</value>
+  </data>
+  <data name="UnitAbbreviation_Nibble" xml:space="preserve">
+    <value>निबल</value>
+  </data>
+  <data name="UnitAbbreviation_Ounce" xml:space="preserve">
+    <value>oz</value>
+  </data>
+  <data name="UnitAbbreviation_PSI" xml:space="preserve">
+    <value>psi</value>
+  </data>
+  <data name="UnitAbbreviation_Paper" xml:space="preserve">
+    <value>कागज़ की शीटें</value>
+  </data>
+  <data name="UnitAbbreviation_Paperclip" xml:space="preserve">
+    <value>पेपर क्लिप</value>
+  </data>
+  <data name="UnitAbbreviation_Pascal" xml:space="preserve">
+    <value>Pa</value>
+  </data>
+  <data name="UnitAbbreviation_Pebibits" xml:space="preserve">
+    <value>Pib</value>
+  </data>
+  <data name="UnitAbbreviation_Pebibytes" xml:space="preserve">
+    <value>PiB</value>
+  </data>
+  <data name="UnitAbbreviation_Petabit" xml:space="preserve">
+    <value>Pb</value>
+  </data>
+  <data name="UnitAbbreviation_Petabyte" xml:space="preserve">
+    <value>PB</value>
+  </data>
+  <data name="UnitAbbreviation_PintUK" xml:space="preserve">
+    <value>pt (ब्रिटिश)</value>
+  </data>
+  <data name="UnitAbbreviation_PintUS" xml:space="preserve">
+    <value>pt (अमेरिकी)</value>
+  </data>
+  <data name="UnitAbbreviation_Pound" xml:space="preserve">
+    <value>lb</value>
+  </data>
+  <data name="UnitAbbreviation_Pyeong" xml:space="preserve">
+    <value>प्योंग</value>
+  </data>
+  <data name="UnitAbbreviation_QuartUK" xml:space="preserve">
+    <value>qt (ब्रिटिश)</value>
+  </data>
+  <data name="UnitAbbreviation_QuartUS" xml:space="preserve">
+    <value>qt (अमेरिकी)</value>
+  </data>
+  <data name="UnitAbbreviation_Radian" xml:space="preserve">
+    <value>rad</value>
+  </data>
+  <data name="UnitAbbreviation_Second" xml:space="preserve">
+    <value>s</value>
+  </data>
+  <data name="UnitAbbreviation_ShortTon" xml:space="preserve">
+    <value>टन (अमेरिकी)</value>
+  </data>
+  <data name="UnitAbbreviation_SliceOfCake" xml:space="preserve">
+    <value>केक के टुकड़े</value>
+  </data>
+  <data name="UnitAbbreviation_Snowflake" xml:space="preserve">
+    <value>हिमकण</value>
+  </data>
+  <data name="UnitAbbreviation_SoccerBall" xml:space="preserve">
+    <value>फ़ुटबॉल</value>
+  </data>
+  <data name="UnitAbbreviation_SoccerField" xml:space="preserve">
+    <value>फ़ुटबॉल मैदान</value>
+  </data>
+  <data name="UnitAbbreviation_SquareCentimeter" xml:space="preserve">
+    <value>cm²</value>
+  </data>
+  <data name="UnitAbbreviation_SquareFoot" xml:space="preserve">
+    <value>ft²</value>
+  </data>
+  <data name="UnitAbbreviation_SquareInch" xml:space="preserve">
+    <value>in²</value>
+  </data>
+  <data name="UnitAbbreviation_SquareKilometer" xml:space="preserve">
+    <value>km²</value>
+  </data>
+  <data name="UnitAbbreviation_SquareMeter" xml:space="preserve">
+    <value>m²</value>
+  </data>
+  <data name="UnitAbbreviation_SquareMile" xml:space="preserve">
+    <value>mi²</value>
+  </data>
+  <data name="UnitAbbreviation_SquareMillimeter" xml:space="preserve">
+    <value>mm²</value>
+  </data>
+  <data name="UnitAbbreviation_SquareYard" xml:space="preserve">
+    <value>yd²</value>
+  </data>
+  <data name="UnitAbbreviation_Stone" xml:space="preserve">
+    <value>st</value>
+  </data>
+  <data name="UnitAbbreviation_SwimmingPool" xml:space="preserve">
+    <value>स्विमिंग पूल</value>
+  </data>
+  <data name="UnitAbbreviation_TablespoonUK" xml:space="preserve">
+    <value>बड़ा चम्मच (ब्रिटिश)</value>
+  </data>
+  <data name="UnitAbbreviation_TablespoonUS" xml:space="preserve">
+    <value>बड़ा चम्मच (अमेरिकी)</value>
+  </data>
+  <data name="UnitAbbreviation_TeaspoonUK" xml:space="preserve">
+    <value>छोटा चम्मच (ब्रिटिश)</value>
+  </data>
+  <data name="UnitAbbreviation_TeaspoonUS" xml:space="preserve">
+    <value>छोटा चम्मच (अमेरिकी)</value>
+  </data>
+  <data name="UnitAbbreviation_Tebibits" xml:space="preserve">
+    <value>Tib</value>
+  </data>
+  <data name="UnitAbbreviation_Tebibytes" xml:space="preserve">
+    <value>TiB</value>
+  </data>
+  <data name="UnitAbbreviation_Terabit" xml:space="preserve">
+    <value>Tb</value>
+  </data>
+  <data name="UnitAbbreviation_Terabyte" xml:space="preserve">
+    <value>TB</value>
+  </data>
+  <data name="UnitAbbreviation_Tonne" xml:space="preserve">
+    <value>t</value>
+  </data>
+  <data name="UnitAbbreviation_TrainEngine" xml:space="preserve">
+    <value>रेल इंजन</value>
+  </data>
+  <data name="UnitAbbreviation_Turtle" xml:space="preserve">
+    <value>कछुए</value>
+  </data>
+  <data name="UnitAbbreviation_Watt" xml:space="preserve">
+    <value>W</value>
+  </data>
+  <data name="UnitAbbreviation_Week" xml:space="preserve">
+    <value>सप्ताह</value>
+  </data>
+  <data name="UnitAbbreviation_Whale" xml:space="preserve">
+    <value>व्हेल</value>
+  </data>
+  <data name="UnitAbbreviation_Yard" xml:space="preserve">
+    <value>yd</value>
+  </data>
+  <data name="UnitAbbreviation_Year" xml:space="preserve">
+    <value>वर्ष</value>
+  </data>
+  <data name="UnitAbbreviation_Yobibits" xml:space="preserve">
+    <value>Yib</value>
+  </data>
+  <data name="UnitAbbreviation_Yobibytes" xml:space="preserve">
+    <value>YiB</value>
+  </data>
+  <data name="UnitAbbreviation_Yottabit" xml:space="preserve">
+    <value>Yb</value>
+  </data>
+  <data name="UnitAbbreviation_Yottabyte" xml:space="preserve">
+    <value>YB</value>
+  </data>
+  <data name="UnitAbbreviation_Zebibits" xml:space="preserve">
+    <value>Zib</value>
+  </data>
+  <data name="UnitAbbreviation_Zebibytes" xml:space="preserve">
+    <value>ZiB</value>
+  </data>
+  <data name="UnitAbbreviation_Zetabits" xml:space="preserve">
+    <value>Zb</value>
+  </data>
+  <data name="UnitAbbreviation_Zetabytes" xml:space="preserve">
+    <value>ZB</value>
+  </data>
+  <data name="UnitName_Acre" xml:space="preserve">
+    <value>एकड़</value>
+  </data>
+  <data name="UnitName_Angstrom" xml:space="preserve">
+    <value>एंग्स्ट्रॉम</value>
+  </data>
+  <data name="UnitName_Atmosphere" xml:space="preserve">
+    <value>वायुमंडल</value>
+  </data>
+  <data name="UnitName_BTUPerMinute" xml:space="preserve">
+    <value>BTU प्रति मिनट</value>
+  </data>
+  <data name="UnitName_Banana" xml:space="preserve">
+    <value>केले</value>
+  </data>
+  <data name="UnitName_Bar" xml:space="preserve">
+    <value>बार</value>
+  </data>
+  <data name="UnitName_Bathtub" xml:space="preserve">
+    <value>बाथटब</value>
+  </data>
+  <data name="UnitName_Battery" xml:space="preserve">
+    <value>AA बैटरियाँ</value>
+  </data>
+  <data name="UnitName_Bit" xml:space="preserve">
+    <value>बिट</value>
+  </data>
+  <data name="UnitName_BritishThermalUnit" xml:space="preserve">
+    <value>ब्रिटिश थर्मल यूनिट</value>
+  </data>
+  <data name="UnitName_Byte" xml:space="preserve">
+    <value>बाइट</value>
+  </data>
+  <data name="UnitName_CD" xml:space="preserve">
+    <value>सीडी</value>
+  </data>
+  <data name="UnitName_Calorie" xml:space="preserve">
+    <value>थर्मोकेमिकल कैलोरी</value>
+  </data>
+  <data name="UnitName_Carat" xml:space="preserve">
+    <value>कैरेट</value>
+  </data>
+  <data name="UnitName_Castle" xml:space="preserve">
+    <value>महल</value>
+  </data>
+  <data name="UnitName_Centigram" xml:space="preserve">
+    <value>सेंटीग्राम</value>
+  </data>
+  <data name="UnitName_Centimeter" xml:space="preserve">
+    <value>सेंटीमीटर</value>
+  </data>
+  <data name="UnitName_CentimetersPerSecond" xml:space="preserve">
+    <value>सेंटीमीटर प्रति सेकंड</value>
+  </data>
+  <data name="UnitName_CoffeeCup" xml:space="preserve">
+    <value>कॉफ़ी के कप</value>
+  </data>
+  <data name="UnitName_CubicCentimeter" xml:space="preserve">
+    <value>घन सेंटीमीटर</value>
+  </data>
+  <data name="UnitName_CubicFoot" xml:space="preserve">
+    <value>घन फ़ुट</value>
+  </data>
+  <data name="UnitName_CubicInch" xml:space="preserve">
+    <value>घन इंच</value>
+  </data>
+  <data name="UnitName_CubicMeter" xml:space="preserve">
+    <value>घन मीटर</value>
+  </data>
+  <data name="UnitName_CubicYard" xml:space="preserve">
+    <value>घन गज़</value>
+  </data>
+  <data name="UnitName_CupUS" xml:space="preserve">
+    <value>कप (अमेरिकी)</value>
+  </data>
+  <data name="UnitName_DVD" xml:space="preserve">
+    <value>डीवीडी</value>
+  </data>
+  <data name="UnitName_Day" xml:space="preserve">
+    <value>दिन</value>
+  </data>
+  <data name="UnitName_Decagram" xml:space="preserve">
+    <value>डेकाग्राम</value>
+  </data>
+  <data name="UnitName_Decigram" xml:space="preserve">
+    <value>डेसीग्राम</value>
+  </data>
+  <data name="UnitName_Degree" xml:space="preserve">
+    <value>डिग्री</value>
+  </data>
+  <data name="UnitName_DegreesCelsius" xml:space="preserve">
+    <value>सेल्सियस</value>
+  </data>
+  <data name="UnitName_DegreesFahrenheit" xml:space="preserve">
+    <value>फ़ारेनहाइट</value>
+  </data>
+  <data name="UnitName_Electron-Volt" xml:space="preserve">
+    <value>इलेक्ट्रॉनवोल्ट</value>
+  </data>
+  <data name="UnitName_Elephant" xml:space="preserve">
+    <value>हाथी</value>
+  </data>
+  <data name="UnitName_Exabits" xml:space="preserve">
+    <value>एक्साबिट</value>
+  </data>
+  <data name="UnitName_Exabytes" xml:space="preserve">
+    <value>एक्साबाइट</value>
+  </data>
+  <data name="UnitName_Exbibits" xml:space="preserve">
+    <value>एक्सबिबिट</value>
+  </data>
+  <data name="UnitName_Exbibytes" xml:space="preserve">
+    <value>एक्सबिबाइट</value>
+  </data>
+  <data name="UnitName_FeetPerSecond" xml:space="preserve">
+    <value>फ़ुट प्रति सेकंड</value>
+  </data>
+  <data name="UnitName_FloppyDisk" xml:space="preserve">
+    <value>फ़्लॉपी डिस्क</value>
+  </data>
+  <data name="UnitName_FluidOunceUK" xml:space="preserve">
+    <value>द्रव औंस (ब्रिटिश)</value>
+  </data>
+  <data name="UnitName_FluidOunceUS" xml:space="preserve">
+    <value>द्रव औंस (अमेरिकी)</value>
+  </data>
+  <data name="UnitName_Foot" xml:space="preserve">
+    <value>फ़ुट</value>
+  </data>
+  <data name="UnitName_Foot-Pound" xml:space="preserve">
+    <value>फ़ुट-पाउंड</value>
+  </data>
+  <data name="UnitName_Foot-PoundPerMinute" xml:space="preserve">
+    <value>फ़ुट-पाउंड प्रति मिनट</value>
+  </data>
+  <data name="UnitName_GallonUK" xml:space="preserve">
+    <value>गैलन (ब्रिटिश)</value>
+  </data>
+  <data name="UnitName_GallonUS" xml:space="preserve">
+    <value>गैलन (अमेरिकी)</value>
+  </data>
+  <data name="UnitName_Gibibits" xml:space="preserve">
+    <value>गिबिबिट</value>
+  </data>
+  <data name="UnitName_Gibibytes" xml:space="preserve">
+    <value>गिबिबाइट</value>
+  </data>
+  <data name="UnitName_Gigabit" xml:space="preserve">
+    <value>गीगाबिट</value>
+  </data>
+  <data name="UnitName_Gigabyte" xml:space="preserve">
+    <value>गीगाबाइट</value>
+  </data>
+  <data name="UnitName_Gradian" xml:space="preserve">
+    <value>ग्रेडियन</value>
+  </data>
+  <data name="UnitName_Gram" xml:space="preserve">
+    <value>ग्राम</value>
+  </data>
+  <data name="UnitName_Hand" xml:space="preserve">
+    <value>हथेलियाँ</value>
+  </data>
+  <data name="UnitName_Hectare" xml:space="preserve">
+    <value>हेक्टेयर</value>
+  </data>
+  <data name="UnitName_Hectogram" xml:space="preserve">
+    <value>हेक्टोग्राम</value>
+  </data>
+  <data name="UnitName_Horse" xml:space="preserve">
+    <value>घोड़े</value>
+  </data>
+  <data name="UnitName_Horsepower" xml:space="preserve">
+    <value>अश्वशक्ति (अमेरिकी)</value>
+  </data>
+  <data name="UnitName_Hour" xml:space="preserve">
+    <value>घंटे</value>
+  </data>
+  <data name="UnitName_Inch" xml:space="preserve">
+    <value>इंच</value>
+  </data>
+  <data name="UnitName_Jet" xml:space="preserve">
+    <value>यात्री विमान</value>
+  </data>
+  <data name="UnitName_Joule" xml:space="preserve">
+    <value>जूल</value>
+  </data>
+  <data name="UnitName_JumboJet" xml:space="preserve">
+    <value>जंबो जेट</value>
+  </data>
+  <data name="UnitName_Kelvin" xml:space="preserve">
+    <value>केल्विन</value>
+  </data>
+  <data name="UnitName_Kibibits" xml:space="preserve">
+    <value>किबिबिट</value>
+  </data>
+  <data name="UnitName_Kibibytes" xml:space="preserve">
+    <value>किबिबाइट</value>
+  </data>
+  <data name="UnitName_KiloPascal" xml:space="preserve">
+    <value>किलोपास्कल</value>
+  </data>
+  <data name="UnitName_Kilobit" xml:space="preserve">
+    <value>किलोबिट</value>
+  </data>
+  <data name="UnitName_Kilobyte" xml:space="preserve">
+    <value>किलोबाइट</value>
+  </data>
+  <data name="UnitName_Kilocalorie" xml:space="preserve">
+    <value>भोजन कैलोरी</value>
+  </data>
+  <data name="UnitName_Kilogram" xml:space="preserve">
+    <value>किलोग्राम</value>
+  </data>
+  <data name="UnitName_Kilojoule" xml:space="preserve">
+    <value>किलोजूल</value>
+  </data>
+  <data name="UnitName_Kilometer" xml:space="preserve">
+    <value>किलोमीटर</value>
+  </data>
+  <data name="UnitName_KilometersPerHour" xml:space="preserve">
+    <value>किलोमीटर प्रति घंटा</value>
+  </data>
+  <data name="UnitName_Kilowatt" xml:space="preserve">
+    <value>किलोवाट</value>
+  </data>
+  <data name="UnitName_Kilowatthour" xml:space="preserve">
+    <value>किलोवाट-घंटा</value>
+  </data>
+  <data name="UnitName_Knot" xml:space="preserve">
+    <value>नॉट</value>
+  </data>
+  <data name="UnitName_LightBulb" xml:space="preserve">
+    <value>बल्ब</value>
+  </data>
+  <data name="UnitName_Liter" xml:space="preserve">
+    <value>लीटर</value>
+  </data>
+  <data name="UnitName_LongTon" xml:space="preserve">
+    <value>लॉन्ग टन (ब्रिटिश)</value>
+  </data>
+  <data name="UnitName_Mach" xml:space="preserve">
+    <value>मैक</value>
+  </data>
+  <data name="UnitName_Mebibits" xml:space="preserve">
+    <value>मेबिबिट</value>
+  </data>
+  <data name="UnitName_Mebibytes" xml:space="preserve">
+    <value>मेबिबाइट</value>
+  </data>
+  <data name="UnitName_Megabit" xml:space="preserve">
+    <value>मेगाबिट</value>
+  </data>
+  <data name="UnitName_Megabyte" xml:space="preserve">
+    <value>मेगाबाइट</value>
+  </data>
+  <data name="UnitName_Meter" xml:space="preserve">
+    <value>मीटर</value>
+  </data>
+  <data name="UnitName_MetersPerSecond" xml:space="preserve">
+    <value>मीटर प्रति सेकंड</value>
+  </data>
+  <data name="UnitName_Micron" xml:space="preserve">
+    <value>माइक्रोमीटर</value>
+  </data>
+  <data name="UnitName_Microsecond" xml:space="preserve">
+    <value>माइक्रोसेकंड</value>
+  </data>
+  <data name="UnitName_Mile" xml:space="preserve">
+    <value>मील</value>
+  </data>
+  <data name="UnitName_MilesPerHour" xml:space="preserve">
+    <value>मील प्रति घंटा</value>
+  </data>
+  <data name="UnitName_Milligram" xml:space="preserve">
+    <value>मिलीग्राम</value>
+  </data>
+  <data name="UnitName_Milliliter" xml:space="preserve">
+    <value>मिलीलीटर</value>
+  </data>
+  <data name="UnitName_Millimeter" xml:space="preserve">
+    <value>मिलीमीटर</value>
+  </data>
+  <data name="UnitName_MillimeterOfMercury" xml:space="preserve">
+    <value>पारे के मिलीमीटर</value>
+  </data>
+  <data name="UnitName_Millisecond" xml:space="preserve">
+    <value>मिलीसेकंड</value>
+  </data>
+  <data name="UnitName_Minute" xml:space="preserve">
+    <value>मिनट</value>
+  </data>
+  <data name="UnitName_Nanometer" xml:space="preserve">
+    <value>नैनोमीटर</value>
+  </data>
+  <data name="UnitName_NauticalMile" xml:space="preserve">
+    <value>समुद्री मील</value>
+  </data>
+  <data name="UnitName_Nibble" xml:space="preserve">
+    <value>निबल</value>
+  </data>
+  <data name="UnitName_Ounce" xml:space="preserve">
+    <value>औंस</value>
+  </data>
+  <data name="UnitName_PSI" xml:space="preserve">
+    <value>पाउंड प्रति वर्ग इंच</value>
+  </data>
+  <data name="UnitName_Paper" xml:space="preserve">
+    <value>कागज़ की शीटें</value>
+  </data>
+  <data name="UnitName_Paperclip" xml:space="preserve">
+    <value>पेपर क्लिप</value>
+  </data>
+  <data name="UnitName_Pascal" xml:space="preserve">
+    <value>पास्कल</value>
+  </data>
+  <data name="UnitName_Pebibits" xml:space="preserve">
+    <value>पेबिबिट</value>
+  </data>
+  <data name="UnitName_Pebibytes" xml:space="preserve">
+    <value>पेबिबाइट</value>
+  </data>
+  <data name="UnitName_Petabit" xml:space="preserve">
+    <value>पेटाबिट</value>
+  </data>
+  <data name="UnitName_Petabyte" xml:space="preserve">
+    <value>पेटाबाइट</value>
+  </data>
+  <data name="UnitName_PintUK" xml:space="preserve">
+    <value>पिंट (ब्रिटिश)</value>
+  </data>
+  <data name="UnitName_PintUS" xml:space="preserve">
+    <value>पिंट (अमेरिकी)</value>
+  </data>
+  <data name="UnitName_Pound" xml:space="preserve">
+    <value>पाउंड</value>
+  </data>
+  <data name="UnitName_Pyeong" xml:space="preserve">
+    <value>प्योंग</value>
+  </data>
+  <data name="UnitName_QuartUK" xml:space="preserve">
+    <value>क्वार्ट (ब्रिटिश)</value>
+  </data>
+  <data name="UnitName_QuartUS" xml:space="preserve">
+    <value>क्वार्ट (अमेरिकी)</value>
+  </data>
+  <data name="UnitName_Radian" xml:space="preserve">
+    <value>रेडियन</value>
+  </data>
+  <data name="UnitName_Second" xml:space="preserve">
+    <value>सेकंड</value>
+  </data>
+  <data name="UnitName_ShortTon" xml:space="preserve">
+    <value>शॉर्ट टन (अमेरिकी)</value>
+  </data>
+  <data name="UnitName_SliceOfCake" xml:space="preserve">
+    <value>केक के टुकड़े</value>
+  </data>
+  <data name="UnitName_Snowflake" xml:space="preserve">
+    <value>हिमकण</value>
+  </data>
+  <data name="UnitName_SoccerBall" xml:space="preserve">
+    <value>फ़ुटबॉल</value>
+  </data>
+  <data name="UnitName_SoccerField" xml:space="preserve">
+    <value>फ़ुटबॉल मैदान</value>
+  </data>
+  <data name="UnitName_SquareCentimeter" xml:space="preserve">
+    <value>वर्ग सेंटीमीटर</value>
+  </data>
+  <data name="UnitName_SquareFoot" xml:space="preserve">
+    <value>वर्ग फ़ुट</value>
+  </data>
+  <data name="UnitName_SquareInch" xml:space="preserve">
+    <value>वर्ग इंच</value>
+  </data>
+  <data name="UnitName_SquareKilometer" xml:space="preserve">
+    <value>वर्ग किलोमीटर</value>
+  </data>
+  <data name="UnitName_SquareMeter" xml:space="preserve">
+    <value>वर्ग मीटर</value>
+  </data>
+  <data name="UnitName_SquareMile" xml:space="preserve">
+    <value>वर्ग मील</value>
+  </data>
+  <data name="UnitName_SquareMillimeter" xml:space="preserve">
+    <value>वर्ग मिलीमीटर</value>
+  </data>
+  <data name="UnitName_SquareYard" xml:space="preserve">
+    <value>वर्ग गज़</value>
+  </data>
+  <data name="UnitName_Stone" xml:space="preserve">
+    <value>स्टोन</value>
+  </data>
+  <data name="UnitName_SwimmingPool" xml:space="preserve">
+    <value>स्विमिंग पूल</value>
+  </data>
+  <data name="UnitName_TablespoonUK" xml:space="preserve">
+    <value>बड़े चम्मच (ब्रिटिश)</value>
+  </data>
+  <data name="UnitName_TablespoonUS" xml:space="preserve">
+    <value>बड़े चम्मच (अमेरिकी)</value>
+  </data>
+  <data name="UnitName_TeaspoonUK" xml:space="preserve">
+    <value>छोटे चम्मच (ब्रिटिश)</value>
+  </data>
+  <data name="UnitName_TeaspoonUS" xml:space="preserve">
+    <value>छोटे चम्मच (अमेरिकी)</value>
+  </data>
+  <data name="UnitName_Tebibits" xml:space="preserve">
+    <value>टेबिबिट</value>
+  </data>
+  <data name="UnitName_Tebibytes" xml:space="preserve">
+    <value>टेबिबाइट</value>
+  </data>
+  <data name="UnitName_Terabit" xml:space="preserve">
+    <value>टेराबिट</value>
+  </data>
+  <data name="UnitName_Terabyte" xml:space="preserve">
+    <value>टेराबाइट</value>
+  </data>
+  <data name="UnitName_Tonne" xml:space="preserve">
+    <value>मीट्रिक टन</value>
+  </data>
+  <data name="UnitName_TrainEngine" xml:space="preserve">
+    <value>रेल इंजन</value>
+  </data>
+  <data name="UnitName_Turtle" xml:space="preserve">
+    <value>कछुए</value>
+  </data>
+  <data name="UnitName_Watt" xml:space="preserve">
+    <value>वाट</value>
+  </data>
+  <data name="UnitName_Week" xml:space="preserve">
+    <value>सप्ताह</value>
+  </data>
+  <data name="UnitName_Whale" xml:space="preserve">
+    <value>व्हेल</value>
+  </data>
+  <data name="UnitName_Yard" xml:space="preserve">
+    <value>गज़</value>
+  </data>
+  <data name="UnitName_Year" xml:space="preserve">
+    <value>वर्ष</value>
+  </data>
+  <data name="UnitName_Yobibits" xml:space="preserve">
+    <value>योबिबिट</value>
+  </data>
+  <data name="UnitName_Yobibytes" xml:space="preserve">
+    <value>योबिबाइट</value>
+  </data>
+  <data name="UnitName_Yottabit" xml:space="preserve">
+    <value>योटाबिट</value>
+  </data>
+  <data name="UnitName_Yottabyte" xml:space="preserve">
+    <value>योटाबाइट</value>
+  </data>
+  <data name="UnitName_Zebibits" xml:space="preserve">
+    <value>ज़ेबिबिट</value>
+  </data>
+  <data name="UnitName_Zebibytes" xml:space="preserve">
+    <value>ज़ेबिबाइट</value>
+  </data>
+  <data name="UnitName_Zetabits" xml:space="preserve">
+    <value>ज़ेटाबिट</value>
+  </data>
+  <data name="UnitName_Zetabytes" xml:space="preserve">
+    <value>ज़ेटाबाइट</value>
+  </data>
+  <data name="UnitsHeading.Text" xml:space="preserve">
+    <value>कोण की इकाइयाँ</value>
+  </data>
+  <data name="UnmatchedParenthesis" xml:space="preserve">
+    <value>समापन कोष्ठक नहीं है</value>
+  </data>
+  <data name="UpdatingCurrencyRates" xml:space="preserve">
+    <value>दरें अपडेट हो रही हैं…</value>
+  </data>
+  <data name="VariableMaxTextBox.AutomationName" xml:space="preserve">
+    <value>अधिकतम मान</value>
+  </data>
+  <data name="VariableMinTextBox.AutomationName" xml:space="preserve">
+    <value>न्यूनतम मान</value>
+  </data>
+  <data name="VariableStepTextBox.AutomationName" xml:space="preserve">
+    <value>चरण</value>
+  </data>
+  <data name="VerticalAsymptotes" xml:space="preserve">
+    <value>ऊर्ध्वाधर अनंतस्पर्शी</value>
+  </data>
+  <data name="XIntercept" xml:space="preserve">
+    <value>x-अंतःखंड</value>
+  </data>
+  <data name="YIntercept" xml:space="preserve">
+    <value>y-अंतःखंड</value>
+  </data>
+  <data name="YearsLabel.Text" xml:space="preserve">
+    <value>वर्ष</value>
+  </data>
+  <data name="absButton.AutomationName" xml:space="preserve">
+    <value>निरपेक्ष मान</value>
+  </data>
+  <data name="arithmeticShiftButton.Content" xml:space="preserve">
+    <value>अंकगणितीय शिफ़्ट</value>
+  </data>
+  <data name="backSpaceButton.AutomationName" xml:space="preserve">
+    <value>बैकस्पेस</value>
+  </data>
+  <data name="bitFlip.ToolTip" xml:space="preserve">
+    <value>बिट कीपैड</value>
+  </data>
+  <data name="bitShiftButton.Text" xml:space="preserve">
+    <value>बिट शिफ़्ट</value>
+  </data>
+  <data name="bitwiseButton.Text" xml:space="preserve">
+    <value>बिटवार</value>
+  </data>
+  <data name="ceilButton.AutomationName" xml:space="preserve">
+    <value>ऊपर की ओर पूर्णांक</value>
+  </data>
+  <data name="clearButton.AutomationName" xml:space="preserve">
+    <value>साफ़ करें</value>
+  </data>
+  <data name="clearEntryButton.AutomationName" xml:space="preserve">
+    <value>प्रविष्टि साफ़ करें</value>
+  </data>
+  <data name="closeParenthesisButton.AutomationName" xml:space="preserve">
+    <value>समापन कोष्ठक</value>
+  </data>
+  <data name="colorChooserButton.ToolTip" xml:space="preserve">
+    <value>रंग बदलें</value>
+  </data>
+  <data name="cubeRootButton.AutomationName" xml:space="preserve">
+    <value>घनमूल</value>
+  </data>
+  <data name="decimalSeparatorButton.AutomationName" xml:space="preserve">
+    <value>दशमलव विभाजक</value>
+  </data>
+  <data name="degreesButton.AutomationName" xml:space="preserve">
+    <value>कोण की इकाई</value>
+  </data>
+  <data name="disableTracingButtonToolTip" xml:space="preserve">
+    <value>ट्रेसिंग बंद करें</value>
+  </data>
+  <data name="divideButton.AutomationName" xml:space="preserve">
+    <value>भाग दें</value>
+  </data>
+  <data name="enableTracingButtonToolTip" xml:space="preserve">
+    <value>ट्रेसिंग शुरू करें</value>
+  </data>
+  <data name="equalButton.AutomationName" xml:space="preserve">
+    <value>बराबर</value>
+  </data>
+  <data name="eulerButton.AutomationName" xml:space="preserve">
+    <value>ऑयलर संख्या</value>
+  </data>
+  <data name="expButton.AutomationName" xml:space="preserve">
+    <value>घातांक प्रविष्टि</value>
+  </data>
+  <data name="factorialButton.AutomationName" xml:space="preserve">
+    <value>क्रमगुणित</value>
+  </data>
+  <data name="floorButton.AutomationName" xml:space="preserve">
+    <value>नीचे की ओर पूर्णांक</value>
+  </data>
+  <data name="ftoeButton.AutomationName" xml:space="preserve">
+    <value>वैज्ञानिक संकेतन</value>
+  </data>
+  <data name="fullKeypad.ToolTip" xml:space="preserve">
+    <value>पूरा कीपैड</value>
+  </data>
+  <data name="funcButton.AutomationName" xml:space="preserve">
+    <value>फलन</value>
+  </data>
+  <data name="funcButton.Text" xml:space="preserve">
+    <value>फलन</value>
+  </data>
+  <data name="functionAnalysisButton.ToolTip" xml:space="preserve">
+    <value>फलन का विश्लेषण करें</value>
+  </data>
+  <data name="graphSettingsButton.ToolTip" xml:space="preserve">
+    <value>ग्राफ़ विकल्प</value>
+  </data>
+  <data name="hypButton.AutomationName" xml:space="preserve">
+    <value>अतिपरवलयिक फलन</value>
+  </data>
+  <data name="inequalityButton.AutomationName" xml:space="preserve">
+    <value>असमिकाएँ</value>
+  </data>
+  <data name="inequalityButton.Text" xml:space="preserve">
+    <value>असमिकाएँ</value>
+  </data>
+  <data name="invertButton.AutomationName" xml:space="preserve">
+    <value>व्युत्क्रम</value>
+  </data>
+  <data name="logBase10Button.AutomationName" xml:space="preserve">
+    <value>आधार 10 का लघुगणक</value>
+  </data>
+  <data name="logBaseEButton.AutomationName" xml:space="preserve">
+    <value>प्राकृतिक लघुगणक</value>
+  </data>
+  <data name="logBaseY.AutomationName" xml:space="preserve">
+    <value>आधार y का लघुगणक</value>
+  </data>
+  <data name="logicalShiftButton.Content" xml:space="preserve">
+    <value>तार्किक शिफ़्ट</value>
+  </data>
+  <data name="mathRichEditBox.PlaceholderText" xml:space="preserve">
+    <value>व्यंजक दर्ज करें</value>
+  </data>
+  <data name="memButton.AutomationName" xml:space="preserve">
+    <value>मेमोरी में सहेजें</value>
+  </data>
+  <data name="memButton.ToolTip" xml:space="preserve">
+    <value>मेमोरी में सहेजें (Ctrl+M)</value>
+  </data>
+  <data name="minusButton.AutomationName" xml:space="preserve">
+    <value>घटा</value>
+  </data>
+  <data name="modButton.AutomationName" xml:space="preserve">
+    <value>मॉड्यूलो</value>
+  </data>
+  <data name="multiplyButton.AutomationName" xml:space="preserve">
+    <value>गुणा करें</value>
+  </data>
+  <data name="negateButton.AutomationName" xml:space="preserve">
+    <value>चिह्न बदलें</value>
+  </data>
+  <data name="openParenthesisButton.AutomationName" xml:space="preserve">
+    <value>आरंभिक कोष्ठक</value>
+  </data>
+  <data name="percentButton.AutomationName" xml:space="preserve">
+    <value>प्रतिशत</value>
+  </data>
+  <data name="piButton.AutomationName" xml:space="preserve">
+    <value>पाई</value>
+  </data>
+  <data name="plusButton.AutomationName" xml:space="preserve">
+    <value>जोड़</value>
+  </data>
+  <data name="powerButton.AutomationName" xml:space="preserve">
+    <value>x की घात y</value>
+  </data>
+  <data name="powerOf10Button.AutomationName" xml:space="preserve">
+    <value>10 की घात x</value>
+  </data>
+  <data name="powerOfEButton.AutomationName" xml:space="preserve">
+    <value>e की घात x</value>
+  </data>
+  <data name="qwordButton.AutomationName" xml:space="preserve">
+    <value>शब्द आकार</value>
+  </data>
+  <data name="removeButton.ToolTip" xml:space="preserve">
+    <value>समीकरण हटाएँ</value>
+  </data>
+  <data name="rotateCarryShiftButton.Content" xml:space="preserve">
+    <value>कैरी सहित घुमाव</value>
+  </data>
+  <data name="rotateCircularButton.Content" xml:space="preserve">
+    <value>वृत्तीय घुमाव</value>
+  </data>
+  <data name="shareButton.ToolTip" xml:space="preserve">
+    <value>साझा करें</value>
+  </data>
+  <data name="shiftButton.AutomationName" xml:space="preserve">
+    <value>दूसरे फलन</value>
+  </data>
+  <data name="showEquationButtonToolTip" xml:space="preserve">
+    <value>ग्राफ़ दिखाएँ या छिपाएँ</value>
+  </data>
+  <data name="squareRootButton.AutomationName" xml:space="preserve">
+    <value>वर्गमूल</value>
+  </data>
+  <data name="submitButton.AutomationName" xml:space="preserve">
+    <value>दर्ज करें</value>
+  </data>
+  <data name="trigButton.AutomationName" xml:space="preserve">
+    <value>त्रिकोणमिति</value>
+  </data>
+  <data name="trigButton.Text" xml:space="preserve">
+    <value>त्रिकोणमिति</value>
+  </data>
+  <data name="trigShiftButton.AutomationName" xml:space="preserve">
+    <value>व्युत्क्रम फलन</value>
+  </data>
+  <data name="twoPowerXButton.AutomationName" xml:space="preserve">
+    <value>2 की घात x</value>
+  </data>
+  <data name="xpower2Button.AutomationName" xml:space="preserve">
+    <value>वर्ग</value>
+  </data>
+  <data name="xpower3Button.AutomationName" xml:space="preserve">
+    <value>घन</value>
+  </data>
+  <data name="ySquareRootButton.AutomationName" xml:space="preserve">
+    <value>x का y-वाँ मूल</value>
+  </data>
+  <data name="zoomInButton.ToolTip" xml:space="preserve">
+    <value>ज़ूम इन (Ctrl + प्लस)</value>
+  </data>
+  <data name="zoomOutButton.ToolTip" xml:space="preserve">
+    <value>ज़ूम आउट (Ctrl + माइनस)</value>
+  </data>
+</root>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Unit converter (legacy UnitConverter.xaml): two value fields with unit pickers, "about equal to" results and a keypad. -->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:Calculator.UI.Localization"
+             xmlns:vm="clr-namespace:Calculator.UI.ViewModels"
+             x:Class="Calculator.UI.Views.ConverterView"
+             FlowDirection="LeftToRight"
+             x:DataType="vm:ConverterViewModel">
+
+    <UserControl.Styles>
+        <!-- A value field; the active one (which the keys type into) is in the display font -->
+        <Style Selector="TextBlock.value">
+            <Setter Property="FontSize" Value="40" />
+            <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+            <Setter Property="Margin" Value="12,0" />
+        </Style>
+        <Style Selector="TextBlock.value.active">
+            <Setter Property="FontFamily" Value="{StaticResource DisplayFont}" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+        </Style>
+    </UserControl.Styles>
+
+    <!--
+        The information under the fields (approximate results, the currency rate status) has the same height in every
+        category, so the keypad has the same size and place in all of them.
+    -->
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,72,*" Margin="3,0,3,3">
+
+        <!-- From: a tap makes it the field the keys type into -->
+        <Button Grid.Row="0" Classes="key subtle" Padding="0" HorizontalContentAlignment="Left" Command="{Binding ActivateFromCommand}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Classes="value" Classes.active="{Binding IsFromActive}" Text="{Binding FromText}" />
+                <!-- Currency symbol after the amount ("10 $"); empty for units -->
+                <TextBlock Text="{Binding SelectedFromUnit.Symbol}" FontSize="20" VerticalAlignment="Center" Margin="-4,8,0,0" Opacity="0.8" />
+            </StackPanel>
+        </Button>
+        <ComboBox Grid.Row="1" Margin="8,0" Classes="flat"
+                  ItemsSource="{Binding Units}" SelectedItem="{Binding SelectedFromUnit}" />
+
+        <!-- To -->
+        <Button Grid.Row="2" Classes="key subtle" Padding="0" Margin="1,16,1,1" HorizontalContentAlignment="Left" Command="{Binding ActivateToCommand}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Classes="value" Classes.active="{Binding IsToActive}" Text="{Binding ToText}" />
+                <TextBlock Text="{Binding SelectedToUnit.Symbol}" FontSize="20" VerticalAlignment="Center" Margin="-4,8,0,0" Opacity="0.8" />
+            </StackPanel>
+        </Button>
+        <ComboBox Grid.Row="3" Margin="8,0" Classes="flat"
+                  ItemsSource="{Binding Units}" SelectedItem="{Binding SelectedToUnit}" />
+        <StackPanel Grid.Row="4" ClipToBounds="True">
+            <TextBlock Margin="12,8,12,0" Text="{Binding SupplementaryText}" FontSize="12" TextWrapping="Wrap" MaxLines="3"
+                   IsVisible="{Binding SupplementaryText, Converter={x:Static StringConverters.IsNotNullOrEmpty}}"
+                   Classes="expression" TextAlignment="Left" />
+            <!-- Extra information of a converter, e.g. the currency rate status -->
+            <ContentControl x:Name="FooterHost" />
+        </StackPanel>
+
+        <!-- Keypad -->
+        <Grid Grid.Row="5" RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*,*">
+            <Button Grid.Row="0" Grid.Column="1" Classes="key operator" Content="CE" Command="{Binding ClearEntryCommand}"
+                    AutomationProperties.Name="{loc:Localize clearEntryButton.AutomationName}" />
+            <Button Grid.Row="0" Grid.Column="2" Classes="key operator symbol" FontFamily="{StaticResource IconFont}" Content="&#xF1B2;" Command="{Binding BackspaceCommand}"
+                    AutomationProperties.Name="{loc:Localize backSpaceButton.AutomationName}" />
+
+            <Button Grid.Row="1" Grid.Column="0" Classes="key number" Content="7" Command="{Binding DigitCommand}" CommandParameter="7" />
+            <Button Grid.Row="1" Grid.Column="1" Classes="key number" Content="8" Command="{Binding DigitCommand}" CommandParameter="8" />
+            <Button Grid.Row="1" Grid.Column="2" Classes="key number" Content="9" Command="{Binding DigitCommand}" CommandParameter="9" />
+            <Button Grid.Row="2" Grid.Column="0" Classes="key number" Content="4" Command="{Binding DigitCommand}" CommandParameter="4" />
+            <Button Grid.Row="2" Grid.Column="1" Classes="key number" Content="5" Command="{Binding DigitCommand}" CommandParameter="5" />
+            <Button Grid.Row="2" Grid.Column="2" Classes="key number" Content="6" Command="{Binding DigitCommand}" CommandParameter="6" />
+            <Button Grid.Row="3" Grid.Column="0" Classes="key number" Content="1" Command="{Binding DigitCommand}" CommandParameter="1" />
+            <Button Grid.Row="3" Grid.Column="1" Classes="key number" Content="2" Command="{Binding DigitCommand}" CommandParameter="2" />
+            <Button Grid.Row="3" Grid.Column="2" Classes="key number" Content="3" Command="{Binding DigitCommand}" CommandParameter="3" />
+            <Button Grid.Row="4" Grid.Column="0" Classes="key number symbol" Content="+/−" Command="{Binding NegateCommand}" IsVisible="{Binding SupportsNegative}"
+                    AutomationProperties.Name="{loc:Localize negateButton.AutomationName}" />
+            <Button Grid.Row="4" Grid.Column="1" Classes="key number" Content="0" Command="{Binding DigitCommand}" CommandParameter="0" />
+            <Button Grid.Row="4" Grid.Column="2" Classes="key number" Content="{Binding DecimalSeparator}" Command="{Binding DecimalPointCommand}"
+                    AutomationProperties.Name="{loc:Localize decimalSeparatorButton.AutomationName}" />
+        </Grid>
+    </Grid>
+</UserControl>

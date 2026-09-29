@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Standard or scientific calculator (legacy Calculator.xaml): expression line, display, memory keys and the mode keypad.
+    Wide windows show the History | Memory pane on the right, narrow ones open it over the keypad.
+-->
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:loc="clr-namespace:Calculator.UI.Localization"
+             xmlns:platform="clr-namespace:Calculator.UI.Platform"
+             xmlns:views="clr-namespace:Calculator.UI.Views"
+             xmlns:vm="clr-namespace:Calculator.UI.ViewModels"
+             x:Class="Calculator.UI.Views.CalculatorView"
+             x:DataType="vm:CalculatorViewModel">
+
+    <Grid x:Name="RootGrid" ColumnDefinitions="*,0">
+
+        <Grid Grid.Column="0" RowDefinitions="22*,72*,32*,Auto,308*" Margin="3,0,3,3">
+            <TextBlock x:Name="ExpressionLabel" Grid.Row="0" Margin="8,0" FlowDirection="LeftToRight" Text="{Binding ExpressionText}" Classes="expression" />
+
+            <TextBlock x:Name="DisplayLabel" Grid.Row="1" Margin="8,0" FlowDirection="LeftToRight" Text="{Binding DisplayText}" Classes="display" DoubleTapped="OnDisplayDoubleTapped" />
+
+            <!-- Memory keys: MC MR M+ M− MS M˅, stretched over the whole width like the original -->
+            <Grid x:Name="MemoryRow" Grid.Row="2" ColumnDefinitions="*,*,*,*,*,*">
+                <Button Grid.Column="0" Classes="key subtle memory" Content="MC" Command="{Binding MemoryClearCommand}"
+                        ToolTip.Tip="{loc:Localize ClearMemoryButton.ToolTip}" AutomationProperties.Name="{loc:Localize ClearMemoryButton.AutomationName}" />
+                <Button Grid.Column="1" Classes="key subtle memory" Content="MR" Command="{Binding MemoryRecallCommand}"
+                        ToolTip.Tip="{loc:Localize MemRecall.ToolTip}" AutomationProperties.Name="{loc:Localize MemRecall.AutomationName}" />
+                <Button Grid.Column="2" Classes="key subtle memory" Content="M+" Command="{Binding MemoryAddCommand}"
+                        ToolTip.Tip="{loc:Localize MemPlus.ToolTip}" AutomationProperties.Name="{loc:Localize MemPlus.AutomationName}" />
+                <Button Grid.Column="3" Classes="key subtle memory" Content="M−" Command="{Binding MemorySubtractCommand}"
+                        ToolTip.Tip="{loc:Localize MemMinus.ToolTip}" AutomationProperties.Name="{loc:Localize MemMinus.AutomationName}" />
+                <Button Grid.Column="4" Classes="key subtle memory" Content="MS" Command="{Binding MemoryStoreCommand}"
+                        ToolTip.Tip="{loc:Localize memButton.ToolTip}" AutomationProperties.Name="{loc:Localize memButton.AutomationName}" />
+                <Button x:Name="MemoryPaneButton" Grid.Column="5" Classes="key subtle memory" Content="M&#x02C5;"
+                        FontFamily="{StaticResource TextFont}"
+                        Click="OnMemoryPaneButtonClicked" IsEnabled="{Binding !IsMemoryEmpty}"
+                        ToolTip.Tip="{loc:Localize MemoryButton.ToolTip}" />
+            </Grid>
+
+            <UserControl x:Name="KeypadHost" Grid.Row="3" Grid.RowSpan="2" />
+
+            <!-- Narrow windows: History | Memory over the keypad -->
+            <Border x:Name="OverlayPane" Grid.Row="3" Grid.RowSpan="2" IsVisible="False" BorderThickness="1"
+                    BorderBrush="{DynamicResource KeyBorder}"
+                    Background="{DynamicResource PaneBackground}" Classes="pane" CornerRadius="8,8,0,0">
+                <views:HistoryMemoryPanel x:Name="OverlayPanel" />
+            </Border>
+        </Grid>
+
+        <!-- Wide windows: History | Memory docked on the right -->
+        <views:HistoryMemoryPanel x:Name="DockedPanel" Grid.Column="1" IsVisible="False" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,83 @@
+# Build output
+bin/
+obj/
+*.binlog
+*.dbg
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Publish output (README: dotnet publish ... -o out; release workflow: publish/, dist/)
+publish/
+out/
+dist/
+artifacts/
+
+# Tests: results, coverage, UI screenshots (BTL_SCREENSHOTS=<folder>)
+TestResults/
+*.trx
+coverage/
+coverage*.xml
+coverage*.json
+*.coverage
+screenshots-out/
+
+# Packages
+*.nupkg
+*.snupkg
+packages/
+
+# Windows packages
+*.msix
+*.msixbundle
+*.msixupload
+*.appx
+*.appxbundle
+*.appxupload
+AppPackages/
+BundleArtifacts/
+
+# Android: packages, and the signing keys, which must never be committed
+*.apk
+*.aab
+*.keystore
+*.jks
+local.properties
+.gradle/
+
+# Secrets
+.env
+.env.*
+*.pfx
+*.p12
+*.pem
+*.key
+
+# IDE and user files
+.vs/
+.idea/
+.vscode/
+.fleet/
+*.user
+*.suo
+*.userprefs
+*.DotSettings.user
+*.sln.iml
+*.swp
+*~
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
+*.log
+
+# OS files
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+.directory
+.Trash-*

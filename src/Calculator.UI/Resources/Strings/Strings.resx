@@ -1,0 +1,1678 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Strings of BTL Calculator, written for this project (see tools). Neutral = English. -->
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AboutGroupTitle.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AddOption.Content" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AlwaysLightTheme.Content" xml:space="preserve">
+    <value>Always light</value>
+  </data>
+  <data name="AlwaysOnTop_Enter" xml:space="preserve">
+    <value>Keep on top</value>
+  </data>
+  <data name="AlwaysOnTop_Exit" xml:space="preserve">
+    <value>Back to full view</value>
+  </data>
+  <data name="AppThemeExpander.Description" xml:space="preserve">
+    <value>Choose how the app looks</value>
+  </data>
+  <data name="AppThemeExpander.Header" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="CalculatorModeText" xml:space="preserve">
+    <value>Calculator</value>
+  </data>
+  <data name="CategoryName_AngleText" xml:space="preserve">
+    <value>Angle</value>
+  </data>
+  <data name="CategoryName_AreaText" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="CategoryName_CurrencyText" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="CategoryName_DataText" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="CategoryName_EnergyText" xml:space="preserve">
+    <value>Energy</value>
+  </data>
+  <data name="CategoryName_LengthText" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="CategoryName_PowerText" xml:space="preserve">
+    <value>Power</value>
+  </data>
+  <data name="CategoryName_PressureText" xml:space="preserve">
+    <value>Pressure</value>
+  </data>
+  <data name="CategoryName_SpeedText" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+  <data name="CategoryName_TemperatureText" xml:space="preserve">
+    <value>Temperature</value>
+  </data>
+  <data name="CategoryName_TimeText" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="CategoryName_VolumeText" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="CategoryName_WeightText" xml:space="preserve">
+    <value>Weight and mass</value>
+  </data>
+  <data name="ClearHistory.ToolTip" xml:space="preserve">
+    <value>Clear history</value>
+  </data>
+  <data name="ClearMemory.ToolTip" xml:space="preserve">
+    <value>Clear memory (Ctrl+L)</value>
+  </data>
+  <data name="ClearMemoryButton.AutomationName" xml:space="preserve">
+    <value>Clear memory</value>
+  </data>
+  <data name="ClearMemoryButton.ToolTip" xml:space="preserve">
+    <value>Clear memory (Ctrl+L)</value>
+  </data>
+  <data name="ClearMemoryItemButton.ToolTip" xml:space="preserve">
+    <value>Remove from memory</value>
+  </data>
+  <data name="ConverterModeText" xml:space="preserve">
+    <value>Converter</value>
+  </data>
+  <data name="CurrencyFromToRatioFormat" xml:space="preserve">
+    <value>%1 %2 = %3 %4</value>
+  </data>
+  <data name="CurrencyRatesUpdateFailed" xml:space="preserve">
+    <value>Couldn’t update the rates. Showing saved rates.</value>
+  </data>
+  <data name="CurrencyTimestampFormat" xml:space="preserve">
+    <value>Updated %1 %2</value>
+  </data>
+  <data name="DarkThemeRadioButton.Content" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="DateCalculationModeText" xml:space="preserve">
+    <value>Date calculation</value>
+  </data>
+  <data name="DateDiff_FromHeader.Header" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="DateDiff_ToHeader.Header" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="DateLabel.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Date_AddSubtractOption.Content" xml:space="preserve">
+    <value>Add or subtract days</value>
+  </data>
+  <data name="Date_Day_few" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="Date_Day_many" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="Date_Day_one" xml:space="preserve">
+    <value>day</value>
+  </data>
+  <data name="Date_Day_other" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="Date_Day_two" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="Date_Day_zero" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="Date_DifferenceLabel.Text" xml:space="preserve">
+    <value>Difference</value>
+  </data>
+  <data name="Date_DifferenceOption.Content" xml:space="preserve">
+    <value>Difference between dates</value>
+  </data>
+  <data name="Date_Month_few" xml:space="preserve">
+    <value>months</value>
+  </data>
+  <data name="Date_Month_many" xml:space="preserve">
+    <value>months</value>
+  </data>
+  <data name="Date_Month_one" xml:space="preserve">
+    <value>month</value>
+  </data>
+  <data name="Date_Month_other" xml:space="preserve">
+    <value>months</value>
+  </data>
+  <data name="Date_Month_two" xml:space="preserve">
+    <value>months</value>
+  </data>
+  <data name="Date_Month_zero" xml:space="preserve">
+    <value>months</value>
+  </data>
+  <data name="Date_OutOfBoundMessage" xml:space="preserve">
+    <value>Date out of range</value>
+  </data>
+  <data name="Date_SameDates" xml:space="preserve">
+    <value>Same dates</value>
+  </data>
+  <data name="Date_Week_few" xml:space="preserve">
+    <value>weeks</value>
+  </data>
+  <data name="Date_Week_many" xml:space="preserve">
+    <value>weeks</value>
+  </data>
+  <data name="Date_Week_one" xml:space="preserve">
+    <value>week</value>
+  </data>
+  <data name="Date_Week_other" xml:space="preserve">
+    <value>weeks</value>
+  </data>
+  <data name="Date_Week_two" xml:space="preserve">
+    <value>weeks</value>
+  </data>
+  <data name="Date_Week_zero" xml:space="preserve">
+    <value>weeks</value>
+  </data>
+  <data name="Date_Year_few" xml:space="preserve">
+    <value>years</value>
+  </data>
+  <data name="Date_Year_many" xml:space="preserve">
+    <value>years</value>
+  </data>
+  <data name="Date_Year_one" xml:space="preserve">
+    <value>year</value>
+  </data>
+  <data name="Date_Year_other" xml:space="preserve">
+    <value>years</value>
+  </data>
+  <data name="Date_Year_two" xml:space="preserve">
+    <value>years</value>
+  </data>
+  <data name="Date_Year_zero" xml:space="preserve">
+    <value>years</value>
+  </data>
+  <data name="DaysLabel.Text" xml:space="preserve">
+    <value>Days</value>
+  </data>
+  <data name="Domain" xml:space="preserve">
+    <value>Domain</value>
+  </data>
+  <data name="EmptyExpression" xml:space="preserve">
+    <value>The expression is empty</value>
+  </data>
+  <data name="EqualWithoutGraphVariable" xml:space="preserve">
+    <value>The equation needs x or y</value>
+  </data>
+  <data name="Error.DivideByZero" xml:space="preserve">
+    <value>Can’t divide by zero</value>
+  </data>
+  <data name="Error.InvalidInput" xml:space="preserve">
+    <value>Invalid input</value>
+  </data>
+  <data name="Error.Overflow" xml:space="preserve">
+    <value>Overflow</value>
+  </data>
+  <data name="Error.Undefined" xml:space="preserve">
+    <value>Result is undefined</value>
+  </data>
+  <data name="ExpectParenthesisAfterFunctionName" xml:space="preserve">
+    <value>A parenthesis is needed after the function name</value>
+  </data>
+  <data name="FlyoutNav.AutomationName" xml:space="preserve">
+    <value>Open navigation</value>
+  </data>
+  <data name="FunctionAnalysisGrid.AutomationName" xml:space="preserve">
+    <value>Function analysis</value>
+  </data>
+  <data name="GraphOptionsHeading.Text" xml:space="preserve">
+    <value>Graph options</value>
+  </data>
+  <data name="GraphSettingsXMax.Header" xml:space="preserve">
+    <value>X max</value>
+  </data>
+  <data name="GraphSettingsXMin.Header" xml:space="preserve">
+    <value>X min</value>
+  </data>
+  <data name="GraphSettingsYMax.Header" xml:space="preserve">
+    <value>Y max</value>
+  </data>
+  <data name="GraphSettingsYMin.Header" xml:space="preserve">
+    <value>Y min</value>
+  </data>
+  <data name="GraphSwitchToEquationMode" xml:space="preserve">
+    <value>Show equations</value>
+  </data>
+  <data name="GraphSwitchToGraphMode" xml:space="preserve">
+    <value>Show graph</value>
+  </data>
+  <data name="GraphThemeHeading.Text" xml:space="preserve">
+    <value>Graph theme</value>
+  </data>
+  <data name="GraphingCalculatorModeText" xml:space="preserve">
+    <value>Graphing</value>
+  </data>
+  <data name="GridHeading.Text" xml:space="preserve">
+    <value>Visible range</value>
+  </data>
+  <data name="HistoryButton.ToolTip" xml:space="preserve">
+    <value>History (Ctrl+H)</value>
+  </data>
+  <data name="HistoryEmpty.Text" xml:space="preserve">
+    <value>No calculations yet.</value>
+  </data>
+  <data name="HistoryLabel.Text" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="HorizontalAsymptotes" xml:space="preserve">
+    <value>Horizontal asymptotes</value>
+  </data>
+  <data name="IncorrectNumParameter" xml:space="preserve">
+    <value>A function has the wrong number of arguments</value>
+  </data>
+  <data name="InflectionPoints" xml:space="preserve">
+    <value>Inflection points</value>
+  </data>
+  <data name="InvalidEquationSyntax" xml:space="preserve">
+    <value>The expression is not valid</value>
+  </data>
+  <data name="InvalidToken" xml:space="preserve">
+    <value>The expression has characters that can’t be used</value>
+  </data>
+  <data name="KGFAnalysisNotSupported" xml:space="preserve">
+    <value>This kind of equation can’t be analyzed.</value>
+  </data>
+  <data name="KGFDomainNone" xml:space="preserve">
+    <value>The domain could not be determined.</value>
+  </data>
+  <data name="KGFEquationTextBox.AutomationName" xml:space="preserve">
+    <value>Back to equations</value>
+  </data>
+  <data name="KGFHorizontalAsymptotesNone" xml:space="preserve">
+    <value>The function has no horizontal asymptotes.</value>
+  </data>
+  <data name="KGFInflectionPointsNone" xml:space="preserve">
+    <value>The function has no inflection points.</value>
+  </data>
+  <data name="KGFMaximaNone" xml:space="preserve">
+    <value>The function has no maxima.</value>
+  </data>
+  <data name="KGFMinimaNone" xml:space="preserve">
+    <value>The function has no minima.</value>
+  </data>
+  <data name="KGFMonotonicityConstant" xml:space="preserve">
+    <value>Constant</value>
+  </data>
+  <data name="KGFMonotonicityDecreasing" xml:space="preserve">
+    <value>Decreasing</value>
+  </data>
+  <data name="KGFMonotonicityError" xml:space="preserve">
+    <value>The monotonicity could not be determined.</value>
+  </data>
+  <data name="KGFMonotonicityIncreasing" xml:space="preserve">
+    <value>Increasing</value>
+  </data>
+  <data name="KGFMonotonicityUnknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="KGFObliqueAsymptotesNone" xml:space="preserve">
+    <value>The function has no oblique asymptotes.</value>
+  </data>
+  <data name="KGFParityEven" xml:space="preserve">
+    <value>The function is even.</value>
+  </data>
+  <data name="KGFParityNeither" xml:space="preserve">
+    <value>The function is neither even nor odd.</value>
+  </data>
+  <data name="KGFParityOdd" xml:space="preserve">
+    <value>The function is odd.</value>
+  </data>
+  <data name="KGFParityUnknown" xml:space="preserve">
+    <value>The parity could not be determined.</value>
+  </data>
+  <data name="KGFPeriodicityNotPeriodic" xml:space="preserve">
+    <value>The function is not periodic.</value>
+  </data>
+  <data name="KGFRangeNone" xml:space="preserve">
+    <value>The range could not be determined.</value>
+  </data>
+  <data name="KGFTooComplexFeaturesError" xml:space="preserve">
+    <value>These properties are too complex to calculate:</value>
+  </data>
+  <data name="KGFVariableIsNotX" xml:space="preserve">
+    <value>Only functions of x can be analyzed, for example y = x².</value>
+  </data>
+  <data name="KGFVerticalAsymptotesNone" xml:space="preserve">
+    <value>The function has no vertical asymptotes.</value>
+  </data>
+  <data name="KGFXInterceptNone" xml:space="preserve">
+    <value>The graph does not cross the x-axis.</value>
+  </data>
+  <data name="KGFYInterceptNone" xml:space="preserve">
+    <value>The graph does not cross the y-axis.</value>
+  </data>
+  <data name="LightThemeRadioButton.Content" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="LineThicknessBoxHeading.Text" xml:space="preserve">
+    <value>Line thickness</value>
+  </data>
+  <data name="MatchAppTheme.Content" xml:space="preserve">
+    <value>Match app theme</value>
+  </data>
+  <data name="Maxima" xml:space="preserve">
+    <value>Maxima</value>
+  </data>
+  <data name="MemMinus.AutomationName" xml:space="preserve">
+    <value>Subtract from memory</value>
+  </data>
+  <data name="MemMinus.ToolTip" xml:space="preserve">
+    <value>Subtract from memory (Ctrl+Q)</value>
+  </data>
+  <data name="MemMinusItem.ToolTip" xml:space="preserve">
+    <value>Subtract from this item</value>
+  </data>
+  <data name="MemPlus.AutomationName" xml:space="preserve">
+    <value>Add to memory</value>
+  </data>
+  <data name="MemPlus.ToolTip" xml:space="preserve">
+    <value>Add to memory (Ctrl+P)</value>
+  </data>
+  <data name="MemPlusItem.ToolTip" xml:space="preserve">
+    <value>Add to this item</value>
+  </data>
+  <data name="MemRecall.AutomationName" xml:space="preserve">
+    <value>Memory recall</value>
+  </data>
+  <data name="MemRecall.ToolTip" xml:space="preserve">
+    <value>Memory recall (Ctrl+R)</value>
+  </data>
+  <data name="MemoryButton.ToolTip" xml:space="preserve">
+    <value>Memory</value>
+  </data>
+  <data name="MemoryLabel.Text" xml:space="preserve">
+    <value>Memory</value>
+  </data>
+  <data name="MemoryPaneEmpty.Text" xml:space="preserve">
+    <value>Memory is empty.</value>
+  </data>
+  <data name="Minima" xml:space="preserve">
+    <value>Minima</value>
+  </data>
+  <data name="Monotonicity" xml:space="preserve">
+    <value>Monotonicity</value>
+  </data>
+  <data name="MonthsLabel.Text" xml:space="preserve">
+    <value>Months</value>
+  </data>
+  <data name="ObliqueAsymptotes" xml:space="preserve">
+    <value>Oblique asymptotes</value>
+  </data>
+  <data name="OfflineStatusHyperlinkText" xml:space="preserve">
+    <value>Offline. Check your internet connection.</value>
+  </data>
+  <data name="ParenthesisMismatch" xml:space="preserve">
+    <value>An opening parenthesis is missing</value>
+  </data>
+  <data name="Parity" xml:space="preserve">
+    <value>Parity</value>
+  </data>
+  <data name="Periodicity" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="ProgrammerModeText" xml:space="preserve">
+    <value>Programmer</value>
+  </data>
+  <data name="Range" xml:space="preserve">
+    <value>Range</value>
+  </data>
+  <data name="RefreshButtonText.Content" xml:space="preserve">
+    <value>Update rates</value>
+  </data>
+  <data name="ResetViewButton.Content" xml:space="preserve">
+    <value>Reset view</value>
+  </data>
+  <data name="ScientificModeText" xml:space="preserve">
+    <value>Scientific</value>
+  </data>
+  <data name="SettingsAppearance.Text" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
+  <data name="SettingsHeader.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingsLanguage.Description" xml:space="preserve">
+    <value>Choose the language of the app</value>
+  </data>
+  <data name="SettingsLanguage.Header" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="ShareActionErrorMessage" xml:space="preserve">
+    <value>Sharing isn’t available right now.</value>
+  </data>
+  <data name="ShareActionErrorOk" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ShareActionTitle" xml:space="preserve">
+    <value>Look what I graphed with %1</value>
+  </data>
+  <data name="StandardModeText" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="SubtractOption.Content" xml:space="preserve">
+    <value>Subtract</value>
+  </data>
+  <data name="SupplementaryResultsHeader.Text" xml:space="preserve">
+    <value>About equal to</value>
+  </data>
+  <data name="SupplementaryUnit_AutomationName" xml:space="preserve">
+    <value>%1 %2</value>
+  </data>
+  <data name="SystemThemeRadioButton.Content" xml:space="preserve">
+    <value>Use system setting</value>
+  </data>
+  <data name="TooManyDecimalPoints" xml:space="preserve">
+    <value>A number has too many decimal separators</value>
+  </data>
+  <data name="TooManyEquals" xml:space="preserve">
+    <value>There are too many equal signs</value>
+  </data>
+  <data name="TrigModeDegrees.Content" xml:space="preserve">
+    <value>Degrees</value>
+  </data>
+  <data name="TrigModeGradians.Content" xml:space="preserve">
+    <value>Gradians</value>
+  </data>
+  <data name="TrigModeRadians.Content" xml:space="preserve">
+    <value>Radians</value>
+  </data>
+  <data name="UnexpectedEndOfExpression" xml:space="preserve">
+    <value>The expression ends too early</value>
+  </data>
+  <data name="UnexpectedToken" xml:space="preserve">
+    <value>The expression has something unexpected</value>
+  </data>
+  <data name="UnitAbbreviation_Acre" xml:space="preserve">
+    <value>ac</value>
+  </data>
+  <data name="UnitAbbreviation_Angstrom" xml:space="preserve">
+    <value>Å</value>
+  </data>
+  <data name="UnitAbbreviation_Atmosphere" xml:space="preserve">
+    <value>atm</value>
+  </data>
+  <data name="UnitAbbreviation_BTUPerMinute" xml:space="preserve">
+    <value>BTU/min</value>
+  </data>
+  <data name="UnitAbbreviation_Banana" xml:space="preserve">
+    <value>bananas</value>
+  </data>
+  <data name="UnitAbbreviation_Bar" xml:space="preserve">
+    <value>bar</value>
+  </data>
+  <data name="UnitAbbreviation_Bathtub" xml:space="preserve">
+    <value>bathtubs</value>
+  </data>
+  <data name="UnitAbbreviation_Battery" xml:space="preserve">
+    <value>AA batteries</value>
+  </data>
+  <data name="UnitAbbreviation_Bit" xml:space="preserve">
+    <value>b</value>
+  </data>
+  <data name="UnitAbbreviation_BritishThermalUnit" xml:space="preserve">
+    <value>BTU</value>
+  </data>
+  <data name="UnitAbbreviation_Byte" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="UnitAbbreviation_CD" xml:space="preserve">
+    <value>CDs</value>
+  </data>
+  <data name="UnitAbbreviation_Calorie" xml:space="preserve">
+    <value>cal</value>
+  </data>
+  <data name="UnitAbbreviation_Carat" xml:space="preserve">
+    <value>ct</value>
+  </data>
+  <data name="UnitAbbreviation_Castle" xml:space="preserve">
+    <value>castles</value>
+  </data>
+  <data name="UnitAbbreviation_Centigram" xml:space="preserve">
+    <value>cg</value>
+  </data>
+  <data name="UnitAbbreviation_Centimeter" xml:space="preserve">
+    <value>cm</value>
+  </data>
+  <data name="UnitAbbreviation_CentimetersPerSecond" xml:space="preserve">
+    <value>cm/s</value>
+  </data>
+  <data name="UnitAbbreviation_CoffeeCup" xml:space="preserve">
+    <value>coffee cups</value>
+  </data>
+  <data name="UnitAbbreviation_CubicCentimeter" xml:space="preserve">
+    <value>cm³</value>
+  </data>
+  <data name="UnitAbbreviation_CubicFoot" xml:space="preserve">
+    <value>ft³</value>
+  </data>
+  <data name="UnitAbbreviation_CubicInch" xml:space="preserve">
+    <value>in³</value>
+  </data>
+  <data name="UnitAbbreviation_CubicMeter" xml:space="preserve">
+    <value>m³</value>
+  </data>
+  <data name="UnitAbbreviation_CubicYard" xml:space="preserve">
+    <value>yd³</value>
+  </data>
+  <data name="UnitAbbreviation_CupUS" xml:space="preserve">
+    <value>cup (US)</value>
+  </data>
+  <data name="UnitAbbreviation_DVD" xml:space="preserve">
+    <value>DVDs</value>
+  </data>
+  <data name="UnitAbbreviation_Day" xml:space="preserve">
+    <value>d</value>
+  </data>
+  <data name="UnitAbbreviation_Decagram" xml:space="preserve">
+    <value>dag</value>
+  </data>
+  <data name="UnitAbbreviation_Decigram" xml:space="preserve">
+    <value>dg</value>
+  </data>
+  <data name="UnitAbbreviation_Degree" xml:space="preserve">
+    <value>°</value>
+  </data>
+  <data name="UnitAbbreviation_DegreesCelsius" xml:space="preserve">
+    <value>°C</value>
+  </data>
+  <data name="UnitAbbreviation_DegreesFahrenheit" xml:space="preserve">
+    <value>°F</value>
+  </data>
+  <data name="UnitAbbreviation_Electron-Volt" xml:space="preserve">
+    <value>eV</value>
+  </data>
+  <data name="UnitAbbreviation_Elephant" xml:space="preserve">
+    <value>elephants</value>
+  </data>
+  <data name="UnitAbbreviation_Exabits" xml:space="preserve">
+    <value>Eb</value>
+  </data>
+  <data name="UnitAbbreviation_Exabytes" xml:space="preserve">
+    <value>EB</value>
+  </data>
+  <data name="UnitAbbreviation_Exbibits" xml:space="preserve">
+    <value>Eib</value>
+  </data>
+  <data name="UnitAbbreviation_Exbibytes" xml:space="preserve">
+    <value>EiB</value>
+  </data>
+  <data name="UnitAbbreviation_FeetPerSecond" xml:space="preserve">
+    <value>ft/s</value>
+  </data>
+  <data name="UnitAbbreviation_FloppyDisk" xml:space="preserve">
+    <value>floppy disks</value>
+  </data>
+  <data name="UnitAbbreviation_FluidOunceUK" xml:space="preserve">
+    <value>fl oz (UK)</value>
+  </data>
+  <data name="UnitAbbreviation_FluidOunceUS" xml:space="preserve">
+    <value>fl oz (US)</value>
+  </data>
+  <data name="UnitAbbreviation_Foot" xml:space="preserve">
+    <value>ft</value>
+  </data>
+  <data name="UnitAbbreviation_Foot-Pound" xml:space="preserve">
+    <value>ft·lb</value>
+  </data>
+  <data name="UnitAbbreviation_Foot-PoundPerMinute" xml:space="preserve">
+    <value>ft·lb/min</value>
+  </data>
+  <data name="UnitAbbreviation_GallonUK" xml:space="preserve">
+    <value>gal (UK)</value>
+  </data>
+  <data name="UnitAbbreviation_GallonUS" xml:space="preserve">
+    <value>gal (US)</value>
+  </data>
+  <data name="UnitAbbreviation_Gibibits" xml:space="preserve">
+    <value>Gib</value>
+  </data>
+  <data name="UnitAbbreviation_Gibibytes" xml:space="preserve">
+    <value>GiB</value>
+  </data>
+  <data name="UnitAbbreviation_Gigabit" xml:space="preserve">
+    <value>Gb</value>
+  </data>
+  <data name="UnitAbbreviation_Gigabyte" xml:space="preserve">
+    <value>GB</value>
+  </data>
+  <data name="UnitAbbreviation_Gradian" xml:space="preserve">
+    <value>gon</value>
+  </data>
+  <data name="UnitAbbreviation_Gram" xml:space="preserve">
+    <value>g</value>
+  </data>
+  <data name="UnitAbbreviation_Hand" xml:space="preserve">
+    <value>hands</value>
+  </data>
+  <data name="UnitAbbreviation_Hectare" xml:space="preserve">
+    <value>ha</value>
+  </data>
+  <data name="UnitAbbreviation_Hectogram" xml:space="preserve">
+    <value>hg</value>
+  </data>
+  <data name="UnitAbbreviation_Horse" xml:space="preserve">
+    <value>horses</value>
+  </data>
+  <data name="UnitAbbreviation_Horsepower" xml:space="preserve">
+    <value>hp (US)</value>
+  </data>
+  <data name="UnitAbbreviation_Hour" xml:space="preserve">
+    <value>h</value>
+  </data>
+  <data name="UnitAbbreviation_Inch" xml:space="preserve">
+    <value>in</value>
+  </data>
+  <data name="UnitAbbreviation_Jet" xml:space="preserve">
+    <value>airliners</value>
+  </data>
+  <data name="UnitAbbreviation_Joule" xml:space="preserve">
+    <value>J</value>
+  </data>
+  <data name="UnitAbbreviation_JumboJet" xml:space="preserve">
+    <value>jumbo jets</value>
+  </data>
+  <data name="UnitAbbreviation_Kelvin" xml:space="preserve">
+    <value>K</value>
+  </data>
+  <data name="UnitAbbreviation_Kibibits" xml:space="preserve">
+    <value>Kib</value>
+  </data>
+  <data name="UnitAbbreviation_Kibibytes" xml:space="preserve">
+    <value>KiB</value>
+  </data>
+  <data name="UnitAbbreviation_KiloPascal" xml:space="preserve">
+    <value>kPa</value>
+  </data>
+  <data name="UnitAbbreviation_Kilobit" xml:space="preserve">
+    <value>kb</value>
+  </data>
+  <data name="UnitAbbreviation_Kilobyte" xml:space="preserve">
+    <value>kB</value>
+  </data>
+  <data name="UnitAbbreviation_Kilocalorie" xml:space="preserve">
+    <value>kcal</value>
+  </data>
+  <data name="UnitAbbreviation_Kilogram" xml:space="preserve">
+    <value>kg</value>
+  </data>
+  <data name="UnitAbbreviation_Kilojoule" xml:space="preserve">
+    <value>kJ</value>
+  </data>
+  <data name="UnitAbbreviation_Kilometer" xml:space="preserve">
+    <value>km</value>
+  </data>
+  <data name="UnitAbbreviation_KilometersPerHour" xml:space="preserve">
+    <value>km/h</value>
+  </data>
+  <data name="UnitAbbreviation_Kilowatt" xml:space="preserve">
+    <value>kW</value>
+  </data>
+  <data name="UnitAbbreviation_Kilowatthour" xml:space="preserve">
+    <value>kWh</value>
+  </data>
+  <data name="UnitAbbreviation_Knot" xml:space="preserve">
+    <value>kn</value>
+  </data>
+  <data name="UnitAbbreviation_LightBulb" xml:space="preserve">
+    <value>light bulbs</value>
+  </data>
+  <data name="UnitAbbreviation_Liter" xml:space="preserve">
+    <value>L</value>
+  </data>
+  <data name="UnitAbbreviation_LongTon" xml:space="preserve">
+    <value>ton (UK)</value>
+  </data>
+  <data name="UnitAbbreviation_Mach" xml:space="preserve">
+    <value>M</value>
+  </data>
+  <data name="UnitAbbreviation_Mebibits" xml:space="preserve">
+    <value>Mib</value>
+  </data>
+  <data name="UnitAbbreviation_Mebibytes" xml:space="preserve">
+    <value>MiB</value>
+  </data>
+  <data name="UnitAbbreviation_Megabit" xml:space="preserve">
+    <value>Mb</value>
+  </data>
+  <data name="UnitAbbreviation_Megabyte" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="UnitAbbreviation_Meter" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="UnitAbbreviation_MetersPerSecond" xml:space="preserve">
+    <value>m/s</value>
+  </data>
+  <data name="UnitAbbreviation_Micron" xml:space="preserve">
+    <value>µm</value>
+  </data>
+  <data name="UnitAbbreviation_Microsecond" xml:space="preserve">
+    <value>µs</value>
+  </data>
+  <data name="UnitAbbreviation_Mile" xml:space="preserve">
+    <value>mi</value>
+  </data>
+  <data name="UnitAbbreviation_MilesPerHour" xml:space="preserve">
+    <value>mph</value>
+  </data>
+  <data name="UnitAbbreviation_Milligram" xml:space="preserve">
+    <value>mg</value>
+  </data>
+  <data name="UnitAbbreviation_Milliliter" xml:space="preserve">
+    <value>mL</value>
+  </data>
+  <data name="UnitAbbreviation_Millimeter" xml:space="preserve">
+    <value>mm</value>
+  </data>
+  <data name="UnitAbbreviation_MillimeterOfMercury" xml:space="preserve">
+    <value>mmHg</value>
+  </data>
+  <data name="UnitAbbreviation_Millisecond" xml:space="preserve">
+    <value>ms</value>
+  </data>
+  <data name="UnitAbbreviation_Minute" xml:space="preserve">
+    <value>min</value>
+  </data>
+  <data name="UnitAbbreviation_Nanometer" xml:space="preserve">
+    <value>nm</value>
+  </data>
+  <data name="UnitAbbreviation_NauticalMile" xml:space="preserve">
+    <value>nmi</value>
+  </data>
+  <data name="UnitAbbreviation_Nibble" xml:space="preserve">
+    <value>nibble</value>
+  </data>
+  <data name="UnitAbbreviation_Ounce" xml:space="preserve">
+    <value>oz</value>
+  </data>
+  <data name="UnitAbbreviation_PSI" xml:space="preserve">
+    <value>psi</value>
+  </data>
+  <data name="UnitAbbreviation_Paper" xml:space="preserve">
+    <value>sheets of paper</value>
+  </data>
+  <data name="UnitAbbreviation_Paperclip" xml:space="preserve">
+    <value>paper clips</value>
+  </data>
+  <data name="UnitAbbreviation_Pascal" xml:space="preserve">
+    <value>Pa</value>
+  </data>
+  <data name="UnitAbbreviation_Pebibits" xml:space="preserve">
+    <value>Pib</value>
+  </data>
+  <data name="UnitAbbreviation_Pebibytes" xml:space="preserve">
+    <value>PiB</value>
+  </data>
+  <data name="UnitAbbreviation_Petabit" xml:space="preserve">
+    <value>Pb</value>
+  </data>
+  <data name="UnitAbbreviation_Petabyte" xml:space="preserve">
+    <value>PB</value>
+  </data>
+  <data name="UnitAbbreviation_PintUK" xml:space="preserve">
+    <value>pt (UK)</value>
+  </data>
+  <data name="UnitAbbreviation_PintUS" xml:space="preserve">
+    <value>pt (US)</value>
+  </data>
+  <data name="UnitAbbreviation_Pound" xml:space="preserve">
+    <value>lb</value>
+  </data>
+  <data name="UnitAbbreviation_Pyeong" xml:space="preserve">
+    <value>pyeong</value>
+  </data>
+  <data name="UnitAbbreviation_QuartUK" xml:space="preserve">
+    <value>qt (UK)</value>
+  </data>
+  <data name="UnitAbbreviation_QuartUS" xml:space="preserve">
+    <value>qt (US)</value>
+  </data>
+  <data name="UnitAbbreviation_Radian" xml:space="preserve">
+    <value>rad</value>
+  </data>
+  <data name="UnitAbbreviation_Second" xml:space="preserve">
+    <value>s</value>
+  </data>
+  <data name="UnitAbbreviation_ShortTon" xml:space="preserve">
+    <value>ton (US)</value>
+  </data>
+  <data name="UnitAbbreviation_SliceOfCake" xml:space="preserve">
+    <value>slices of cake</value>
+  </data>
+  <data name="UnitAbbreviation_Snowflake" xml:space="preserve">
+    <value>snowflakes</value>
+  </data>
+  <data name="UnitAbbreviation_SoccerBall" xml:space="preserve">
+    <value>soccer balls</value>
+  </data>
+  <data name="UnitAbbreviation_SoccerField" xml:space="preserve">
+    <value>soccer fields</value>
+  </data>
+  <data name="UnitAbbreviation_SquareCentimeter" xml:space="preserve">
+    <value>cm²</value>
+  </data>
+  <data name="UnitAbbreviation_SquareFoot" xml:space="preserve">
+    <value>ft²</value>
+  </data>
+  <data name="UnitAbbreviation_SquareInch" xml:space="preserve">
+    <value>in²</value>
+  </data>
+  <data name="UnitAbbreviation_SquareKilometer" xml:space="preserve">
+    <value>km²</value>
+  </data>
+  <data name="UnitAbbreviation_SquareMeter" xml:space="preserve">
+    <value>m²</value>
+  </data>
+  <data name="UnitAbbreviation_SquareMile" xml:space="preserve">
+    <value>mi²</value>
+  </data>
+  <data name="UnitAbbreviation_SquareMillimeter" xml:space="preserve">
+    <value>mm²</value>
+  </data>
+  <data name="UnitAbbreviation_SquareYard" xml:space="preserve">
+    <value>yd²</value>
+  </data>
+  <data name="UnitAbbreviation_Stone" xml:space="preserve">
+    <value>st</value>
+  </data>
+  <data name="UnitAbbreviation_SwimmingPool" xml:space="preserve">
+    <value>swimming pools</value>
+  </data>
+  <data name="UnitAbbreviation_TablespoonUK" xml:space="preserve">
+    <value>tbsp (UK)</value>
+  </data>
+  <data name="UnitAbbreviation_TablespoonUS" xml:space="preserve">
+    <value>tbsp (US)</value>
+  </data>
+  <data name="UnitAbbreviation_TeaspoonUK" xml:space="preserve">
+    <value>tsp (UK)</value>
+  </data>
+  <data name="UnitAbbreviation_TeaspoonUS" xml:space="preserve">
+    <value>tsp (US)</value>
+  </data>
+  <data name="UnitAbbreviation_Tebibits" xml:space="preserve">
+    <value>Tib</value>
+  </data>
+  <data name="UnitAbbreviation_Tebibytes" xml:space="preserve">
+    <value>TiB</value>
+  </data>
+  <data name="UnitAbbreviation_Terabit" xml:space="preserve">
+    <value>Tb</value>
+  </data>
+  <data name="UnitAbbreviation_Terabyte" xml:space="preserve">
+    <value>TB</value>
+  </data>
+  <data name="UnitAbbreviation_Tonne" xml:space="preserve">
+    <value>t</value>
+  </data>
+  <data name="UnitAbbreviation_TrainEngine" xml:space="preserve">
+    <value>locomotives</value>
+  </data>
+  <data name="UnitAbbreviation_Turtle" xml:space="preserve">
+    <value>turtles</value>
+  </data>
+  <data name="UnitAbbreviation_Watt" xml:space="preserve">
+    <value>W</value>
+  </data>
+  <data name="UnitAbbreviation_Week" xml:space="preserve">
+    <value>wk</value>
+  </data>
+  <data name="UnitAbbreviation_Whale" xml:space="preserve">
+    <value>whales</value>
+  </data>
+  <data name="UnitAbbreviation_Yard" xml:space="preserve">
+    <value>yd</value>
+  </data>
+  <data name="UnitAbbreviation_Year" xml:space="preserve">
+    <value>yr</value>
+  </data>
+  <data name="UnitAbbreviation_Yobibits" xml:space="preserve">
+    <value>Yib</value>
+  </data>
+  <data name="UnitAbbreviation_Yobibytes" xml:space="preserve">
+    <value>YiB</value>
+  </data>
+  <data name="UnitAbbreviation_Yottabit" xml:space="preserve">
+    <value>Yb</value>
+  </data>
+  <data name="UnitAbbreviation_Yottabyte" xml:space="preserve">
+    <value>YB</value>
+  </data>
+  <data name="UnitAbbreviation_Zebibits" xml:space="preserve">
+    <value>Zib</value>
+  </data>
+  <data name="UnitAbbreviation_Zebibytes" xml:space="preserve">
+    <value>ZiB</value>
+  </data>
+  <data name="UnitAbbreviation_Zetabits" xml:space="preserve">
+    <value>Zb</value>
+  </data>
+  <data name="UnitAbbreviation_Zetabytes" xml:space="preserve">
+    <value>ZB</value>
+  </data>
+  <data name="UnitName_Acre" xml:space="preserve">
+    <value>Acres</value>
+  </data>
+  <data name="UnitName_Angstrom" xml:space="preserve">
+    <value>Ångströms</value>
+  </data>
+  <data name="UnitName_Atmosphere" xml:space="preserve">
+    <value>Atmospheres</value>
+  </data>
+  <data name="UnitName_BTUPerMinute" xml:space="preserve">
+    <value>BTU per minute</value>
+  </data>
+  <data name="UnitName_Banana" xml:space="preserve">
+    <value>bananas</value>
+  </data>
+  <data name="UnitName_Bar" xml:space="preserve">
+    <value>Bars</value>
+  </data>
+  <data name="UnitName_Bathtub" xml:space="preserve">
+    <value>bathtubs</value>
+  </data>
+  <data name="UnitName_Battery" xml:space="preserve">
+    <value>AA batteries</value>
+  </data>
+  <data name="UnitName_Bit" xml:space="preserve">
+    <value>Bits</value>
+  </data>
+  <data name="UnitName_BritishThermalUnit" xml:space="preserve">
+    <value>British thermal units</value>
+  </data>
+  <data name="UnitName_Byte" xml:space="preserve">
+    <value>Bytes</value>
+  </data>
+  <data name="UnitName_CD" xml:space="preserve">
+    <value>CDs</value>
+  </data>
+  <data name="UnitName_Calorie" xml:space="preserve">
+    <value>Thermochemical calories</value>
+  </data>
+  <data name="UnitName_Carat" xml:space="preserve">
+    <value>Carats</value>
+  </data>
+  <data name="UnitName_Castle" xml:space="preserve">
+    <value>castles</value>
+  </data>
+  <data name="UnitName_Centigram" xml:space="preserve">
+    <value>Centigrams</value>
+  </data>
+  <data name="UnitName_Centimeter" xml:space="preserve">
+    <value>Centimeters</value>
+  </data>
+  <data name="UnitName_CentimetersPerSecond" xml:space="preserve">
+    <value>Centimeters per second</value>
+  </data>
+  <data name="UnitName_CoffeeCup" xml:space="preserve">
+    <value>coffee cups</value>
+  </data>
+  <data name="UnitName_CubicCentimeter" xml:space="preserve">
+    <value>Cubic centimeters</value>
+  </data>
+  <data name="UnitName_CubicFoot" xml:space="preserve">
+    <value>Cubic feet</value>
+  </data>
+  <data name="UnitName_CubicInch" xml:space="preserve">
+    <value>Cubic inches</value>
+  </data>
+  <data name="UnitName_CubicMeter" xml:space="preserve">
+    <value>Cubic meters</value>
+  </data>
+  <data name="UnitName_CubicYard" xml:space="preserve">
+    <value>Cubic yards</value>
+  </data>
+  <data name="UnitName_CupUS" xml:space="preserve">
+    <value>Cups (US)</value>
+  </data>
+  <data name="UnitName_DVD" xml:space="preserve">
+    <value>DVDs</value>
+  </data>
+  <data name="UnitName_Day" xml:space="preserve">
+    <value>Days</value>
+  </data>
+  <data name="UnitName_Decagram" xml:space="preserve">
+    <value>Decagrams</value>
+  </data>
+  <data name="UnitName_Decigram" xml:space="preserve">
+    <value>Decigrams</value>
+  </data>
+  <data name="UnitName_Degree" xml:space="preserve">
+    <value>Degrees</value>
+  </data>
+  <data name="UnitName_DegreesCelsius" xml:space="preserve">
+    <value>Celsius</value>
+  </data>
+  <data name="UnitName_DegreesFahrenheit" xml:space="preserve">
+    <value>Fahrenheit</value>
+  </data>
+  <data name="UnitName_Electron-Volt" xml:space="preserve">
+    <value>Electronvolts</value>
+  </data>
+  <data name="UnitName_Elephant" xml:space="preserve">
+    <value>elephants</value>
+  </data>
+  <data name="UnitName_Exabits" xml:space="preserve">
+    <value>Exabits</value>
+  </data>
+  <data name="UnitName_Exabytes" xml:space="preserve">
+    <value>Exabytes</value>
+  </data>
+  <data name="UnitName_Exbibits" xml:space="preserve">
+    <value>Exbibits</value>
+  </data>
+  <data name="UnitName_Exbibytes" xml:space="preserve">
+    <value>Exbibytes</value>
+  </data>
+  <data name="UnitName_FeetPerSecond" xml:space="preserve">
+    <value>Feet per second</value>
+  </data>
+  <data name="UnitName_FloppyDisk" xml:space="preserve">
+    <value>floppy disks</value>
+  </data>
+  <data name="UnitName_FluidOunceUK" xml:space="preserve">
+    <value>Fluid ounces (UK)</value>
+  </data>
+  <data name="UnitName_FluidOunceUS" xml:space="preserve">
+    <value>Fluid ounces (US)</value>
+  </data>
+  <data name="UnitName_Foot" xml:space="preserve">
+    <value>Feet</value>
+  </data>
+  <data name="UnitName_Foot-Pound" xml:space="preserve">
+    <value>Foot-pounds</value>
+  </data>
+  <data name="UnitName_Foot-PoundPerMinute" xml:space="preserve">
+    <value>Foot-pounds per minute</value>
+  </data>
+  <data name="UnitName_GallonUK" xml:space="preserve">
+    <value>Gallons (UK)</value>
+  </data>
+  <data name="UnitName_GallonUS" xml:space="preserve">
+    <value>Gallons (US)</value>
+  </data>
+  <data name="UnitName_Gibibits" xml:space="preserve">
+    <value>Gibibits</value>
+  </data>
+  <data name="UnitName_Gibibytes" xml:space="preserve">
+    <value>Gibibytes</value>
+  </data>
+  <data name="UnitName_Gigabit" xml:space="preserve">
+    <value>Gigabits</value>
+  </data>
+  <data name="UnitName_Gigabyte" xml:space="preserve">
+    <value>Gigabytes</value>
+  </data>
+  <data name="UnitName_Gradian" xml:space="preserve">
+    <value>Gradians</value>
+  </data>
+  <data name="UnitName_Gram" xml:space="preserve">
+    <value>Grams</value>
+  </data>
+  <data name="UnitName_Hand" xml:space="preserve">
+    <value>hands</value>
+  </data>
+  <data name="UnitName_Hectare" xml:space="preserve">
+    <value>Hectares</value>
+  </data>
+  <data name="UnitName_Hectogram" xml:space="preserve">
+    <value>Hectograms</value>
+  </data>
+  <data name="UnitName_Horse" xml:space="preserve">
+    <value>horses</value>
+  </data>
+  <data name="UnitName_Horsepower" xml:space="preserve">
+    <value>Horsepower (US)</value>
+  </data>
+  <data name="UnitName_Hour" xml:space="preserve">
+    <value>Hours</value>
+  </data>
+  <data name="UnitName_Inch" xml:space="preserve">
+    <value>Inches</value>
+  </data>
+  <data name="UnitName_Jet" xml:space="preserve">
+    <value>airliners</value>
+  </data>
+  <data name="UnitName_Joule" xml:space="preserve">
+    <value>Joules</value>
+  </data>
+  <data name="UnitName_JumboJet" xml:space="preserve">
+    <value>jumbo jets</value>
+  </data>
+  <data name="UnitName_Kelvin" xml:space="preserve">
+    <value>Kelvins</value>
+  </data>
+  <data name="UnitName_Kibibits" xml:space="preserve">
+    <value>Kibibits</value>
+  </data>
+  <data name="UnitName_Kibibytes" xml:space="preserve">
+    <value>Kibibytes</value>
+  </data>
+  <data name="UnitName_KiloPascal" xml:space="preserve">
+    <value>Kilopascals</value>
+  </data>
+  <data name="UnitName_Kilobit" xml:space="preserve">
+    <value>Kilobits</value>
+  </data>
+  <data name="UnitName_Kilobyte" xml:space="preserve">
+    <value>Kilobytes</value>
+  </data>
+  <data name="UnitName_Kilocalorie" xml:space="preserve">
+    <value>Food calories</value>
+  </data>
+  <data name="UnitName_Kilogram" xml:space="preserve">
+    <value>Kilograms</value>
+  </data>
+  <data name="UnitName_Kilojoule" xml:space="preserve">
+    <value>Kilojoules</value>
+  </data>
+  <data name="UnitName_Kilometer" xml:space="preserve">
+    <value>Kilometers</value>
+  </data>
+  <data name="UnitName_KilometersPerHour" xml:space="preserve">
+    <value>Kilometers per hour</value>
+  </data>
+  <data name="UnitName_Kilowatt" xml:space="preserve">
+    <value>Kilowatts</value>
+  </data>
+  <data name="UnitName_Kilowatthour" xml:space="preserve">
+    <value>Kilowatt-hours</value>
+  </data>
+  <data name="UnitName_Knot" xml:space="preserve">
+    <value>Knots</value>
+  </data>
+  <data name="UnitName_LightBulb" xml:space="preserve">
+    <value>light bulbs</value>
+  </data>
+  <data name="UnitName_Liter" xml:space="preserve">
+    <value>Liters</value>
+  </data>
+  <data name="UnitName_LongTon" xml:space="preserve">
+    <value>Long tons (UK)</value>
+  </data>
+  <data name="UnitName_Mach" xml:space="preserve">
+    <value>Mach</value>
+  </data>
+  <data name="UnitName_Mebibits" xml:space="preserve">
+    <value>Mebibits</value>
+  </data>
+  <data name="UnitName_Mebibytes" xml:space="preserve">
+    <value>Mebibytes</value>
+  </data>
+  <data name="UnitName_Megabit" xml:space="preserve">
+    <value>Megabits</value>
+  </data>
+  <data name="UnitName_Megabyte" xml:space="preserve">
+    <value>Megabytes</value>
+  </data>
+  <data name="UnitName_Meter" xml:space="preserve">
+    <value>Meters</value>
+  </data>
+  <data name="UnitName_MetersPerSecond" xml:space="preserve">
+    <value>Meters per second</value>
+  </data>
+  <data name="UnitName_Micron" xml:space="preserve">
+    <value>Micrometers</value>
+  </data>
+  <data name="UnitName_Microsecond" xml:space="preserve">
+    <value>Microseconds</value>
+  </data>
+  <data name="UnitName_Mile" xml:space="preserve">
+    <value>Miles</value>
+  </data>
+  <data name="UnitName_MilesPerHour" xml:space="preserve">
+    <value>Miles per hour</value>
+  </data>
+  <data name="UnitName_Milligram" xml:space="preserve">
+    <value>Milligrams</value>
+  </data>
+  <data name="UnitName_Milliliter" xml:space="preserve">
+    <value>Milliliters</value>
+  </data>
+  <data name="UnitName_Millimeter" xml:space="preserve">
+    <value>Millimeters</value>
+  </data>
+  <data name="UnitName_MillimeterOfMercury" xml:space="preserve">
+    <value>Millimeters of mercury</value>
+  </data>
+  <data name="UnitName_Millisecond" xml:space="preserve">
+    <value>Milliseconds</value>
+  </data>
+  <data name="UnitName_Minute" xml:space="preserve">
+    <value>Minutes</value>
+  </data>
+  <data name="UnitName_Nanometer" xml:space="preserve">
+    <value>Nanometers</value>
+  </data>
+  <data name="UnitName_NauticalMile" xml:space="preserve">
+    <value>Nautical miles</value>
+  </data>
+  <data name="UnitName_Nibble" xml:space="preserve">
+    <value>Nibbles</value>
+  </data>
+  <data name="UnitName_Ounce" xml:space="preserve">
+    <value>Ounces</value>
+  </data>
+  <data name="UnitName_PSI" xml:space="preserve">
+    <value>Pounds per square inch</value>
+  </data>
+  <data name="UnitName_Paper" xml:space="preserve">
+    <value>sheets of paper</value>
+  </data>
+  <data name="UnitName_Paperclip" xml:space="preserve">
+    <value>paper clips</value>
+  </data>
+  <data name="UnitName_Pascal" xml:space="preserve">
+    <value>Pascals</value>
+  </data>
+  <data name="UnitName_Pebibits" xml:space="preserve">
+    <value>Pebibits</value>
+  </data>
+  <data name="UnitName_Pebibytes" xml:space="preserve">
+    <value>Pebibytes</value>
+  </data>
+  <data name="UnitName_Petabit" xml:space="preserve">
+    <value>Petabits</value>
+  </data>
+  <data name="UnitName_Petabyte" xml:space="preserve">
+    <value>Petabytes</value>
+  </data>
+  <data name="UnitName_PintUK" xml:space="preserve">
+    <value>Pints (UK)</value>
+  </data>
+  <data name="UnitName_PintUS" xml:space="preserve">
+    <value>Pints (US)</value>
+  </data>
+  <data name="UnitName_Pound" xml:space="preserve">
+    <value>Pounds</value>
+  </data>
+  <data name="UnitName_Pyeong" xml:space="preserve">
+    <value>Pyeong</value>
+  </data>
+  <data name="UnitName_QuartUK" xml:space="preserve">
+    <value>Quarts (UK)</value>
+  </data>
+  <data name="UnitName_QuartUS" xml:space="preserve">
+    <value>Quarts (US)</value>
+  </data>
+  <data name="UnitName_Radian" xml:space="preserve">
+    <value>Radians</value>
+  </data>
+  <data name="UnitName_Second" xml:space="preserve">
+    <value>Seconds</value>
+  </data>
+  <data name="UnitName_ShortTon" xml:space="preserve">
+    <value>Short tons (US)</value>
+  </data>
+  <data name="UnitName_SliceOfCake" xml:space="preserve">
+    <value>slices of cake</value>
+  </data>
+  <data name="UnitName_Snowflake" xml:space="preserve">
+    <value>snowflakes</value>
+  </data>
+  <data name="UnitName_SoccerBall" xml:space="preserve">
+    <value>soccer balls</value>
+  </data>
+  <data name="UnitName_SoccerField" xml:space="preserve">
+    <value>soccer fields</value>
+  </data>
+  <data name="UnitName_SquareCentimeter" xml:space="preserve">
+    <value>Square centimeters</value>
+  </data>
+  <data name="UnitName_SquareFoot" xml:space="preserve">
+    <value>Square feet</value>
+  </data>
+  <data name="UnitName_SquareInch" xml:space="preserve">
+    <value>Square inches</value>
+  </data>
+  <data name="UnitName_SquareKilometer" xml:space="preserve">
+    <value>Square kilometers</value>
+  </data>
+  <data name="UnitName_SquareMeter" xml:space="preserve">
+    <value>Square meters</value>
+  </data>
+  <data name="UnitName_SquareMile" xml:space="preserve">
+    <value>Square miles</value>
+  </data>
+  <data name="UnitName_SquareMillimeter" xml:space="preserve">
+    <value>Square millimeters</value>
+  </data>
+  <data name="UnitName_SquareYard" xml:space="preserve">
+    <value>Square yards</value>
+  </data>
+  <data name="UnitName_Stone" xml:space="preserve">
+    <value>Stones</value>
+  </data>
+  <data name="UnitName_SwimmingPool" xml:space="preserve">
+    <value>swimming pools</value>
+  </data>
+  <data name="UnitName_TablespoonUK" xml:space="preserve">
+    <value>Tablespoons (UK)</value>
+  </data>
+  <data name="UnitName_TablespoonUS" xml:space="preserve">
+    <value>Tablespoons (US)</value>
+  </data>
+  <data name="UnitName_TeaspoonUK" xml:space="preserve">
+    <value>Teaspoons (UK)</value>
+  </data>
+  <data name="UnitName_TeaspoonUS" xml:space="preserve">
+    <value>Teaspoons (US)</value>
+  </data>
+  <data name="UnitName_Tebibits" xml:space="preserve">
+    <value>Tebibits</value>
+  </data>
+  <data name="UnitName_Tebibytes" xml:space="preserve">
+    <value>Tebibytes</value>
+  </data>
+  <data name="UnitName_Terabit" xml:space="preserve">
+    <value>Terabits</value>
+  </data>
+  <data name="UnitName_Terabyte" xml:space="preserve">
+    <value>Terabytes</value>
+  </data>
+  <data name="UnitName_Tonne" xml:space="preserve">
+    <value>Metric tonnes</value>
+  </data>
+  <data name="UnitName_TrainEngine" xml:space="preserve">
+    <value>locomotives</value>
+  </data>
+  <data name="UnitName_Turtle" xml:space="preserve">
+    <value>turtles</value>
+  </data>
+  <data name="UnitName_Watt" xml:space="preserve">
+    <value>Watts</value>
+  </data>
+  <data name="UnitName_Week" xml:space="preserve">
+    <value>Weeks</value>
+  </data>
+  <data name="UnitName_Whale" xml:space="preserve">
+    <value>whales</value>
+  </data>
+  <data name="UnitName_Yard" xml:space="preserve">
+    <value>Yards</value>
+  </data>
+  <data name="UnitName_Year" xml:space="preserve">
+    <value>Years</value>
+  </data>
+  <data name="UnitName_Yobibits" xml:space="preserve">
+    <value>Yobibits</value>
+  </data>
+  <data name="UnitName_Yobibytes" xml:space="preserve">
+    <value>Yobibytes</value>
+  </data>
+  <data name="UnitName_Yottabit" xml:space="preserve">
+    <value>Yottabits</value>
+  </data>
+  <data name="UnitName_Yottabyte" xml:space="preserve">
+    <value>Yottabytes</value>
+  </data>
+  <data name="UnitName_Zebibits" xml:space="preserve">
+    <value>Zebibits</value>
+  </data>
+  <data name="UnitName_Zebibytes" xml:space="preserve">
+    <value>Zebibytes</value>
+  </data>
+  <data name="UnitName_Zetabits" xml:space="preserve">
+    <value>Zettabits</value>
+  </data>
+  <data name="UnitName_Zetabytes" xml:space="preserve">
+    <value>Zettabytes</value>
+  </data>
+  <data name="UnitsHeading.Text" xml:space="preserve">
+    <value>Angle units</value>
+  </data>
+  <data name="UnmatchedParenthesis" xml:space="preserve">
+    <value>A closing parenthesis is missing</value>
+  </data>
+  <data name="UpdatingCurrencyRates" xml:space="preserve">
+    <value>Updating rates…</value>
+  </data>
+  <data name="VariableMaxTextBox.AutomationName" xml:space="preserve">
+    <value>Maximum value</value>
+  </data>
+  <data name="VariableMinTextBox.AutomationName" xml:space="preserve">
+    <value>Minimum value</value>
+  </data>
+  <data name="VariableStepTextBox.AutomationName" xml:space="preserve">
+    <value>Step</value>
+  </data>
+  <data name="VerticalAsymptotes" xml:space="preserve">
+    <value>Vertical asymptotes</value>
+  </data>
+  <data name="XIntercept" xml:space="preserve">
+    <value>X-intercepts</value>
+  </data>
+  <data name="YIntercept" xml:space="preserve">
+    <value>Y-intercept</value>
+  </data>
+  <data name="YearsLabel.Text" xml:space="preserve">
+    <value>Years</value>
+  </data>
+  <data name="absButton.AutomationName" xml:space="preserve">
+    <value>Absolute value</value>
+  </data>
+  <data name="arithmeticShiftButton.Content" xml:space="preserve">
+    <value>Arithmetic shift</value>
+  </data>
+  <data name="backSpaceButton.AutomationName" xml:space="preserve">
+    <value>Backspace</value>
+  </data>
+  <data name="bitFlip.ToolTip" xml:space="preserve">
+    <value>Bit keypad</value>
+  </data>
+  <data name="bitShiftButton.Text" xml:space="preserve">
+    <value>Bit shift</value>
+  </data>
+  <data name="bitwiseButton.Text" xml:space="preserve">
+    <value>Bitwise</value>
+  </data>
+  <data name="ceilButton.AutomationName" xml:space="preserve">
+    <value>Ceiling</value>
+  </data>
+  <data name="clearButton.AutomationName" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="clearEntryButton.AutomationName" xml:space="preserve">
+    <value>Clear entry</value>
+  </data>
+  <data name="closeParenthesisButton.AutomationName" xml:space="preserve">
+    <value>Closing parenthesis</value>
+  </data>
+  <data name="colorChooserButton.ToolTip" xml:space="preserve">
+    <value>Change color</value>
+  </data>
+  <data name="cubeRootButton.AutomationName" xml:space="preserve">
+    <value>Cube root</value>
+  </data>
+  <data name="decimalSeparatorButton.AutomationName" xml:space="preserve">
+    <value>Decimal separator</value>
+  </data>
+  <data name="degreesButton.AutomationName" xml:space="preserve">
+    <value>Angle unit</value>
+  </data>
+  <data name="disableTracingButtonToolTip" xml:space="preserve">
+    <value>Stop tracing</value>
+  </data>
+  <data name="divideButton.AutomationName" xml:space="preserve">
+    <value>Divide</value>
+  </data>
+  <data name="enableTracingButtonToolTip" xml:space="preserve">
+    <value>Start tracing</value>
+  </data>
+  <data name="equalButton.AutomationName" xml:space="preserve">
+    <value>Equals</value>
+  </data>
+  <data name="eulerButton.AutomationName" xml:space="preserve">
+    <value>Euler’s number</value>
+  </data>
+  <data name="expButton.AutomationName" xml:space="preserve">
+    <value>Exponent entry</value>
+  </data>
+  <data name="factorialButton.AutomationName" xml:space="preserve">
+    <value>Factorial</value>
+  </data>
+  <data name="floorButton.AutomationName" xml:space="preserve">
+    <value>Floor</value>
+  </data>
+  <data name="ftoeButton.AutomationName" xml:space="preserve">
+    <value>Scientific notation</value>
+  </data>
+  <data name="fullKeypad.ToolTip" xml:space="preserve">
+    <value>Full keypad</value>
+  </data>
+  <data name="funcButton.AutomationName" xml:space="preserve">
+    <value>Functions</value>
+  </data>
+  <data name="funcButton.Text" xml:space="preserve">
+    <value>Function</value>
+  </data>
+  <data name="functionAnalysisButton.ToolTip" xml:space="preserve">
+    <value>Analyze function</value>
+  </data>
+  <data name="graphSettingsButton.ToolTip" xml:space="preserve">
+    <value>Graph options</value>
+  </data>
+  <data name="hypButton.AutomationName" xml:space="preserve">
+    <value>Hyperbolic functions</value>
+  </data>
+  <data name="inequalityButton.AutomationName" xml:space="preserve">
+    <value>Inequalities</value>
+  </data>
+  <data name="inequalityButton.Text" xml:space="preserve">
+    <value>Inequalities</value>
+  </data>
+  <data name="invertButton.AutomationName" xml:space="preserve">
+    <value>Reciprocal</value>
+  </data>
+  <data name="logBase10Button.AutomationName" xml:space="preserve">
+    <value>Logarithm base 10</value>
+  </data>
+  <data name="logBaseEButton.AutomationName" xml:space="preserve">
+    <value>Natural logarithm</value>
+  </data>
+  <data name="logBaseY.AutomationName" xml:space="preserve">
+    <value>Logarithm base y</value>
+  </data>
+  <data name="logicalShiftButton.Content" xml:space="preserve">
+    <value>Logical shift</value>
+  </data>
+  <data name="mathRichEditBox.PlaceholderText" xml:space="preserve">
+    <value>Enter an expression</value>
+  </data>
+  <data name="memButton.AutomationName" xml:space="preserve">
+    <value>Save to memory</value>
+  </data>
+  <data name="memButton.ToolTip" xml:space="preserve">
+    <value>Save to memory (Ctrl+M)</value>
+  </data>
+  <data name="minusButton.AutomationName" xml:space="preserve">
+    <value>Minus</value>
+  </data>
+  <data name="modButton.AutomationName" xml:space="preserve">
+    <value>Modulo</value>
+  </data>
+  <data name="multiplyButton.AutomationName" xml:space="preserve">
+    <value>Multiply</value>
+  </data>
+  <data name="negateButton.AutomationName" xml:space="preserve">
+    <value>Change sign</value>
+  </data>
+  <data name="openParenthesisButton.AutomationName" xml:space="preserve">
+    <value>Opening parenthesis</value>
+  </data>
+  <data name="percentButton.AutomationName" xml:space="preserve">
+    <value>Percent</value>
+  </data>
+  <data name="piButton.AutomationName" xml:space="preserve">
+    <value>Pi</value>
+  </data>
+  <data name="plusButton.AutomationName" xml:space="preserve">
+    <value>Plus</value>
+  </data>
+  <data name="powerButton.AutomationName" xml:space="preserve">
+    <value>x to the power of y</value>
+  </data>
+  <data name="powerOf10Button.AutomationName" xml:space="preserve">
+    <value>Ten to the power of x</value>
+  </data>
+  <data name="powerOfEButton.AutomationName" xml:space="preserve">
+    <value>e to the power of x</value>
+  </data>
+  <data name="qwordButton.AutomationName" xml:space="preserve">
+    <value>Word size</value>
+  </data>
+  <data name="removeButton.ToolTip" xml:space="preserve">
+    <value>Remove equation</value>
+  </data>
+  <data name="rotateCarryShiftButton.Content" xml:space="preserve">
+    <value>Rotation through carry</value>
+  </data>
+  <data name="rotateCircularButton.Content" xml:space="preserve">
+    <value>Circular rotation</value>
+  </data>
+  <data name="shareButton.ToolTip" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="shiftButton.AutomationName" xml:space="preserve">
+    <value>Second functions</value>
+  </data>
+  <data name="showEquationButtonToolTip" xml:space="preserve">
+    <value>Show or hide the graph</value>
+  </data>
+  <data name="squareRootButton.AutomationName" xml:space="preserve">
+    <value>Square root</value>
+  </data>
+  <data name="submitButton.AutomationName" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="trigButton.AutomationName" xml:space="preserve">
+    <value>Trigonometry</value>
+  </data>
+  <data name="trigButton.Text" xml:space="preserve">
+    <value>Trigonometry</value>
+  </data>
+  <data name="trigShiftButton.AutomationName" xml:space="preserve">
+    <value>Inverse functions</value>
+  </data>
+  <data name="twoPowerXButton.AutomationName" xml:space="preserve">
+    <value>Two to the power of x</value>
+  </data>
+  <data name="xpower2Button.AutomationName" xml:space="preserve">
+    <value>Square</value>
+  </data>
+  <data name="xpower3Button.AutomationName" xml:space="preserve">
+    <value>Cube</value>
+  </data>
+  <data name="ySquareRootButton.AutomationName" xml:space="preserve">
+    <value>y-th root of x</value>
+  </data>
+  <data name="zoomInButton.ToolTip" xml:space="preserve">
+    <value>Zoom in (Ctrl + plus)</value>
+  </data>
+  <data name="zoomOutButton.ToolTip" xml:space="preserve">
+    <value>Zoom out (Ctrl + minus)</value>
+  </data>
+</root>

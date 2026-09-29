@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+  <!-- The cache folder of the app (AppFolders.Cache is inside it on Android). -->
+  <cache-path name="cache" path="." />
+</paths>

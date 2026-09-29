@@ -1,0 +1,9 @@
+# Buttons of the "Sponsor" link of the repository. Fill in the services you use and remove the others.
+# GitHub Sponsors pays out through Stripe, which is not available in every country; Boosty and direct links work
+# where it is not.
+
+# github: [ilyashdev]
+# ko_fi: your-name
+custom:
+  # - https://boosty.to/your-name
+  # - https://your-site.example/donate

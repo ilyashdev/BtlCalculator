@@ -1,0 +1,152 @@
+# A version tag (git tag v0.2.0 && git push origin v0.2.0) publishes a GitHub release with the app for every platform:
+# Windows and Linux as single Native AOT binaries (x64 and arm64), and Android as an APK.
+#
+# The APK is signed with the release key when the repository has these secrets (Settings > Secrets and variables >
+# Actions), otherwise with a debug key (fine to install, not for Google Play):
+#   ANDROID_KEYSTORE           the keystore file in base64 (base64 -w0 release.keystore)
+#   ANDROID_KEYSTORE_PASSWORD  its password
+#   ANDROID_KEY_ALIAS          the alias of the key in it
+#   ANDROID_KEY_PASSWORD       the password of the key
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  desktop:
+    name: Desktop (${{ matrix.rid }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        # Native AOT compiles for the system it runs on, so every target has a runner of its own.
+        include:
+          - { os: windows-latest, rid: win-x64 }
+          - { os: windows-11-arm, rid: win-arm64 }
+          - { os: ubuntu-latest, rid: linux-x64 }
+          - { os: ubuntu-24.04-arm, rid: linux-arm64 }
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Install the native toolchain
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y clang zlib1g-dev
+
+      - name: Publish
+        run: >
+          dotnet publish src/Calculator.Desktop -c Release -r ${{ matrix.rid }}
+          -p:Version="${GITHUB_REF_NAME#v}" -o publish
+
+      # Debug symbols stay out of the download: they are several times larger than the app.
+      - name: Pack
+        run: |
+          name="BtlCalculator-${GITHUB_REF_NAME#v}-${{ matrix.rid }}"
+          rm -f publish/*.pdb publish/*.dbg
+          mkdir dist
+          if [[ "${{ runner.os }}" == "Windows" ]]; then
+            pwsh -Command "Compress-Archive -Path publish/* -DestinationPath dist/$name.zip"
+          else
+            tar -czf "dist/$name.tar.gz" -C publish .
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: desktop-${{ matrix.rid }}
+          path: dist/*
+          if-no-files-found: error
+
+  android:
+    name: Android
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: microsoft
+          java-version: 21
+
+      - name: Install the android workload
+        run: dotnet workload install android
+
+      - name: Install the Android SDK packages
+        run: >
+          dotnet build src/Calculator.Android -t:InstallAndroidDependencies
+          -p:AndroidSdkDirectory="$ANDROID_HOME" -p:AcceptAndroidSDKLicenses=true
+
+      # ApplicationVersion is the number Android compares on updates, so it grows with every run of this workflow.
+      - name: Build the APK
+        env:
+          ANDROID_KEYSTORE: ${{ secrets.ANDROID_KEYSTORE }}
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          signing=()
+          if [[ -n "$ANDROID_KEYSTORE" ]]; then
+            echo "$ANDROID_KEYSTORE" | base64 -d > "$RUNNER_TEMP/release.keystore"
+            signing=(
+              -p:AndroidKeyStore=true
+              -p:AndroidSigningKeyStore="$RUNNER_TEMP/release.keystore"
+              -p:AndroidSigningKeyAlias="$ANDROID_KEY_ALIAS"
+              -p:AndroidSigningStorePass=env:ANDROID_KEYSTORE_PASSWORD
+              -p:AndroidSigningKeyPass=env:ANDROID_KEY_PASSWORD
+            )
+          else
+            echo "::warning::No release key in the secrets: the APK is signed with a debug key."
+          fi
+
+          dotnet publish src/Calculator.Android -c Release -o publish \
+            -p:AndroidSdkDirectory="$ANDROID_HOME" \
+            -p:Version="${GITHUB_REF_NAME#v}" \
+            -p:ApplicationVersion=${{ github.run_number }} \
+            "${signing[@]}"
+
+          mkdir dist
+          cp publish/*-Signed.apk "dist/BtlCalculator-${GITHUB_REF_NAME#v}-android.apk"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: android
+          path: dist/*
+          if-no-files-found: error
+
+  release:
+    name: GitHub release
+    needs: [desktop, android]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v5
+        with:
+          path: dist
+          merge-multiple: true
+
+      # A tag with a suffix (v0.2.0-beta.1) is marked as a pre-release.
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true
+          prerelease: ${{ contains(github.ref_name, '-') }}

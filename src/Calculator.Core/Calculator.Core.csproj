@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Platform independent calculator logic: no UI or platform dependencies, used by the app on every platform and fully tested. -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>Calculator.Core</RootNamespace>
+    <!-- Trimming and Native AOT analyzers: the core must stay usable in AOT builds (the Linux app is one). -->
+    <IsAotCompatible>true</IsAotCompatible>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Calculator.Core.Tests" />
+  </ItemGroup>
+
+</Project>
