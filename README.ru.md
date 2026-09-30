@@ -1,4 +1,4 @@
-# Better than Legacy Calculator
+# <img src="src/Calculator.UI/Assets/logo.svg" alt="" width="64" height="64" align="absmiddle"> Better than Legacy Calculator
 
 **Сколько на самом деле стоит код Microsoft, если с помощью Claude за день с нуля можно переписать их калькулятор, который Microsoft не
 может починить уже много лет?**

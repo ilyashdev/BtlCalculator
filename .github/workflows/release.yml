@@ -120,7 +120,26 @@ jobs:
         run: |
           signing=()
           if [[ -n "$ANDROID_KEYSTORE" ]]; then
-            echo "$ANDROID_KEYSTORE" | base64 -d > "$RUNNER_TEMP/release.keystore"
+            # Line breaks and spaces a copy and paste may add to the secret are dropped.
+            if ! printf '%s' "$ANDROID_KEYSTORE" | tr -d '[:space:]' | base64 -d > "$RUNNER_TEMP/release.keystore"; then
+              echo "::error::ANDROID_KEYSTORE is not valid base64."
+              exit 1
+            fi
+
+            # Clear messages here instead of a bare "java exited with code 2" from the signing step.
+            if ! keytool -list -keystore "$RUNNER_TEMP/release.keystore" -storepass:env ANDROID_KEYSTORE_PASSWORD > /dev/null; then
+              echo "::error::The keystore (ANDROID_KEYSTORE) cannot be opened with ANDROID_KEYSTORE_PASSWORD: a wrong password or a damaged file."
+              exit 1
+            fi
+            if ! keytool -list -keystore "$RUNNER_TEMP/release.keystore" -storepass:env ANDROID_KEYSTORE_PASSWORD -alias "$ANDROID_KEY_ALIAS" > /dev/null; then
+              echo "::error::The keystore has no key named '$ANDROID_KEY_ALIAS' (ANDROID_KEY_ALIAS)."
+              exit 1
+            fi
+            # A PKCS12 keystore (the default of keytool) has one password for the store and the key.
+            if [[ "$ANDROID_KEY_PASSWORD" != "$ANDROID_KEYSTORE_PASSWORD" ]]; then
+              echo "::warning::ANDROID_KEY_PASSWORD differs from ANDROID_KEYSTORE_PASSWORD; for a PKCS12 keystore they are the same."
+            fi
+
             signing=(
               -p:AndroidKeyStore=true
               -p:AndroidSigningKeyStore="$RUNNER_TEMP/release.keystore"
