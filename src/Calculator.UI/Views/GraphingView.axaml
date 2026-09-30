@@ -41,8 +41,13 @@
             <Setter Property="Foreground" Value="White" />
         </Style>
 
-        <!-- Actions of an equation line: analysis, color, line style, remove -->
+        <!--
+            Actions of an equation line: analysis, color, line style, remove. They do not take the focus: on touch
+            screens there is no hover, so they show only while the equation is edited, and a tap that took the focus
+            from the text box would hide them (and the on-screen keyboard) before the tap ends, and nothing happened.
+        -->
         <Style Selector="Button.equationAction">
+            <Setter Property="Focusable" Value="False" />
             <Setter Property="FontSize" Value="14" />
             <Setter Property="Width" Value="32" />
             <Setter Property="Height" Value="32" />

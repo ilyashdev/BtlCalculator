@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
   <!-- Currency rates are downloaded (ExchangeRate-API); nothing else goes online. -->
   <uses-permission android:name="android.permission.INTERNET" />
-  <application android:label="BTL Calculator" android:supportsRtl="true">
+  <application android:label="Calculator" android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher" android:supportsRtl="true">
     <!-- Lets the share sheet hand the graph picture (in the cache folder) to other apps. -->
     <provider android:name="androidx.core.content.FileProvider"
               android:authorities="com.btlcalculator.app.files"

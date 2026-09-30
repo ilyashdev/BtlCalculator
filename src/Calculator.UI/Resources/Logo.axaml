@@ -1,0 +1,70 @@
+<!--
+    The logo of the app (Assets/logo.svg) as a drawing: the About section shows it and the window icon is rendered from
+    it. Avalonia does not draw SVG files, so the drawing is repeated here; change it together with logo.svg.
+    Gradient points are absolute, in the 512 x 512 space of the SVG, like its userSpaceOnUse gradients.
+-->
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <LinearGradientBrush x:Key="LogoAccent" StartPoint="136,76" EndPoint="376,444">
+        <GradientStop Offset="0" Color="#FFC24B" />
+        <GradientStop Offset="0.5" Color="#FF8A3D" />
+        <GradientStop Offset="1" Color="#FF4F3A" />
+    </LinearGradientBrush>
+
+    <DrawingImage x:Key="AppLogo">
+        <DrawingGroup>
+            <!-- The whole 512 x 512 square, so the logo keeps the margins of the SVG -->
+            <GeometryDrawing Brush="Transparent" Geometry="M0,0 H512 V512 H0 Z" />
+
+            <!-- Body -->
+            <GeometryDrawing Geometry="M168,32 H344 A72,72 0 0 1 416,104 V408 A72,72 0 0 1 344,480 H168 A72,72 0 0 1 96,408 V104 A72,72 0 0 1 168,32 Z">
+                <GeometryDrawing.Brush>
+                    <LinearGradientBrush StartPoint="96,32" EndPoint="416,480">
+                        <GradientStop Offset="0" Color="#2A2630" />
+                        <GradientStop Offset="1" Color="#16141A" />
+                    </LinearGradientBrush>
+                </GeometryDrawing.Brush>
+            </GeometryDrawing>
+            <GeometryDrawing Geometry="M168,36 H344 A68,68 0 0 1 412,104 V408 A68,68 0 0 1 344,476 H168 A68,68 0 0 1 100,408 V104 A68,68 0 0 1 168,36 Z">
+                <GeometryDrawing.Pen>
+                    <Pen Thickness="8">
+                        <Pen.Brush>
+                            <LinearGradientBrush StartPoint="96,32" EndPoint="416,480" Opacity="0.9">
+                                <GradientStop Offset="0" Color="#FFB547" />
+                                <GradientStop Offset="1" Color="#FF5E3A" />
+                            </LinearGradientBrush>
+                        </Pen.Brush>
+                    </Pen>
+                </GeometryDrawing.Pen>
+            </GeometryDrawing>
+
+            <!-- Display with "tan(10x)" -->
+            <GeometryDrawing Brush="#12FFFFFF"
+                             Geometry="M166,76 H346 A30,30 0 0 1 376,106 V142 A30,30 0 0 1 346,172 H166 A30,30 0 0 1 136,142 V106 A30,30 0 0 1 166,76 Z" />
+            <GeometryDrawing Geometry="M179,104 V132 Q179,140 187,140 H191 M172,116 H188 M218,128 A10,12 0 1 1 198,128 A10,12 0 1 1 218,128 M218,116 V140 M226,140 V116 M226,128 Q226,116 236,116 Q246,116 246,128 V140 M262,102 Q250,125 262,148 M270,110 L278,104 V140 M306,122 A10,18 0 1 1 286,122 A10,18 0 1 1 306,122 M314,116 L332,140 M332,116 L314,140 M340,102 Q352,125 340,148">
+                <GeometryDrawing.Pen>
+                    <Pen Brush="{StaticResource LogoAccent}" Thickness="6" LineCap="Round" LineJoin="Round" />
+                </GeometryDrawing.Pen>
+            </GeometryDrawing>
+
+            <!-- Tonal keys and the accent key -->
+            <GeometryDrawing Brush="#14FFFFFF"
+                             Geometry="M168,204 H212 A32,32 0 0 1 244,236 V280 A32,32 0 0 1 212,312 H168 A32,32 0 0 1 136,280 V236 A32,32 0 0 1 168,204 Z M300,204 H344 A32,32 0 0 1 376,236 V280 A32,32 0 0 1 344,312 H300 A32,32 0 0 1 268,280 V236 A32,32 0 0 1 300,204 Z M168,336 H212 A32,32 0 0 1 244,368 V412 A32,32 0 0 1 212,444 H168 A32,32 0 0 1 136,412 V368 A32,32 0 0 1 168,336 Z" />
+            <GeometryDrawing Brush="{StaticResource LogoAccent}"
+                             Geometry="M300,336 H344 A32,32 0 0 1 376,368 V412 A32,32 0 0 1 344,444 H300 A32,32 0 0 1 268,412 V368 A32,32 0 0 1 300,336 Z" />
+
+            <!-- + − × = -->
+            <GeometryDrawing Geometry="M166,258 H214 M190,234 V282 M298,258 H346 M190,364 V416 M167.5,377 L212.5,403 M167.5,403 L212.5,377">
+                <GeometryDrawing.Pen>
+                    <Pen Brush="{StaticResource LogoAccent}" Thickness="12" LineCap="Round" />
+                </GeometryDrawing.Pen>
+            </GeometryDrawing>
+            <GeometryDrawing Geometry="M298,377 H346 M298,403 H346">
+                <GeometryDrawing.Pen>
+                    <Pen Brush="#1C1A20" Thickness="12" LineCap="Round" />
+                </GeometryDrawing.Pen>
+            </GeometryDrawing>
+        </DrawingGroup>
+    </DrawingImage>
+</ResourceDictionary>

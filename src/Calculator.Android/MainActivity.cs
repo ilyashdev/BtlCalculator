@@ -8,7 +8,7 @@ namespace Calculator.Android;
 
 /// <summary>The one screen of the app; Avalonia shows the main view in it.</summary>
 [Activity(
-    Label = "BTL Calculator",
+    Label = "Calculator",
     Theme = "@style/CalculatorTheme",
     MainLauncher = true,
     ConfigurationChanges = ConfigChanges.Orientation | ConfigChanges.ScreenSize | ConfigChanges.UiMode | ConfigChanges.ScreenLayout)]

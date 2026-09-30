@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- The app logo: window and taskbar icon, the .exe icon, the Android launcher icon (adaptive), About in Settings.
+- A link to the project on GitHub in About.
+- The installed app is named "Calculator" (launcher, Start menu, window title); About still shows BTL Calculator.
+- Releases: the Android APK is signed with the project's release key; a Microsoft Store package (MSIX bundle for x64
+  and arm64) is built once the Store identity is set up.
+
 ## 0.1.0 — first public version
 
 The whole calculator, rewritten from scratch in C# on Avalonia.

@@ -38,10 +38,16 @@
             <Border Padding="16" BorderThickness="1"
                     BorderBrush="{DynamicResource KeyBorder}"
                     Background="{DynamicResource NumberFill}" CornerRadius="4">
-                <StackPanel Spacing="4">
-                    <TextBlock Text="{x:Static app:Branding.ShortName}" FontSize="14" />
-                    <TextBlock x:Name="VersionLabel" FontSize="12" Opacity="0.7" />
-                </StackPanel>
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                    <Image Source="{StaticResource AppLogo}" Width="48" Height="48" VerticalAlignment="Center" />
+                    <StackPanel Grid.Column="1" Spacing="4" VerticalAlignment="Center">
+                        <TextBlock Text="{x:Static app:Branding.ShortName}" FontSize="14" />
+                        <TextBlock x:Name="VersionLabel" FontSize="12" Opacity="0.7" />
+                        <Button Classes="link" FontSize="12" Click="OnProjectLinkClick" ToolTip.Tip="{x:Static app:Branding.ProjectUrl}">
+                            <TextBlock Text="{x:Static app:Branding.ProjectUrlText}" TextDecorations="Underline" />
+                        </Button>
+                    </StackPanel>
+                </Grid>
             </Border>
         </StackPanel>
     </ScrollViewer>

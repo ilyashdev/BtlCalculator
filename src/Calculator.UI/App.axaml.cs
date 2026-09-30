@@ -3,6 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
+using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Calculator.UI.Platform;
 using Calculator.UI.Services;
@@ -120,7 +121,8 @@ public partial class App : Application
     {
         var window = new Window
         {
-            Title = Branding.ShortName,
+            Title = Branding.AppName,
+            Icon = CreateWindowIcon(),
             MinWidth = MinimumWidth,
             MinHeight = MinimumHeight,
             WindowStartupLocation = WindowStartupLocation.CenterScreen,
@@ -152,6 +154,24 @@ public partial class App : Application
             }
         };
         return window;
+    }
+
+    /// <summary>The logo (Resources/Logo.axaml) as a picture for the title bar, the taskbar and the window switcher.</summary>
+    private static WindowIcon? CreateWindowIcon()
+    {
+        if (Current?.TryGetResource("AppLogo", null, out object? resource) != true || resource is not IImage logo)
+        {
+            return null;
+        }
+
+        const int size = 256;
+        var bitmap = new RenderTargetBitmap(new PixelSize(size, size));
+        using (DrawingContext context = bitmap.CreateDrawingContext())
+        {
+            logo.Draw(context, new Rect(logo.Size), new Rect(0, 0, size, size));
+        }
+
+        return new WindowIcon(bitmap);
     }
 
     /// <summary>

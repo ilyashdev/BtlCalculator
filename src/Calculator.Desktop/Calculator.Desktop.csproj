@@ -15,6 +15,8 @@
     <RootNamespace>Calculator.Desktop</RootNamespace>
     <AssemblyName>BtlCalculator</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!-- The icon of the .exe in Windows Explorer; made from the logo by LogoTests (BTL_LOGO). The window icon is drawn by the app. -->
+    <ApplicationIcon>BtlCalculator.ico</ApplicationIcon>
     <PublishAot>true</PublishAot>
   </PropertyGroup>
 

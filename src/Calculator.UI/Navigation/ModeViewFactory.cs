@@ -62,7 +62,7 @@ public sealed class ModeViewFactory(AppServices services)
         AppMode.Pressure => Converter(UnitCategory.Pressure),
         AppMode.Angle => Converter(UnitCategory.Angle),
         AppMode.Currency => new CurrencyView(new CurrencyViewModel(services.ExchangeRates, services.System)),
-        AppMode.Settings => new SettingsView(services.Themes, services.Languages),
+        AppMode.Settings => new SettingsView(services.Themes, services.Languages, services.System),
         _ => throw new ArgumentOutOfRangeException(nameof(mode), mode, "A mode without a view."),
     };
 

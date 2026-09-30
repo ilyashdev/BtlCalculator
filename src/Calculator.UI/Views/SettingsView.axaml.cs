@@ -11,14 +11,16 @@ public partial class SettingsView : UserControl
 {
     private readonly AppThemeService _themes;
     private readonly LanguageService _languages;
+    private readonly ISystemServices _system;
     private readonly List<LanguageOption> _languageOptions;
 
-    public SettingsView(AppThemeService themes, LanguageService languages)
+    public SettingsView(AppThemeService themes, LanguageService languages, ISystemServices system)
     {
         InitializeComponent();
 
         _themes = themes;
         _languages = languages;
+        _system = system;
         VersionLabel.Text = typeof(SettingsView).Assembly.GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion.Split('+')[0];
 
         RadioButton selected = themes.Choice switch
@@ -48,6 +50,8 @@ public partial class SettingsView : UserControl
             _themes.SetChoice(choice);
         }
     }
+
+    private async void OnProjectLinkClick(object? sender, RoutedEventArgs e) => await _system.OpenUrlAsync(new Uri(Branding.ProjectUrl));
 
     /// <summary>The app switches at once: its views are rebuilt in the new language (see App.ShowMainView).</summary>
     private void OnLanguageSelected(object? sender, SelectionChangedEventArgs e)

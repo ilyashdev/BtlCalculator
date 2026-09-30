@@ -10,7 +10,7 @@
     <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
     <RootNamespace>Calculator.Android</RootNamespace>
     <ApplicationId>com.btlcalculator.app</ApplicationId>
-    <ApplicationTitle>BTL Calculator</ApplicationTitle>
+    <ApplicationTitle>Calculator</ApplicationTitle>
     <ApplicationVersion>1</ApplicationVersion>
     <ApplicationDisplayVersion>$(Version)</ApplicationDisplayVersion>
     <AndroidPackageFormat>apk</AndroidPackageFormat>

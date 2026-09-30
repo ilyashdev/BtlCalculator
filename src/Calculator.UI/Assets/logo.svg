@@ -1,0 +1,52 @@
+<!--
+  The logo of BTL Calculator. The same drawing lives in Resources/Logo.axaml (in the app, window icon) and in the
+  Android launcher icon (Calculator.Android/Resources/drawable/ic_launcher_logo.xml): change them together.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>BTL Calculator</title>
+  <defs>
+    <linearGradient id="body" x1="96" y1="32" x2="416" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2A2630"/>
+      <stop offset="1" stop-color="#16141A"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="96" y1="32" x2="416" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFB547"/>
+      <stop offset="1" stop-color="#FF5E3A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="136" y1="76" x2="376" y2="444" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFC24B"/>
+      <stop offset="0.5" stop-color="#FF8A3D"/>
+      <stop offset="1" stop-color="#FF4F3A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- body -->
+  <rect x="96" y="32" width="320" height="448" rx="72" fill="url(#body)"/>
+  <rect x="100" y="36" width="312" height="440" rx="68" fill="none" stroke="url(#rim)" stroke-width="8" stroke-opacity="0.9"/>
+
+  <!-- display: "tan(10x)" drawn with lines, so it looks the same without any font -->
+  <rect x="136" y="76" width="240" height="96" rx="30" fill="#FFFFFF" fill-opacity="0.07"/>
+  <path stroke="url(#accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"
+        d="M179,104 V132 Q179,140 187,140 H191 M172,116 H188
+           M218,128 A10,12 0 1 1 198,128 A10,12 0 1 1 218,128 M218,116 V140
+           M226,140 V116 M226,128 Q226,116 236,116 Q246,116 246,128 V140
+           M262,102 Q250,125 262,148
+           M270,110 L278,104 V140
+           M306,122 A10,18 0 1 1 286,122 A10,18 0 1 1 306,122
+           M314,116 L332,140 M332,116 L314,140
+           M340,102 Q352,125 340,148"/>
+
+  <!-- tonal keys -->
+  <g fill="#FFFFFF" fill-opacity="0.08">
+    <rect x="136" y="204" width="108" height="108" rx="32"/>
+    <rect x="268" y="204" width="108" height="108" rx="32"/>
+    <rect x="136" y="336" width="108" height="108" rx="32"/>
+  </g>
+  <!-- accent key -->
+  <rect x="268" y="336" width="108" height="108" rx="32" fill="url(#accent)"/>
+
+  <!-- symbols: + − × = -->
+  <path stroke="url(#accent)" stroke-width="12" stroke-linecap="round" fill="none"
+        d="M166,258 H214 M190,234 V282 M298,258 H346 M190,364 V416 M167.5,377 L212.5,403 M167.5,403 L212.5,377"/>
+  <path d="M298,377 H346 M298,403 H346" stroke="#1C1A20" stroke-width="12" stroke-linecap="round" fill="none"/>
+</svg>

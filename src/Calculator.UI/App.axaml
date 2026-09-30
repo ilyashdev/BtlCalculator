@@ -6,6 +6,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceInclude Source="avares://Calculator.UI/Resources/Colors.axaml" />
+                <ResourceInclude Source="avares://Calculator.UI/Resources/Logo.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
